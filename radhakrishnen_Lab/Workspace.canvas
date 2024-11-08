@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"5992ba772bed9c6f","type":"group","x":-520,"y":-360,"width":1760,"height":1360,"color":"4","label":"Worspace"},
+		{"id":"01d9ff2f15863d0e","type":"group","x":-600,"y":-840,"width":580,"height":360,"label":"New Software/Topics to study"},
+		{"id":"2ea2369ec1c71cea","type":"text","text":"hydrogen treatments in grommacs","x":-580,"y":-760,"width":250,"height":60},
+		{"id":"a4dd6e91f5d43565","type":"text","text":"mean field theory","x":-580,"y":-820,"width":250,"height":60},
+		{"id":"5b0e60758f09fd5c","type":"text","text":"[viamd](https://github.com/scanberg/viamd)\n[Research Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01033)","x":-240,"y":-820,"width":180,"height":87},
+		{"id":"53caaf4a2b0e1f1f","type":"text","text":" SAMSON and the GROMACS wizard?","x":-277,"y":-580,"width":250,"height":77},
+		{"id":"2e02a4caa41255af","type":"text","text":"PME and what we use for long distance interactions","x":-582,"y":-570,"width":250,"height":60},
+		{"id":"fca6aa69a0b9e84b","type":"text","text":"Delphi finite difference solver","x":-420,"y":-673,"width":286,"height":60},
+		{"id":"eba76a8372cecd8d","type":"text","text":"osprey","x":-582,"y":-673,"width":127,"height":60},
+		{"id":"6e45eddba215a0ca","type":"text","text":"Check with HR about remotely working out of state","x":-24,"y":320,"width":504,"height":140},
+		{"id":"152cdf6e7ac97157","type":"text","text":"Meeting with mala convo and ideas","x":200,"y":-326,"width":250,"height":60},
+		{"id":"69516d9597f59e9e","type":"text","text":"for mala's object oriented c++ scripts\n/programs/common/utilities/","x":-420,"y":-160,"width":306,"height":105},
+		{"id":"0530803c9779f448","type":"text","text":"where is the most current usage of the old solver? and should I base my files on those or do I need to write some new ones.\n\n- start with the path specified in Mala's email\n- Amy and Ella on /research for partial charge examples\n- chows as a backup and may be hardcoded for DNA\n","x":37,"y":-33,"width":503,"height":253},
+		{"id":"59f80ac703f83d22","type":"file","file":"Everyday use files/Quick Notes for later filing and to-do.md","x":426,"y":-1057,"width":668,"height":648},
+		{"id":"051740e5c657426c","x":540,"y":60,"width":648,"height":709,"type":"text","text":"- Next step is to create a figure like the one in the grant proposal\n- Maybe make the snapshot extraction a little more generalized for DNA as well\n\t- if Erini needs it\n- Finish up the refactoring and the guide to use the old solvercp \n\n![Pasted image 20240531182304.png](app://e639562fd7632334776edc6545feaf319dfb/Users/zak/Wellesley/Radhakrishnan%20Lab/Housekeeping/Attachments/Pasted%20image%2020240531182304.png?1717194184294)"}
+	],
+	"edges":[]
+}

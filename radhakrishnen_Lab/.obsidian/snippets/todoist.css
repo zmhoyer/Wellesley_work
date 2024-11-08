@@ -1,0 +1,228 @@
+/** Inbox Icon **/
+.callout[data-callout^="todoist-"][data-callout$="-inbox"] {
+  --callout-icon: lucide-inbox;
+}
+
+/** Berry Red **/
+.callout[data-callout^="todoist-berry-red-"] {
+  --callout-color: 184, 37, 95;
+}
+
+.todoist-berry-red {
+  color: #b8255f;
+}
+
+/** Red **/
+.callout[data-callout^="todoist-red-"] {
+  --callout-color: 219, 64, 53;
+}
+
+.todoist-red {
+  color: #db4035;
+}
+
+/** Orange **/
+.callout[data-callout^="todoist-orange-"] {
+  --callout-color: 255, 153, 51;
+}
+
+.todoist-orange {
+  color: #ff9933;
+}
+
+/** Yellow **/
+.callout[data-callout^="todoist-yellow-"] {
+  --callout-color: 250, 208, 0;
+}
+
+.todoist-yellow {
+  color: #fad000;
+}
+
+/** Olive Green **/
+.callout[data-callout^="todoist-olive-green-"] {
+  --callout-color: 175, 184, 59;
+}
+
+.todoist-olive-green {
+  color: #afb83b;
+}
+
+/** Lime Green **/
+.callout[data-callout^="todoist-lime-green-"] {
+  --callout-color: 126, 204, 73;
+}
+
+.todoist-lime-green {
+  color: #7ecc49;
+}
+
+/** Green **/
+.callout[data-callout^="todoist-green-"] {
+  --callout-color: 41, 148, 56;
+}
+
+.todoist-green {
+  color: #299438;
+}
+
+/** Mint Green **/
+.callout[data-callout^="todoist-mint-green-"] {
+  --callout-color: 106, 204, 188;
+}
+
+.todoist-mint-green {
+  color: #6accbc;
+}
+
+/** Teal **/
+.callout[data-callout^="todoist-teal-"] {
+  --callout-color: 21, 143, 173;
+}
+
+.todoist-teal {
+  color: #158fad;
+}
+
+/** Sky Blue **/
+.callout[data-callout^="todoist-sky-blue-"] {
+  --callout-color: 20, 170, 245;
+}
+
+.todoist-sky-blue {
+  color: #14aaf5;
+}
+
+/** Light Blue **/
+.callout[data-callout^="todoist-light-blue-"] {
+  --callout-color: 150, 195, 235;
+}
+
+.todoist-light-blue {
+  color: #96c3eb;
+}
+
+/** Blue **/
+.callout[data-callout^="todoist-blue-"] {
+  --callout-color: 64, 115, 255;
+}
+
+.todoist-blue {
+  color: #4073ff;
+}
+
+/** Grape **/
+.callout[data-callout^="todoist-grape-"] {
+  --callout-color: 136, 77, 255;
+}
+
+.todoist-grape {
+  color: #884dff;
+}
+
+/** Violet **/
+.callout[data-callout^="todoist-violet-"] {
+  --callout-color: 175, 56, 235;
+}
+
+.todoist-violet {
+  color: #af38eb;
+}
+
+/** Lavender **/
+.callout[data-callout^="todoist-lavender-"] {
+  --callout-color: 235, 150, 235;
+}
+
+.todoist-lavender {
+  color: #eb96eb;
+}
+
+/** Magenta **/
+.callout[data-callout^="todoist-magenta-"] {
+  --callout-color: 224, 81, 148;
+}
+
+.todoist-magenta {
+  color: #e05194;
+}
+
+/** Salmon **/
+.callout[data-callout^="todoist-salmon-"] {
+  --callout-color: 255, 141, 133;
+}
+
+.todoist-salmon {
+  color: #ff8d85;
+}
+
+/** Charcoal **/
+.callout[data-callout^="todoist-charcoal-"] {
+  --callout-color: 128, 128, 128;
+}
+
+.todoist-charcoal {
+  color: #808080;
+}
+
+/** Grey **/
+.callout[data-callout^="todoist-grey-"] {
+  --callout-color: 184, 184, 184;
+}
+
+.todoist-grey {
+  color: #b8b8b8;
+}
+
+/** Taupe **/
+.callout[data-callout^="todoist-taupe-"] {
+  --callout-color: 204, 172, 147;
+}
+
+.todoist-taupe {
+  color: #ccac93;
+}
+
+/** Extra Info **/
+.callout[data-callout^="todoist-"] li ul li {
+  font-size: smaller;
+  color: #999;
+  display: inline;
+  margin: 0 0.25em;
+}
+
+.callout[data-callout^="todoist-"] li ul li:first-child {
+  margin-left: -2em;
+}
+
+.callout[data-callout^="todoist-"] li ul li .list-bullet {
+  display: none;
+}
+
+.todoist-postponed {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.todoist-postponed::before {
+  content: "« ";
+}
+
+.todoist-postponed::after {
+  content: " »";
+}
+
+/** Task Date **/
+.todoist-task-date {
+  color: #299438;
+}
+
+.todoist-task-date::before {
+  margin-right: .2em;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='.7em' height='.7em' viewBox='0 0 24 24' fill='none' stroke='rgb(41, 148, 56)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-calendar'%3E%3Crect width='18' height='18' x='3' y='4' rx='2' ry='2'/%3E%3Cline x1='16' x2='16' y1='2' y2='6'/%3E%3Cline x1='8' x2='8' y1='2' y2='6'/%3E%3Cline x1='3' x2='21' y1='10' y2='10'/%3E%3C/svg%3E");
+}
+
+.todoist-task-recurring::after {
+  margin-left: .2em;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='.7em' height='.7em' viewBox='0 0 24 24' fill='none' stroke='rgb(41, 148, 56)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-repeat-2'%3E%3Cpath d='m2 9 3-3 3 3'/%3E%3Cpath d='M13 18H7a2 2 0 0 1-2-2V6'/%3E%3Cpath d='m22 15-3 3-3-3'/%3E%3Cpath d='M11 6h6a2 2 0 0 1 2 2v10'/%3E%3C/svg%3E");
+}

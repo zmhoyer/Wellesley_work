@@ -1,0 +1,41 @@
+{
+  "calendarSources": [
+    {
+      "type": "dailynote",
+      "color": "#c8b328",
+      "heading": "Today's Tasks"
+    },
+    {
+      "type": "local",
+      "color": "#0fbfcc",
+      "directory": "Calendar/Classes"
+    },
+    {
+      "type": "local",
+      "color": "#e19833",
+      "directory": "Calendar/Headstart Task"
+    },
+    {
+      "type": "local",
+      "color": "#29bc78",
+      "directory": "Calendar/Homework Task"
+    },
+    {
+      "type": "local",
+      "color": "#f60909",
+      "directory": "Calendar/TA Classes/4124"
+    },
+    {
+      "type": "local",
+      "color": "#ff6666",
+      "directory": "Calendar/TA Classes/O'Chem"
+    }
+  ],
+  "defaultCalendar": 0,
+  "firstDay": 0,
+  "initialView": {
+    "desktop": "timeGridWeek",
+    "mobile": "timeGrid3Days"
+  },
+  "timeFormat24h": false
+}

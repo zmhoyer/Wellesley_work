@@ -1,0 +1,12 @@
+{
+  "accentColor": "#c7460f",
+  "baseFontSize": 15,
+  "translucency": true,
+  "cssTheme": "AnuPpuccin",
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "todoist"
+  ],
+  "theme": "obsidian",
+  "showViewHeader": true
+}
