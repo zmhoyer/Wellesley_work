@@ -1,0 +1,9 @@
+# Ignore Mac sytem files
+.DS_store
+
+# Ignore specific files
+Radhakrishnan_Lab/
+viamd/
+Papers/
+Random/
+Random_projects/
