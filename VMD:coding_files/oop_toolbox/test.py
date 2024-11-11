@@ -9,6 +9,10 @@
 
 ### still just testing junk
 
+### testing to see if my obsidian git plugin is what's automatically pushing this git dir
+
+#la de da da
+
 
 import numpy as np
 import pandas as pd
