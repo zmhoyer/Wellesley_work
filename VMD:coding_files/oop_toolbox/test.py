@@ -4,6 +4,10 @@
 #this file is primarily used to test git and various other tools in the directory
 # see if I can find a way to activate an environment from a script to streamline this process even more for Mala
 
+#I'm going to replace this pretty soon so idk how much I'm actually doing here but meh shmeh
+
+
+
 import numpy as np
 import pandas as pd
 import xarray as xr
