@@ -195,9 +195,7 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": true,
       "workspaces:Manage workspace layouts": false,
-      "random-note:Open random note": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "homepage:Open homepage": false
+      "random-note:Open random note": false
     }
   },
   "active": "38c62ade6b7e3975",
