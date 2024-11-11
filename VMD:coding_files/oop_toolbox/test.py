@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# To use this file you need to do $conda activate iron
+#this file is primarily used to test git and various other tools in the directory
+# see if I can find a way to activate an environment from a script to streamline this process even more for Mala
+
 import numpy as np
 import pandas as pd
 import xarray as xr
