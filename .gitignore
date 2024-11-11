@@ -2,7 +2,7 @@
 .DS_store
 
 # Ignore specific files
-Radhakrishnan_Lab/
+radhakrishnan_Lab/
 viamd/
 Papers/
 Random/

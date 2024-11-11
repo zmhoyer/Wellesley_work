@@ -9,12 +9,12 @@
 		{"id":"2e02a4caa41255af","type":"text","text":"PME and what we use for long distance interactions","x":-582,"y":-570,"width":250,"height":60},
 		{"id":"fca6aa69a0b9e84b","type":"text","text":"Delphi finite difference solver","x":-420,"y":-673,"width":286,"height":60},
 		{"id":"eba76a8372cecd8d","type":"text","text":"osprey","x":-582,"y":-673,"width":127,"height":60},
-		{"id":"6e45eddba215a0ca","type":"text","text":"Check with HR about remotely working out of state","x":-24,"y":320,"width":504,"height":140},
 		{"id":"152cdf6e7ac97157","type":"text","text":"Meeting with mala convo and ideas","x":200,"y":-326,"width":250,"height":60},
-		{"id":"69516d9597f59e9e","type":"text","text":"for mala's object oriented c++ scripts\n/programs/common/utilities/","x":-420,"y":-160,"width":306,"height":105},
-		{"id":"0530803c9779f448","type":"text","text":"where is the most current usage of the old solver? and should I base my files on those or do I need to write some new ones.\n\n- start with the path specified in Mala's email\n- Amy and Ella on /research for partial charge examples\n- chows as a backup and may be hardcoded for DNA\n","x":37,"y":-33,"width":503,"height":253},
 		{"id":"59f80ac703f83d22","type":"file","file":"Everyday use files/Quick Notes for later filing and to-do.md","x":426,"y":-1057,"width":668,"height":648},
-		{"id":"051740e5c657426c","x":540,"y":60,"width":648,"height":709,"type":"text","text":"- Next step is to create a figure like the one in the grant proposal\n- Maybe make the snapshot extraction a little more generalized for DNA as well\n\t- if Erini needs it\n- Finish up the refactoring and the guide to use the old solvercp \n\n![Pasted image 20240531182304.png](app://e639562fd7632334776edc6545feaf319dfb/Users/zak/Wellesley/Radhakrishnan%20Lab/Housekeeping/Attachments/Pasted%20image%2020240531182304.png?1717194184294)"}
+		{"id":"6e45eddba215a0ca","type":"text","text":"- Check with HR about remotely working out of state\n- document and refactor the old solver\n- ","x":-24,"y":320,"width":504,"height":140},
+		{"id":"0530803c9779f448","type":"text","text":"where is the most current usage of the old solver? and should I base my files on those or do I need to write some new ones.\n\n- start with the path specified in Mala's email\n- Amy and Ella on /research for partial charge examples\n- chows as a backup and may be hardcoded for DNA\n","x":37,"y":-33,"width":503,"height":253},
+		{"id":"051740e5c657426c","type":"text","text":"- Next step is to create a figure like the one in the grant proposal\n- Maybe make the snapshot extraction a little more generalized for DNA as well\n\t- if Erini needs it\n- Finish up the refactoring and the guide to use the old solvercp \n\n![Pasted image 20240531182304.png](app://e639562fd7632334776edc6545feaf319dfb/Users/zak/Wellesley/Radhakrishnan%20Lab/Housekeeping/Attachments/Pasted%20image%2020240531182304.png?1717194184294)","x":540,"y":60,"width":648,"height":709},
+		{"id":"69516d9597f59e9e","type":"text","text":"for mala's object oriented c++ scripts\n/programs/common/utilities/","x":-420,"y":-160,"width":306,"height":105}
 	],
 	"edges":[]
 }

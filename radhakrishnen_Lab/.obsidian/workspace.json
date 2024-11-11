@@ -15,8 +15,8 @@
               "state": {
                 "file": "Workspace.canvas",
                 "viewState": {
-                  "x": 448.01040743105983,
-                  "y": 561.0260106866508,
+                  "x": -396.96128812054326,
+                  "y": 506.23262428569353,
                   "zoom": -0.6326997295308442
                 }
               },
@@ -195,7 +195,9 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": true,
       "workspaces:Manage workspace layouts": false,
-      "random-note:Open random note": false
+      "random-note:Open random note": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "homepage:Open homepage": false
     }
   },
   "active": "38c62ade6b7e3975",
