@@ -9,12 +9,9 @@ number = ['750000ps', '770000ps']#, 790000, 810000, 830000, 850000, 890000, 9100
 number_of_peptides = sim
 list_of_snapshots = number
 list_of_residues = ['1THR', '2ALA']
+#list_of_residues = residueName(cwd+"/"+str(number_of_peptides[0])+"/"+str(list_of_snapshots[0]))
 
 cwd = os.getcwd()
-
-
-
-#list_of_residues = residueName(cwd+"/"+str(number_of_peptides[0])+"/"+str(list_of_snapshots[0]))
 os.mkdir('ddg')
 residue_summary = open(cwd+"/ddg/residue_summary_all_peps.txt", 'w')
 for residue_name in list_of_residues:
@@ -48,11 +45,15 @@ for peptide in number_of_peptides:
             res_sum = open(cwd+"/ddg/residue_summary_all_peps.txt", 'a')
             res_sum.write("{:<11.4f}".format(delta_delta_gopt))
 
+            res_sum_perpep = open(cwd+"/ddg/residue_summary_"+peptide+".txt", 'a')
+            res_sum_perpep.write("{:<11.4f}".format(delta_delta_gopt))
 
             res_per_pep = open(cwd+"/ddg/"+residue+"/"+residue+"_"+peptide+"_allsnapshots_ddgs.txt", 'a')
             res_per_pep.write("{:<11.4f}\n".format(delta_delta_gopt))
             res_per_pep.close()
-
+        
+        res_sum_perpep.write("\n")
+        res_sum_perpep.close()
         res_sum.write("\n")
         res_sum.close()
 
