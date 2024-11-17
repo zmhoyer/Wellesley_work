@@ -1,11 +1,13 @@
 clear;
 
-figure(1);
+peptides = 4;
+
+figure('Name','Peptide_1','NumberTitle','off');
 %
 data_array = load("residue_summary_p1.txt");
 data_mean = mean(data_array,1);
 data_std = std(data_array,1);
-data_ste = data_std/sqrt(size(data_array,1));
+data_ste = data_std/sqrt(peptides);
 %
 myfontsize = 15;
 errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2);
@@ -24,12 +26,13 @@ xticklabels({'','T1','S3','S4','A6','G7','L8','Q9','10W','11P','V12','G13','V15'
 
 
 
-figure(2);
+
+figure('Name','Peptide_2','NumberTitle','off');
 %
 data_array = load("residue_summary_p2.txt");
 data_mean = mean(data_array,1);
 data_std = std(data_array,1);
-data_ste = data_std/sqrt(size(data_array,1));
+data_ste = data_std/sqrt(peptides);
 %
 myfontsize = 15;
 errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2);
@@ -48,13 +51,12 @@ xticklabels({'','T1','S3','S4','A6','G7','L8','Q9','10W','11P','V12','G13','V15'
 
 
 
-
-figure(3);
+figure('Name','Peptide_3','NumberTitle','off');
 %
 data_array = load("residue_summary_p3.txt");
 data_mean = mean(data_array,1);
 data_std = std(data_array,1);
-data_ste = data_std/sqrt(size(data_array,1));
+data_ste = data_std/sqrt(peptides);
 %
 myfontsize = 15;
 errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2);
@@ -74,12 +76,11 @@ xticklabels({'','T1','S3','S4','A6','G7','L8','Q9','10W','11P','V12','G13','V15'
 
 
 
-
-figure(4);
+figure('Name','Peptide_4','NumberTitle','off');
 data_array = load("residue_summary_p4.txt");
 data_mean = mean(data_array,1);
 data_std = std(data_array,1);
-data_ste = data_std/sqrt(size(data_array,1));
+data_ste = data_std/sqrt(peptides);
 %
 myfontsize = 15;
 errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2);
@@ -98,12 +99,12 @@ xticklabels({'','T1','S3','S4','A6','G7','L8','Q9','10W','11P','V12','G13','V15'
 
 
 
-figure(5);
+figure('Name','Cumulative_Peptides','NumberTitle','off');
 %
 data_array = load("residue_summary_all_peps.txt");
 data_mean = mean(data_array,1);
 data_std = std(data_array,1);
-data_ste = data_std/sqrt(size(data_array,1));
+data_ste = data_std/sqrt(peptides);
 %
 myfontsize = 15;
 errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2);
