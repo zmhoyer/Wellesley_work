@@ -1,0 +1,182 @@
+%% general settings %%
+
+clear;
+close all
+blue = [57 106 177]./255;
+red = [204 37 41]./255;
+black = [83 81 84]./255;
+green = [62 150 81]./255;
+brown = [146 36 40]./255;
+purple = [107 76 154]./255;
+
+simulation_name = "1_wt";
+peptides_per_sim = 4;
+lipids_per_sim = 128;
+
+
+%% Box size analysis %%
+
+% figure creation
+figure('Name',simulation_name+" box size analysis",'NumberTitle','off');
+
+% data load and processing
+box_array = load("box.txt");
+time = box_array(:,1);
+x_and_y = box_array(:,2);
+z = box_array(:,4);
+
+% Figure settings
+plot(time,x_and_y,'color',green);
+hold on;
+plot(time,z,'color',blue);
+ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+myfontsize = 15;
+ax1.FontSize = myfontsize;
+ylabel('Box vector length (nm)','fontsize',myfontsize);
+xlabel('Time (ps)','fontsize',myfontsize);
+%axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+%xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* 0.05)
+%ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+
+%% Area per lipid analysis %%
+
+% figure creation
+figure('Name',simulation_name+" area per lipid analysis",'NumberTitle','off');
+
+% data load and processing
+time = box_array(:,1);
+x_and_y = box_array(:,2);
+area_per_lipid = (x_and_y.*x_and_y)/(lipids_per_sim/2);
+%mean_arr = movmean(area_per_lipid,1000);
+
+% Figure settings
+plot(time,area_per_lipid,'color',black);
+hold on;
+%plot(time,mean_arr,'color', red);
+ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+myfontsize = 15;
+ax1.FontSize = myfontsize;
+ylabel('Area per lipid (nm^2)','fontsize',myfontsize);
+xlabel('Time (ps)','fontsize',myfontsize);
+%axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+%xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* 0.05)
+%ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+
+%% Energy analysis %%
+
+% figure creation
+figure('Name',simulation_name+" Total energy analysis",'NumberTitle','off');
+
+% data load and processing
+energy_array = load("mdenergy.txt");
+time = energy_array(:,1);
+total_energy = energy_array(:,2);
+
+% Figure settings
+plot(time,total_energy,'color',purple);
+ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+myfontsize = 15;
+ax1.FontSize = myfontsize;
+ylabel('Potential energy (KJ/mol), (K)','fontsize',myfontsize);
+xlabel('Time (ps)','fontsize',myfontsize);
+axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
+%ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+
+%% Temperature analysis %%
+
+% figure creation
+figure('Name',simulation_name+" Temperature analysis",'NumberTitle','off');
+
+% data load and processing
+
+time = energy_array(:,1);
+Temperature = energy_array(:,3);
+
+% Figure settings
+plot(time,Temperature,'color',green);
+ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+myfontsize = 15;
+ax1.FontSize = myfontsize;
+ylabel('Temperature (K)','fontsize',myfontsize);
+xlabel('Time (ps)','fontsize',myfontsize);
+axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+%xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
+%ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+%% Density analysis %%
+
+% figure creation
+figure('Name',simulation_name+" Bilayer thickness",'NumberTitle','off');
+
+% data load and processing
+Density_array = load("density.txt");
+arp = Density_array(:,1);
+Density = Density_array(:,2);
+
+% Figure settings
+plot(arp,Density,'color',purple);
+ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+myfontsize = 15;
+ax1.FontSize = myfontsize;
+ylabel('Density (kg m^-3)','fontsize',myfontsize);
+xlabel('Average relative position from center (nm)','fontsize',myfontsize);
+axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+%xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
+%ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+%% RMSD Analysis %%
+
+for pep = peptides_per_sim:-1:1.0
+
+   % figure creation
+    figure('Name',simulation_name+" RMSD "+pep,'NumberTitle','off');
+
+    % data load and processing
+    rmsd = load(pep+"p_rmsd.txt");
+    time = rmsd(:,1);
+    rms_values = rmsd(:,2);
+
+    % Figure settings
+    plot(time,rms_values,'color',purple);
+    ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+    myfontsize = 15;
+    ax1.FontSize = myfontsize;
+    ylabel('RMSD (nm)','fontsize',myfontsize);
+    xlabel('time (ps)','fontsize',myfontsize);
+    axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+    %xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
+    %ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+end
+
+
+%% RMSF Analysis %%
+
+for pep = peptides_per_sim:-1:1.0
+
+    %figure creation
+    figure('Name',simulation_name+" RMSF "+pep,'NumberTitle','off');
+
+    % data load and processing
+    rmsf = load(pep+"p_rmsf.txt");
+    rmsf_nm = rmsf(:,2);
+    rmsf_atom_num = rmsf(:,1);
+    rmsf_array = {'T1','R2','S3','S4','R5','A6','G7','L8','Q9','10W','11P','V12','G13','R14','V15','H16','R17','L18','L19','R20','K21'};
+
+    % Figure settings
+    plot(rmsf_nm,'-*','MarkerSize',10,'color',purple);
+    ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+    myfontsize = 15;
+    ax1.FontSize = myfontsize;
+    ylabel('RMSF (nm)','fontsize',myfontsize);
+    xlabel('Residue','fontsize',myfontsize);
+    axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+    xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* 0.05)
+    ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+    xticks(0:length(rmsf_atom_num));
+    xticklabels({'','T1','R2','S3','S4','R5','A6','G7','L8','Q9','10W','11P','V12','G13','R14','V15','H16','R17','L18','L19','R20','K21'});
+
+end
