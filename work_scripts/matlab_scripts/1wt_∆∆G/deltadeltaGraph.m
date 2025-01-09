@@ -1,3 +1,20 @@
+%% general settings %%
+
+clear;
+close all
+blue = [57 106 177]./255;
+red = [204 37 41]./255;
+black = [83 81 84]./255;
+green = [62 150 81]./255;
+brown = [146 36 40]./255;
+purple = [107 76 154]./255;
+
+simulation_name = "2_wt";
+peptides_per_sim = 4;
+lipids_per_sim = 128;
+
+%% ∆∆G Graphs %%
+
 clear;
 
 peptides = 4;
@@ -97,7 +114,7 @@ ax1.FontSize = myfontsize;
 xticks(0:length(data_mean));
 xticklabels({'','T1','S3','S4','A6','G7','L8','Q9','10W','11P','V12','G13','V15','H16','L18','L19',''});
 
-
+%% Cumulative ∆∆G graph %%
 
 figure('Name','Cumulative_Peptides','NumberTitle','off');
 %
