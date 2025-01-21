@@ -1,0 +1,38 @@
+# This file was created Fri Jan 17 11:50:28 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/bfII_wildtype_one_prot_his
+# Command line:
+#   gmx rmsf -f ./2p_memb.xtc -n ./analysis_index.ndx -s ./2p_memb.tpr -o 2p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Grunge ROck MAChoS
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+  372   2.7784
+  386   2.6422
+  410   2.5148
+  421   2.4954
+  432   2.5198
+  456   2.3652
+  466   2.3321
+  473   2.3018
+  492   2.3337
+  509   0.3527
+  535   0.4797
+  547   0.5992
+  563   0.7960
+  570   0.9095
+  594   0.8794
+  610   1.0926
+  628   0.8957
+  652   0.8742
+  671   0.8342
+  690   0.8926
+  714   0.9313

@@ -1,0 +1,38 @@
+# This file was created Fri Jan 17 12:18:02 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/bfII_wildtype_two_prot_his
+# Command line:
+#   gmx rmsf -f ./4p_memb.xtc -n ./analysis_index.ndx -s ./4p_memb.tpr -o 4p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# GRoups of Organic Molecules in ACtion for Science
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+ 1106   0.9788
+ 1120   1.0462
+ 1144   0.5558
+ 1155   0.5340
+ 1166   0.6484
+ 1190   0.6175
+ 1200   0.6560
+ 1207   0.7271
+ 1226   0.6837
+ 1243   0.7977
+ 1269   0.3960
+ 1281   0.3793
+ 1297   0.4622
+ 1304   0.5394
+ 1328   0.7560
+ 1344   0.5249
+ 1362   0.6590
+ 1386   0.8334
+ 1405   0.8192
+ 1424   0.8133
+ 1448   0.9949

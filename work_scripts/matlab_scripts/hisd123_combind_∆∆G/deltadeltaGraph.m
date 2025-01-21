@@ -21,9 +21,9 @@ peptide_mean_array = [];
 total_number_of_peptides = peptides_per_sim*number_of_sim;
 
 % setting up the mean,atd,ste
-residue_summary_sim1 = load("1wt_residue_summary_all_peps.txt");
-residue_summary_sim2 = load("2wt_residue_summary_all_peps.txt");
-residue_summary_sim3 = load("3wt_residue_summary_all_peps.txt");
+residue_summary_sim1 = load("1hisd_residue_summary_all_peps.txt");
+residue_summary_sim2 = load("2hisd_residue_summary_all_peps.txt");
+residue_summary_sim3 = load("3hisd_residue_summary_all_peps.txt");
 residue_summary_combind_array = cat(1,residue_summary_sim1,residue_summary_sim2,residue_summary_sim3);
 
 total_peptides = mat2cell(residue_summary_combind_array,Row_lengths);

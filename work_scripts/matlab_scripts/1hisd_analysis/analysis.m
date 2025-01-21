@@ -9,9 +9,11 @@ green = [62 150 81]./255;
 brown = [146 36 40]./255;
 purple = [107 76 154]./255;
 
-simulation_name = "2_wt";
+simulation_name = "1 protonated histidine";
 peptides_per_sim = 4;
 lipids_per_sim = 128;
+number_of_residues = 21;
+current_peptide_residue_list = {['1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISD', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS']};
 
 
 %% Box size analysis %%
@@ -136,7 +138,7 @@ for pep = peptides_per_sim:-1:1.0
     figure('Name',simulation_name+" RMSD peptide "+pep,'NumberTitle','off');
 
     % data load and processing
-    rmsd = load("p"+pep+"_rmsd.txt");
+    rmsd = load(pep+"p_rmsd.txt");
     time = rmsd(:,1);
     rms_values = rmsd(:,2);
 
@@ -150,6 +152,7 @@ for pep = peptides_per_sim:-1:1.0
     axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
     %xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
     %ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
 end
 
 
@@ -161,7 +164,7 @@ for pep = peptides_per_sim:-1:1.0
     figure('Name',simulation_name+" RMSF peptide "+pep,'NumberTitle','off');
 
     % data load and processing
-    rmsf = load("p"+pep+"_rmsf.txt");
+    rmsf = load(pep+"p_rmsf.txt");
     rmsf_nm = rmsf(:,2);
     rmsf_atom_num = rmsf(:,1);
     rmsf_array = {'T1','R2','S3','S4','R5','A6','G7','L8','Q9','10W','11P','V12','G13','R14','V15','H16','R17','L18','L19','R20','K21'};
@@ -180,3 +183,107 @@ for pep = peptides_per_sim:-1:1.0
     xticklabels({'','T1','R2','S3','S4','R5','A6','G7','L8','Q9','10W','11P','V12','G13','R14','V15','H16','R17','L18','L19','R20','K21'});
 
 end
+
+%% Per Residue Minimum Distance %%
+
+for pep = peptides_per_sim:-1:1.0
+
+    %figure creation
+    figure('Name',simulation_name+" mindist summary peptide "+pep,'NumberTitle','off');
+
+    %inverse_residue_array = load(pep+"p_residue_mindist_summary.txt");
+    inverse_residue_array = load(pep+"p_residue_mindist_summary.txt");
+    Residue_array = inverse_residue_array.';
+    Time = Residue_array(:,1)
+    data_mean = [];
+    data_std = [];
+
+    for residue_number = number_of_residues:-1:1.0
+        dimension = residue_number + 1;
+        Residue_mindist = Residue_array(:,dimension);
+        data_mean(end+1) = mean(Residue_mindist); %#ok<*SAGROW>
+        data_std(end+1) = std(Residue_mindist);
+        %data_ste = data_std/sqrt(length(Residue_Average,1));
+
+    end    
+
+
+    myfontsize = 15;
+    errorbar(data_mean, data_std, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',brown);
+    ylabel('Minimum Distance (nm)','fontsize',myfontsize);
+    xlabel('BF2 residue','fontsize',myfontsize);
+    ax1 = gca;
+    %restricts the axises to be directly up on the data and then gives them
+    %some centering space
+    axis(ax1, 'tight');
+    xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* 0.05)
+    ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+    ax1.FontSize = myfontsize;
+    xticks(0:length(data_mean));
+    xticklabels({'','1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISD', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS',''});
+
+end
+
+%% Per Residue Minimum Distance analysis 2 with ste %%
+
+% for pep = peptides_per_sim:-1:1.0
+% 
+%     %figure creation
+%     figure('Name',simulation_name+" mindist summary peptide "+pep,'NumberTitle','off');
+% 
+%     %inverse_residue_array = load(pep+"p_residue_mindist_summary.txt");
+%     inverse_residue_array = load(pep+"p_residue_mindist_summary.txt");
+%     Residue_array = inverse_residue_array.';
+%     Time = Residue_array(:,1);
+% 
+%     data_mean = [];
+%     data_std = [];
+% 
+%     for residue_number = number_of_residues:-1:1.0
+%         dimension = residue_number + 1;
+%         Residue_mindist = Residue_array(:,dimension);
+%         data_mean(end+1) = mean(Residue_mindist); %#ok<*SAGROW>
+%         data_std(end+1) = std(Residue_mindist);
+%         data_ste = data_std/sqrt(length(Residue_mindist));
+% 
+%     end    
+% 
+% 
+%     myfontsize = 15;
+%     errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',brown);
+%     ylabel('Minimum Distance (nm)','fontsize',myfontsize);
+%     xlabel('BF2 residue','fontsize',myfontsize);
+%     ax1 = gca;
+%     %restricts the axises to be directly up on the data and then gives them
+%     %some centering space
+%     axis(ax1, 'tight');
+%     xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* 0.05)
+%     ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+% 
+%     ax1.FontSize = myfontsize;
+%     xticks(0:length(data_mean));
+%     xticklabels({'','1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISD', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS',''});
+% 
+% end
+
+% %% hbond Analysis %%
+% 
+% % figure creation
+% figure('Name',simulation_name+" hbnum_analysis",'NumberTitle','off');
+% 
+% % data load and processing
+% hbnum_array = load("hbnum.txt");
+% time = hbnum_array(:,1);
+% hbnum = hbnum_array(:,2);
+% 
+% % Figure settings
+% plot(hbnum,'color',purple);
+% ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+% myfontsize = 15;
+% ax1.FontSize = myfontsize;
+% ylabel('number of hydrogen bonds','fontsize',myfontsize);
+% xlabel('Time (ps)','fontsize',myfontsize);
+% axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+% %xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
+% %ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)

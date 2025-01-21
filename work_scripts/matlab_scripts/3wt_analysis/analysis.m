@@ -9,7 +9,7 @@ green = [62 150 81]./255;
 brown = [146 36 40]./255;
 purple = [107 76 154]./255;
 
-simulation_name = "1_wt";
+simulation_name = "3_wt";
 peptides_per_sim = 4;
 lipids_per_sim = 128;
 number_of_residues = 21;
@@ -138,7 +138,7 @@ for pep = peptides_per_sim:-1:1.0
     figure('Name',simulation_name+" RMSD peptide "+pep,'NumberTitle','off');
 
     % data load and processing
-    rmsd = load(pep+"p_rmsd.txt");
+    rmsd = load("p"+pep+"_rmsd.txt");
     time = rmsd(:,1);
     rms_values = rmsd(:,2);
 
@@ -164,7 +164,7 @@ for pep = peptides_per_sim:-1:1.0
     figure('Name',simulation_name+" RMSF peptide "+pep,'NumberTitle','off');
 
     % data load and processing
-    rmsf = load(pep+"p_rmsf.txt");
+    rmsf = load("p"+pep+"_rmsf.txt");
     rmsf_nm = rmsf(:,2);
     rmsf_atom_num = rmsf(:,1);
     rmsf_array = {'T1','R2','S3','S4','R5','A6','G7','L8','Q9','10W','11P','V12','G13','R14','V15','H16','R17','L18','L19','R20','K21'};

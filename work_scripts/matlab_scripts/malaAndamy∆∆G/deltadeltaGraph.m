@@ -21,7 +21,7 @@ data_std = std(combind_array,1);
 data_ste = data_std/sqrt(peptides);
 %figure settings
 myfontsize = 15;
-errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',blue);
+errorbar(data_mean, data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',green);
 ylabel('\Delta\DeltaG_{opt,elec}, kcal/mol','fontsize',myfontsize);
 xlabel('BF2 residue','fontsize',myfontsize);
 ax1 = gca;

@@ -10,7 +10,7 @@ brown = [146 36 40]./255;
 purple = [107 76 154]./255;
 
 residue_summary = load("residue_summary_all_peps.txt");
-simulation_name = "3_wt";
+simulation_name = "3 protonated histidine";
 peptides_per_sim = 4;
 lipids_per_sim = 128;
 Row_lengths = [12 12 12 12]; %to seperate the cumulative residue summary. 12 is the number of snapshots and there are four sets of 12 snapshots
