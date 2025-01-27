@@ -288,3 +288,61 @@ end
 % axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
 % %xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
 % %ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+%% DSSP %%
+
+for pep = peptides_per_sim:-1:1.0
+
+    pep = 1;
+
+    %figure creation
+    figure('Name',simulation_name+" DSSP peptide "+pep,'NumberTitle','off');
+
+    % data load and processing
+    DSSP = load("p"+pep+"_dssp.txt");
+    time = DSSP(:,1);
+    loops = DSSP(:,2);
+    Breaks = DSSP(:,3);
+    Bends = DSSP(:,4);
+    Turns = DSSP(:,5);
+    PP_Helices = DSSP(:,6);
+    pi_Helices = DSSP(:,7);
+    type_310_Helices = DSSP(:,8);
+    b_Strands = DSSP(:,9);
+    b_Bridges = DSSP(:,10);
+    a_Helices = DSSP(:,11);
+   
+
+    % Figure settings
+    plot(time,loops,'color',purple);
+    hold on
+    plot(time,Breaks,'color',brown);
+    hold on
+    plot(time,Bends,'color',green);
+    hold on
+    plot(time,Turns,'color',black);
+    hold on
+    plot(time,PP_Helices,'color',blue);
+    hold on
+    plot(time,pi_Helices,'color',red);
+    hold on
+    plot(time,type_310_Helices,'color',"y");
+    hold on
+    plot(time,b_Strands,'color',"m");
+    hold on
+    plot(time,b_Bridges,'color',"c");
+    hold on
+    plot(time,a_Helices,'color',"r");
+    hold off
+
+    ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
+    myfontsize = 15;
+    ax1.FontSize = myfontsize;
+    ylabel('prevelance (count)','fontsize',myfontsize);
+    xlabel('time (ps)','fontsize',myfontsize);
+    axis(ax1, 'tight'); %restricts the axises to be directly up on the data and then gives them some centering space
+    %xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* -0.05)
+    %ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
+
+
+end

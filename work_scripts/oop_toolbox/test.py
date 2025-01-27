@@ -44,10 +44,6 @@ atom_information = ["ATOM_number", "RESIDUE_number", "RESIDUE_name", "ATOM_id", 
 Colspaces = [(0, 5), (5, 10), (10, 16), (16, 20), (20, 30), (30, 40), (40, 50), (50, 52), (52, 61), (61, -1)]
 Dtype = {'ATOM_number': int, 'RESIDUE_number': int, 'RESIDUE_name': str, 'ATOM_id': str, 'X_coordinate': float, 'Y_coordinate': float, 'Z_coordinate': float, 'SEGMENT_id': str, 'RESIDUE_ID': int, 'CHARGE/OTHER': float}
 
-sim_atom_information = ["X_coordinate", "Y_coordinate", "Z_coordinate"]
-sim_Colspaces =  [(20, 30), (30, 40), (40, 50)]
-sim_Dtype = {'X_coordinate': float, 'Y_coordinate': float, 'Z_coordinate': float}
-
 pd.options.display.float_format = '{:,.5f}'.format #needed to get the for the proper precision of the coords
 
 #I used pandas and then xarray as xarray didn't have any good fixed width options.
@@ -63,6 +59,15 @@ big4 = xr.DataArray(pd.read_fwf(input,
                                     dims=["atom_number", "atom_information"]) #,coords=[atom_number,atom_information]
 print(f"--- {time.time() - start_time} seconds ---")
 
+
+
+
+
+
+
+sim_atom_information = ["X_coordinate", "Y_coordinate", "Z_coordinate"]
+sim_Colspaces =  [(20, 30), (30, 40), (40, 50)]
+sim_Dtype = {'X_coordinate': float, 'Y_coordinate': float, 'Z_coordinate': float}
 
 start_time = time.time() 
 sim_big4 = xr.DataArray(pd.read_fwf(input, 

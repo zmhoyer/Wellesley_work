@@ -1,7 +1,5 @@
 %% general settings %%
 
-clear;
-fclose all;
 blue = [57 106 177]./255;
 red = [204 37 41]./255;
 black = [83 81 84]./255;

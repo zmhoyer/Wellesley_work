@@ -9,7 +9,7 @@ green = [62 150 81]./255;
 brown = [146 36 40]./255;
 purple = [107 76 154]./255;
 
-simulation_name = "3 protonated histidine";
+simulation_name = "2_wt";
 peptides_per_sim = 4;
 lipids_per_sim = 128;
 number_of_residues = 21;
