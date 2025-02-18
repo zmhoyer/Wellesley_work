@@ -1,7 +1,5 @@
 %% general settings %%
 
-clear;
-fclose all;
 blue = [57 106 177]./255;
 red = [204 37 41]./255;
 black = [83 81 84]./255;
@@ -22,6 +20,11 @@ run("../prot_his_bindingfreeenergy/binding_free_engergy.m");
 summary_array = cat(2,summary_array,combind_array_tot);
 summary_mean = cat(2,summary_mean,data_mean);
 
+run("../Q9R_bindingfreeenergy/binding_free_engergy.m")
+summary_array = cat(2,summary_array,all_Q9R_means);
+summary_mean = cat(2,summary_mean,Q9R_mean);
+
+
 
 
 
@@ -31,7 +34,7 @@ myfontsize = 15;
 
 colors = blue;
 
-scatter([1,2], summary_array, 25, colors,"filled");
+scatter([1,2,3], summary_array, 25, colors,"filled");
 ylabel('\DeltaG_{opt,elec}, kcal/mol','fontsize',myfontsize);
 xlabel('Simulation','fontsize',myfontsize);
 hold on
@@ -47,4 +50,4 @@ ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
 %
 ax1.FontSize = myfontsize;
 xticks(0:length(summary_array));
-xticklabels({'','WT','HISH',''});
+xticklabels({'','WT','HISH','Q9R',''});

@@ -323,16 +323,15 @@ for pep = peptides_per_sim:-1:1.0
 %}
 
 single_mean = mean(bbsc_mean_mindist);
-single_std = std(bbsc_mean_mindist);
-single_ste = single_std/4;
+single_std = std(single_mean);
+single_ste =
 
 
-
-    figure('Name',"WT1 bb-sc_difference mindist summary peptide "+pep,'NumberTitle','off');
+    figure('Name',"WT1 difference mindist summary peptide "+pep,'NumberTitle','off');
 
     myfontsize = 15;
-    errorbar(single_mean, single_ste, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',blue);
-    ylabel('Minimum Distance Difference (bb-sc nm)','fontsize',myfontsize);
+    errorbar(data_mean, data_std, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',blue);
+    ylabel('Minimum Distance (nm)','fontsize',myfontsize);
     xlabel('BF2 residue','fontsize',myfontsize);
     ax1 = gca;
     %restricts the axises to be directly up on the data and then gives them
@@ -342,13 +341,14 @@ single_ste = single_std/4;
     ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
 
     ax1.FontSize = myfontsize;
-    xticks(0:length(single_mean));
+    xticks(0:length(data_mean));
     xticklabels({'','1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISD', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS',''});
 
+end
 
 
 
-%{
+
 figure('Name',"pep 1 mean difference mindist summary",'NumberTitle','off');
 
 fontsize = 15;
@@ -365,7 +365,7 @@ fontsize = 15;
     ax1.FontSize = myfontsize;
     xticks(0:length(data_mean));
     xticklabels({'','1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISD', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS',''});
-%}
+
 
 
 %% Per Residue Minimum Distance analysis 2 with ste %%
