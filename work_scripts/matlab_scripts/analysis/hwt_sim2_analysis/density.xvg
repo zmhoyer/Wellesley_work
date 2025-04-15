@@ -1,0 +1,74 @@
+# This file was created Thu Mar 13 22:31:48 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/bfII_wildtype_two_prot_his
+# Command line:
+#   gmx density -f ./md.xtc -s ./md.tpr -o /home/zh106/bfII_wildtype_two_prot_his/important_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# Gravel Rubs Often Many Awfully Cauterized Sores
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.74933                0
+    -4.55548                0
+    -4.36163                0
+    -4.16778                0
+    -3.97393                0
+    -3.78008                0
+    -3.58623      0.000203149
+    -3.39238        0.0092699
+    -3.19853         0.170561
+    -3.00468          1.97836
+    -2.81083          14.6287
+    -2.61698          73.5486
+    -2.42313          249.801
+    -2.22928          558.797
+    -2.03543          846.776
+    -1.84158          993.206
+    -1.64773          1026.62
+    -1.45388           983.74
+    -1.26003          919.735
+    -1.06618          884.796
+   -0.872325          871.534
+   -0.678475          854.769
+   -0.484625          823.119
+   -0.290775          763.196
+   -0.096925          693.919
+    0.096925           692.36
+    0.290775          761.858
+    0.484625          822.939
+    0.678475          855.119
+    0.872325          870.603
+     1.06618          887.346
+     1.26003          929.773
+     1.45388          993.389
+     1.64773          1037.27
+     1.84158          994.189
+     2.03543          823.417
+     2.22928          544.838
+     2.42313          253.334
+     2.61698          77.9856
+     2.81083          16.1596
+     3.00468          2.59023
+     3.19853         0.267891
+     3.39238        0.0184313
+     3.58623        0.0011698
+     3.78008      0.000541486
+     3.97393       3.8738e-05
+     4.16778                0
+     4.36163                0
+     4.55548                0
+     4.74933                0

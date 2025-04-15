@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 15:53:02 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/hl8r_sim1
+# Command line:
+#   gmx rmsf -f /home/zh106/hl8r_sim1/analysis_setup_files/1p_memb.xtc -n /home/zh106/hl8r_sim1/analysis_setup_files/1p_index.ndx -s /home/zh106/hl8r_sim1/analysis_setup_files/1p_memb.tpr -o /home/zh106/hl8r_sim1/hl8r_sim1_analysis/1p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# Gallium Rubidium Oxygen Manganese Argon Carbon Silicon
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2147
+   19   0.1967
+   43   0.1515
+   54   0.1332
+   65   0.1334
+   89   0.1181
+   99   0.0775
+  106   0.0861
+  130   0.1126
+  147   0.1104
+  173   0.1146
+  185   0.1429
+  201   0.1723
+  208   0.1851
+  232   0.1790
+  248   0.1853
+  266   0.2156
+  290   0.3095
+  309   0.3238
+  328   0.3921
+  352   0.5777

@@ -1,0 +1,74 @@
+# This file was created Fri Mar 14 01:12:03 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/sim2_Q9R
+# Command line:
+#   gmx density -f ./md.xtc -s ./md.tpr -o /home/zh106/sim2_Q9R/important_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# Gnomes, ROck Monsters And Chili Sauce
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.76227                0
+    -4.56789                0
+    -4.37351                0
+    -4.17913                0
+    -3.98476                0
+    -3.79038                0
+      -3.596      0.000138512
+    -3.40162       0.00781398
+    -3.20724         0.129969
+    -3.01286           1.6099
+    -2.81849           12.498
+    -2.62411          65.6522
+    -2.42973          234.565
+    -2.23535          543.392
+    -2.04097          839.014
+    -1.84659          989.621
+    -1.65222           1027.9
+    -1.45784           985.89
+    -1.26346           918.99
+    -1.06908          883.501
+   -0.874702           870.52
+   -0.680324          855.966
+   -0.485946          824.385
+   -0.291567          762.416
+  -0.0971892          690.392
+   0.0971892          690.609
+    0.291567          763.589
+    0.485946          824.589
+    0.680324           856.08
+    0.874702          872.616
+     1.06908          884.788
+     1.26346          923.775
+     1.45784          994.802
+     1.65222          1030.59
+     1.84659          980.577
+     2.04097          832.078
+     2.23535          544.799
+     2.42973          234.081
+     2.62411          64.7353
+     2.81849          12.5612
+     3.01286          1.47367
+     3.20724        0.0766756
+     3.40162       0.00213213
+       3.596      9.12086e-06
+     3.79038                0
+     3.98476                0
+     4.17913                0
+     4.37351                0
+     4.56789                0
+     4.76227                0

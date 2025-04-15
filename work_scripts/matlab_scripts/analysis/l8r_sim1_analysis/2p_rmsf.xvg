@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 16:16:59 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/l8r_sim1
+# Command line:
+#   gmx rmsf -f /home/zh106/l8r_sim1/analysis_setup_files/2p_memb.xtc -n /home/zh106/l8r_sim1/analysis_setup_files/2p_index.ndx -s /home/zh106/l8r_sim1/analysis_setup_files/2p_memb.tpr -o /home/zh106/l8r_sim1/l8r_sim1_analysis/2p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# GRowing Old MAkes el Chrono Sweat
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.1450
+   19   0.1227
+   43   0.1184
+   54   0.0859
+   65   0.0660
+   89   0.0746
+   99   0.0825
+  106   0.1170
+  130   0.1267
+  147   0.1376
+  173   0.1307
+  185   0.1306
+  201   0.1521
+  208   0.1351
+  232   0.1185
+  248   0.1316
+  265   0.1010
+  289   0.1177
+  308   0.1503
+  327   0.1420
+  351   0.2082

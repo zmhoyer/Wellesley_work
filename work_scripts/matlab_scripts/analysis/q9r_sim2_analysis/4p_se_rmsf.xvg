@@ -1,0 +1,38 @@
+# This file was created Fri Apr  4 15:38:16 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/q9r_sim2
+# Command line:
+#   gmx rmsf -dt 10 -b 750000 -e 1000000 -f ./analysis_setup_files/4p_memb.xtc -n ./analysis_setup_files/4p_index.ndx -s ./analysis_setup_files/4p_memb.tpr -o ./q9r_sim2_analysis/4p_se_rmsf.xvg
+# gmx rmsf is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.3748
+   19   0.3390
+   43   0.1969
+   54   0.1975
+   65   0.2143
+   89   0.1841
+   99   0.1404
+  106   0.1704
+  125   0.1711
+  149   0.1368
+  175   0.1198
+  187   0.1015
+  203   0.1063
+  210   0.1090
+  234   0.0966
+  250   0.1259
+  267   0.1379
+  291   0.1025
+  310   0.1168
+  329   0.1471
+  353   0.2071

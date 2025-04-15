@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 17:56:01 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/a6r_sim2
+# Command line:
+#   gmx rmsf -f /home/zh106/a6r_sim2/analysis_setup_files/4p_memb.xtc -n /home/zh106/a6r_sim2/analysis_setup_files/4p_index.ndx -s /home/zh106/a6r_sim2/analysis_setup_files/4p_memb.tpr -o /home/zh106/a6r_sim2/a6r_sim2_analysis/4p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2403
+   19   0.1660
+   43   0.2568
+   54   0.2085
+   65   0.1102
+   89   0.1295
+  113   0.1453
+  120   0.1138
+  139   0.1236
+  156   0.1018
+  182   0.0690
+  194   0.0698
+  210   0.0809
+  217   0.0691
+  241   0.0495
+  257   0.0609
+  274   0.0820
+  298   0.0792
+  317   0.0812
+  336   0.1358
+  360   0.2881

@@ -1,0 +1,74 @@
+# This file was created Fri Apr 11 16:08:06 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/t1r_sim2
+# Command line:
+#   gmx density -f ./../../xj103/T1R_hpc_2/md.xtc -s ./../../xj103/T1R_hpc_2/md.tpr -o /home/zh106/t1r_sim2/t1r_sim2_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.70936                0
+    -4.51714                0
+    -4.32492                0
+     -4.1327                0
+    -3.94048                0
+    -3.74827                0
+    -3.55605       0.00022585
+    -3.36383        0.0131436
+    -3.17161          0.22094
+    -2.97939          2.40637
+    -2.78717          16.9548
+    -2.59495           81.592
+    -2.40273          264.167
+    -2.21052          568.577
+     -2.0183          846.732
+    -1.82608          989.195
+    -1.63386          1021.87
+    -1.44164           978.99
+    -1.24942          917.003
+     -1.0572           883.46
+   -0.864984          870.666
+   -0.672766          854.067
+   -0.480547          822.587
+   -0.288328           761.68
+  -0.0961094           691.23
+   0.0961094          693.094
+    0.288328          763.191
+    0.480547          823.442
+    0.672766          854.698
+    0.864984          871.219
+      1.0572          884.714
+     1.24942          922.114
+     1.44164           988.38
+     1.63386           1032.9
+     1.82608          984.263
+      2.0183          830.313
+     2.21052          560.346
+     2.40273          262.432
+     2.59495          84.6933
+     2.78717          19.8211
+     2.97939           3.2426
+     3.17161         0.329841
+     3.36383        0.0294453
+     3.55605       0.00271283
+     3.74827      2.06595e-05
+     3.94048                0
+      4.1327                0
+     4.32492                0
+     4.51714                0
+     4.70936                0

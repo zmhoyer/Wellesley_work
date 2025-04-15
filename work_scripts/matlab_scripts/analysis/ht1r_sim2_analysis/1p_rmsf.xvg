@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 16:16:10 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/ht1r_sim2
+# Command line:
+#   gmx rmsf -f /home/zh106/ht1r_sim2/analysis_setup_files/1p_memb.xtc -n /home/zh106/ht1r_sim2/analysis_setup_files/1p_index.ndx -s /home/zh106/ht1r_sim2/analysis_setup_files/1p_memb.tpr -o /home/zh106/ht1r_sim2/ht1r_sim2_analysis/1p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2590
+   29   0.1486
+   53   0.1563
+   64   0.1903
+   75   0.1304
+   99   0.1136
+  109   0.1545
+  116   0.1325
+  135   0.1324
+  152   0.2001
+  178   0.1888
+  190   0.1713
+  206   0.2855
+  213   0.3359
+  237   0.2647
+  253   0.3928
+  271   0.2716
+  295   0.2171
+  314   0.2940
+  333   0.4874
+  357   0.6553

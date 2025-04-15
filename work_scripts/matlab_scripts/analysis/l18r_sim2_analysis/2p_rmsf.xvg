@@ -1,0 +1,38 @@
+# This file was created Thu Apr  3 20:51:52 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/l18r_sim2
+# Command line:
+#   gmx rmsf -f /home/zh106/l18r_sim2/analysis_setup_files/2p_memb.xtc -n /home/zh106/l18r_sim2/analysis_setup_files/2p_index.ndx -s /home/zh106/l18r_sim2/analysis_setup_files/2p_memb.tpr -o /home/zh106/l18r_sim2/l18r_sim2_analysis/2p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.3546
+   19   0.1473
+   43   0.1376
+   54   0.1438
+   65   0.0955
+   89   0.0838
+   99   0.1102
+  106   0.1253
+  125   0.1429
+  142   0.1840
+  168   0.1525
+  180   0.1000
+  196   0.1499
+  203   0.0998
+  227   0.1004
+  243   0.0803
+  260   0.1006
+  284   0.1264
+  308   0.1041
+  327   0.1179
+  351   0.2355

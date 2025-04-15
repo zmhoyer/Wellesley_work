@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 16:47:43 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/t1r_sim1
+# Command line:
+#   gmx rmsf -f /home/zh106/t1r_sim1/analysis_setup_files/2p_memb.xtc -n /home/zh106/t1r_sim1/analysis_setup_files/2p_index.ndx -s /home/zh106/t1r_sim1/analysis_setup_files/2p_memb.tpr -o /home/zh106/t1r_sim1/t1r_sim1_analysis/2p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# GROningen Mixture of Alchemy and Childrens' Stories
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.4580
+   29   0.3702
+   53   0.2861
+   64   0.1973
+   75   0.2397
+   99   0.2543
+  109   0.2519
+  116   0.2020
+  135   0.1918
+  152   0.1717
+  178   0.1333
+  190   0.1057
+  206   0.1316
+  213   0.1087
+  237   0.0957
+  253   0.1155
+  270   0.1042
+  294   0.1188
+  313   0.1685
+  332   0.1705
+  356   0.2372

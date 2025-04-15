@@ -1,0 +1,38 @@
+# This file was created Fri Apr  4 15:04:50 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/wt_sim3
+# Command line:
+#   gmx rmsf -dt 10 -b 750000 -e 1000000 -f ./analysis_setup_files/3p_memb.xtc -n ./analysis_setup_files/3p_index.ndx -s ./analysis_setup_files/3p_memb.tpr -o ./wt_sim3_analysis/3p_se_rmsf.xvg
+# gmx rmsf is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2325
+   19   0.1324
+   43   0.0866
+   54   0.0619
+   65   0.0740
+   89   0.0881
+   99   0.1159
+  106   0.1156
+  125   0.1030
+  142   0.0659
+  168   0.0507
+  180   0.0577
+  196   0.0643
+  203   0.0708
+  227   0.0664
+  243   0.0424
+  260   0.0804
+  284   0.1149
+  303   0.1003
+  322   0.0784
+  346   0.1184

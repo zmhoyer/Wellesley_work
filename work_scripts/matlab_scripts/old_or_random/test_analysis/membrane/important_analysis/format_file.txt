@@ -1,0 +1,16 @@
+# This file is a log of how to read the summary files.
+Any newly created summary files should have their format recorded here.
+
+
+
+
+For the minimum distance summary files:
+
+The rows: The first row is the time(ps) from where the rest of the data is extracted.
+The following rows are the peptide residues in the order given by the coordinate file)
+
+This order is most likely the order of amino acids in the peptide
+
+The columns: All columns are the time dependent data
+
+

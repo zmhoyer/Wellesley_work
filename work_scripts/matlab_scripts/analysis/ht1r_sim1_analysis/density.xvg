@@ -1,0 +1,74 @@
+# This file was created Fri Apr 11 16:08:53 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/ht1r_sim1
+# Command line:
+#   gmx density -f ./../../xj103/T1R_protonated_hpc_1/md.xtc -s ./../../xj103/T1R_protonated_hpc_1/md.tpr -o /home/zh106/ht1r_sim1/ht1r_sim1_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# GRowing Old MAkes el Chrono Sweat
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.62867                0
+    -4.43975                0
+    -4.25082                0
+     -4.0619                0
+    -3.87297                0
+    -3.68405      4.60263e-06
+    -3.49512       0.00123125
+     -3.3062        0.0242957
+    -3.11727         0.330114
+    -2.92834          3.08542
+    -2.73942           19.729
+    -2.55049          89.1066
+    -2.36157          277.191
+    -2.17264          577.173
+    -1.98372          843.297
+    -1.79479          981.975
+    -1.60587          1012.61
+    -1.41694          972.882
+    -1.22802           914.96
+    -1.03909          881.489
+   -0.850164          867.262
+   -0.661239            850.9
+   -0.472314          818.538
+   -0.283388          761.957
+  -0.0944627          701.842
+   0.0944627          701.519
+    0.283388          762.299
+    0.472314          818.129
+    0.661239          850.909
+    0.850164          867.869
+     1.03909          883.643
+     1.22802          918.323
+     1.41694            976.7
+     1.60587          1011.85
+     1.79479          964.542
+     1.98372          818.192
+     2.17264          565.535
+     2.36157          285.324
+     2.55049          103.338
+     2.73942            28.66
+     2.92834          6.10659
+     3.11727          0.94958
+      3.3062         0.101126
+     3.49512       0.00796659
+     3.68405       0.00066215
+     3.87297      6.90239e-06
+      4.0619                0
+     4.25082                0
+     4.43975                0
+     4.62867                0

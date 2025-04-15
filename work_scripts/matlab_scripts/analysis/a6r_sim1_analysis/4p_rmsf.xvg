@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 17:56:04 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/a6r_sim1
+# Command line:
+#   gmx rmsf -f /home/zh106/a6r_sim1/analysis_setup_files/4p_memb.xtc -n /home/zh106/a6r_sim1/analysis_setup_files/4p_index.ndx -s /home/zh106/a6r_sim1/analysis_setup_files/4p_memb.tpr -o /home/zh106/a6r_sim1/a6r_sim1_analysis/4p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Gyas ROwers Mature At Cryogenic Speed
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2854
+   19   0.2211
+   43   0.1862
+   54   0.1955
+   65   0.2095
+   89   0.2017
+  113   0.2204
+  120   0.2325
+  139   0.2677
+  156   0.2305
+  182   0.1597
+  194   0.1485
+  210   0.1812
+  217   0.2069
+  241   0.2357
+  257   0.2471
+  274   0.2910
+  298   0.2449
+  317   0.2687
+  336   0.4230
+  360   0.6336

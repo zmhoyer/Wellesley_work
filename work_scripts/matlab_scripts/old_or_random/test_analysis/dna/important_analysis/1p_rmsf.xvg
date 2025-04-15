@@ -1,0 +1,39 @@
+# This file was created Sun Mar 23 22:53:32 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2018.3 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /data/zak/random_testing/analysis_testing
+# Command line:
+#   gmx rmsf -f /data/zak/random_testing/analysis_testing/analysis_setup_files/1p_DNA.xtc -n /data/zak/random_testing/analysis_testing/analysis_setup_files/analysis_index.ndx -s /data/zak/random_testing/analysis_testing/analysis_setup_files/1p_DNA.tpr -o /data/zak/random_testing/analysis_testing/important_analysis/1p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.5892
+   25   0.7070
+   44   0.6362
+   61   0.5990
+   78   0.5110
+   97   0.4112
+  117   0.4434
+  141   0.3850
+  148   0.4431
+  167   0.4157
+  183   0.4030
+  200   0.4144
+  210   0.4059
+  217   0.4469
+  241   0.4896
+  252   0.5849
+  271   0.5506
+  278   0.4642
+  302   0.4147
+  322   0.5876
+  341   0.6742
+  355   0.9514

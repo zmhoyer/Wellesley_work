@@ -1,0 +1,38 @@
+# This file was created Fri Apr 11 16:53:51 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/l8r_sim2
+# Command line:
+#   gmx rmsf -f /home/zh106/l8r_sim2/analysis_setup_files/3p_memb.xtc -n /home/zh106/l8r_sim2/analysis_setup_files/3p_index.ndx -s /home/zh106/l8r_sim2/analysis_setup_files/3p_memb.tpr -o /home/zh106/l8r_sim2/l8r_sim2_analysis/3p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# Gromacs Runs One Microsecond At Cannonball Speeds
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.0543
+   19   0.0402
+   43   0.0377
+   54   0.0370
+   65   0.0331
+   89   0.0320
+   99   0.0346
+  106   0.0376
+  130   0.0389
+  147   0.0421
+  173   0.0427
+  185   0.0413
+  201   0.0421
+  208   0.0411
+  232   0.0402
+  248   0.0359
+  265   0.0369
+  289   0.0473
+  308   0.0505
+  327   0.0604
+  351   0.0850
