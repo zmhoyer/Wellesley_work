@@ -25,11 +25,11 @@ clear;
 close all
 
 Conversion_factor_to_nanoseconds = 1000; %if data is in terms of picoseconds, keep 1000. If in nanoseconds, change to 1
-simulation_name = "Simulation 1: Q9R - "; % What is the name of this simulation
+simulation_name = "Simulation 1: WT - "; % What is the name of this simulation
 peptides_per_sim = 4; % Do you have more than 1 peptides? if so how many?
 lipids_per_sim = 128; % Did you change the number of lipids?
 number_of_residues = 21; % How many residues do you have?
-current_peptide_residue_list = {'1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISH', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS'}; % What are the residue names in order
+current_peptide_residue_list = {'1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HIS', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS'}; % What are the residue names in order
 current_residue_one_letter_code = {'T','R','S','S','R','A','G','L','Q','W','P','V','G','R','V','H','R','L','L','R','K'};
 snapshot_extration_range_start = 750; % The start time(ns) that the snapshot extraction portion of the simulation encompases. 250 means the it starts at 250 nanoseconds of the simulation.
 snapshot_extration_range_end = 1000; % The end time(ns) that the snapshot extraction portion of the simulation encompases. 250 means the it starts at 250 nanoseconds of the simulation.
@@ -46,10 +46,10 @@ space_array = {''};
 spaced_residue_list = [space_array current_peptide_residue_list space_array];
 spaced_one_letter_residue_list = [space_array current_residue_one_letter_code space_array];
 
-snapshot_extration_range_start_frames = snapshot_extration_range_start*100; % used 100 here since the full amount of frames aren't outputted from analysis. we usually output every 10th frame.
+snapshot_extration_range_start_frames = (snapshot_extration_range_start*100)+1; % used 100 here since the full amount of frames aren't outputted from analysis. we usually output every 10th frame.
 snapshot_extration_range_end_frames = (snapshot_extration_range_end*100)+1;
 
-mkdir('data_pictures_for_pdf'); % This is where all png images (for presentations) and pdfs(for publications or other places where vector graphics are important) are stored.
+mkdir('pictures_of_data'); % This is where all png images (for presentations) and pdfs(for publications or other places where vector graphics are important) are stored.
 
 
 
@@ -107,15 +107,18 @@ function fitting_data(NameValueArgs)
     end
 
     if NameValueArgs.data_spacing ~= false
+        ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
         xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* 0.05)
         ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* 0.05)
     end
 
     if NameValueArgs.data_spacing_x ~= false
+        ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
         xlim(ax1, xlim(ax1) + [-1,1]*range(xlim(ax1)).* NameValueArgs.data_spacing_x)
     end
 
     if NameValueArgs.data_spacing_y ~= false
+        ax1 = gca; % generate cartesian axis aka. allows you to work with the axis
         ylim(ax1, ylim(ax1) + [-1,1]*range(ylim(ax1)).* NameValueArgs.data_spacing_y)
     end
 end
@@ -168,12 +171,66 @@ function consistent_figures(NameValueArgs) %function to (attempt) to keep all fi
     set(NameValueArgs.figure_name,'Units','centimeters','Position',[3 3 picturewidth hw_ratio*picturewidth])
     pos = get(NameValueArgs.figure_name,'Position');
     set(NameValueArgs.figure_name,'PaperPositionMode','Auto','PaperUnits','centimeters','PaperSize',[pos(3), pos(4)])
-    print(NameValueArgs.figure_name,'Data_pictures_for_pdf/'+NameValueArgs.PDF_PNG_name,'-dpdf','-vector','-fillpage')
-    print(NameValueArgs.figure_name,'Data_pictures_for_pdf/'+NameValueArgs.PDF_PNG_name,'-dpng','-vector', '-r600')
+    print(NameValueArgs.figure_name,'pictures_of_data/'+NameValueArgs.PDF_PNG_name,'-dpdf','-vector','-fillpage')
+    print(NameValueArgs.figure_name,'pictures_of_data/'+NameValueArgs.PDF_PNG_name,'-dpng','-vector', '-r600')
     
 
 
 end
+
+%% Upper and Lower leaflet mindist analysis %% peptide to phosphates, full length
+
+
+for pep = 1:peptides_per_sim
+
+
+    % data load and processing
+    upper_leaflet_array = load("mindist/"+pep+"p_upper_leaflet_mindist.txt");
+    lower_leaflet_array = load("mindist/"+pep+"p_lower_leaflet_mindist.txt");
+    time = upper_leaflet_array(:,1)/Conversion_factor_to_nanoseconds;
+
+    upper_leaflet_data = upper_leaflet_array(:,2);
+    MM_upper_leaflet_data = movmean(upper_leaflet_data,100);
+    lower_leaflet_data = lower_leaflet_array(:,2);
+    MM_lower_leaflet_data = movmean(lower_leaflet_data,100);
+
+    
+    %MM_rms_values = movmean(rms_values,100);
+
+    % Figure settings and creation
+    Title = simulation_name+" Mindist to Leaflets -- Peptide "+pep;
+    mindist_to_leafs = figure('Name',Title,'NumberTitle','off');
+    %plot(time,MM_rms_values,'color',black);
+    
+ 
+    plot(time,upper_leaflet_data,'Color',[batlowS(5,:),0.33])
+    hold on;
+    plot(time,lower_leaflet_data,'Color',[batlowS(8,:),0.33])
+    hold on;
+
+    MM_upper_leaflet_data_plot = plot(time,MM_upper_leaflet_data,'Color',batlowS(5,:),DisplayName='Distance To Upper Leaflet');
+    hold on;
+    MM_lower_leaflet_data_plot = plot(time,MM_lower_leaflet_data,'Color',batlowS(8,:),DisplayName='Distance To Lower Leaflet');
+    hold on;
+     
+
+    %setting the legend line widths with a set of fake data so the in-plot line
+    %widths can stay the same.
+    ax = gca;
+    Legend_MM_upper_leaflet_data = copyobj(MM_upper_leaflet_data_plot, ax);
+    Legend_MM_lower_leaflet_data = copyobj(MM_lower_leaflet_data_plot, ax);
+    set(Legend_MM_upper_leaflet_data, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+    set(Legend_MM_lower_leaflet_data, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+    Mindist_leaflets_legend = legend([Legend_MM_upper_leaflet_data,Legend_MM_lower_leaflet_data],'AutoUpdate','off','Orientation','horizontal', Location='northoutside');
+
+
+    ylabel('Minimum Distance ({\itnm})');
+    xlabel('Time ({\itns})');
+    fitting_data(tight_fitting=true,data_spacing_y=0.05);
+    consistent_figures(figure_name=mindist_to_leafs, PDF_PNG_name=Title, legend_name=Mindist_leaflets_legend);
+
+end
+
 
 
 
@@ -375,7 +432,7 @@ if peptides_per_sim > 1
     
     RMSD_analysis_legend = legend(line_width_for_legends,'AutoUpdate','off','Orientation','horizontal', Location='northoutside');
     
-    fitting_data(tight_fitting=true,data_spacing_y=0.10);
+    fitting_data(data_spacing_y=0.10);
     consistent_figures(figure_name=Summary_RMSD_figure, PDF_PNG_name=Title,legend_name=RMSD_analysis_legend);
 
 end
@@ -392,7 +449,7 @@ for pep = 1:peptides_per_sim
     rmsf_atom_num = rmsf(:,1);
 
     % Figure settings and creation
-    Title = simulation_name+" RMSF -- Peptide "+pep;
+    Title = simulation_name+" RMSF -- Peptide "+pep+" Full Length";
     RMSF_figure = figure('Name',Title,'NumberTitle','off');
     plot(rmsf_nm,'-o','MarkerSize',7,'MarkerFaceColor', white,'color',black);
 
@@ -411,7 +468,7 @@ end
 
 if peptides_per_sim > 1
 
-    Title = simulation_name+" RMSF -- All Peptides";
+    Title = simulation_name+" RMSF -- All Peptides Full Length";
     RMSF_figure = figure('Name',Title,'NumberTitle','off');
     line_width_for_legends = [];
     
@@ -423,6 +480,50 @@ if peptides_per_sim > 1
         rmsf = load(pep+"p_rmsf.txt");
         rmsf_nm = rmsf(:,2);
         rmsf_atom_num = rmsf(:,1);
+    
+        % Figure settings and creation
+        rmsf_plot = plot(rmsf_nm,'-','color',batlowS(pep+1,:),DisplayName="Peptide "+pep, LineWidth=2);
+        hold on;
+    
+        %line width for legend
+        ax = gca;
+        rmsf_plot_for_legend = copyobj(rmsf_plot,ax);
+        set(rmsf_plot_for_legend, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+        line_width_for_legends = [line_width_for_legends, rmsf_plot_for_legend];
+    
+    end
+    
+    ylabel('RMSF ({\itnm})');
+    xlabel('Residue');
+    
+    RMSF_analysis_legend = legend(line_width_for_legends,'AutoUpdate','off','Orientation','horizontal', Location='northoutside');
+    
+    xticks(0:length(rmsf_atom_num));
+    xticklabels(spaced_one_letter_residue_list);
+    
+    fitting_data(tight_fitting=true, data_spacing=true);
+    consistent_figures(figure_name=RMSF_figure,rotate_x_labels_by_angle=0, PDF_PNG_name=Title, legend_name=RMSF_analysis_legend);
+
+end
+
+
+%% RMSF SE Analysis summary %%
+
+if peptides_per_sim > 1
+
+    Title = simulation_name+" RMSF -- All Peptides from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
+    RMSF_figure = figure('Name',Title,'NumberTitle','off');
+    line_width_for_legends = [];
+    
+    
+    for pep = 1:peptides_per_sim
+    
+    
+        % data load and processing
+        rmsf = load(pep+"p_se_rmsf.txt");
+        rmsf_nm = rmsf(:,2);
+        rmsf_atom_num = rmsf(:,1);
+        
     
         % Figure settings and creation
         rmsf_plot = plot(rmsf_nm,'-','color',batlowS(pep+1,:),DisplayName="Peptide "+pep, LineWidth=2);
@@ -480,7 +581,7 @@ for pep = 1:peptides_per_sim
     four_pep_sidechain_mean_array = cat(1,four_pep_sidechain_mean_array,Sidechain_Residue_data_mean);
 
     %figure settings and creation
-    Title = simulation_name+" Sidechain Minimum Distance -- Peptide "+pep;
+    Title = simulation_name+" Sidechain Minimum Distance -- Peptide "+pep+" from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
     Mindist_figure = figure('Name',Title,'NumberTitle','off');
     errorbar(Sidechain_Residue_data_mean, Sidechain_Residue_data_std, '-','LineWidth',1.2, 'Color',black);
     
@@ -500,7 +601,7 @@ hold off;
 
 if peptides_per_sim > 1
 
-    Title = simulation_name+" Sidechain Minimum Distance Summary";
+    Title = simulation_name+" Sidechain Minimum Distance Summary from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
     backbone_mindist_figure = figure('Name',Title,'NumberTitle','off');
     line_width_for_legends = [];
     Inverse_four_pep_sidechain_mean_array = four_pep_sidechain_mean_array.';
@@ -564,12 +665,12 @@ for pep = 1:peptides_per_sim
         %data_ste = data_std/sqrt(length(Residue_Average,1));
 
     end    
-    
+
     four_pep_backbone_mean_array = cat(1,four_pep_backbone_mean_array,backbone_Residue_data_mean);
 
 
     %Figure settings and creation
-    Title = simulation_name+" Backbone Minimum Distance -- Peptide  "+pep;
+    Title = simulation_name+" Backbone Minimum Distance -- Peptide "+pep+" from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
     backbone_mindist_figure = figure('Name',Title,'NumberTitle','off');
     errorbar(backbone_Residue_data_mean, backbone_Residue_data_std, '-', 'MarkerSize',7, 'LineWidth',1.2, 'Color',black);
     
@@ -585,15 +686,16 @@ end
 
 hold off;
 
-
+% summary
 
 if peptides_per_sim > 1
 
-    Title = simulation_name+" Backbone Minimum Distance Summary";
+    Title = simulation_name+" Backbone Minimum Distance Summary from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
     backbone_mindist_figure = figure('Name',Title,'NumberTitle','off');
     line_width_for_legends = [];
     Inverse_four_pep_backbone_mean_array = four_pep_backbone_mean_array.';
-    
+
+
     for pep = 1:peptides_per_sim
       
     
@@ -626,13 +728,10 @@ end
 
 %% Backbone mindist - side chain
 
-bbsc_mindist = four_pep_backbone_residue_array-four_pep_sidechain_residue_array;
-scbb_mindist = four_pep_sidechain_residue_array-four_pep_backbone_residue_array;
 BBmean_minus_SCmean_mindist = four_pep_backbone_mean_array-four_pep_sidechain_mean_array;
-
 BBmean_minus_SCmean_mindist = BBmean_minus_SCmean_mindist.';
 
-Title = simulation_name+" Backbone Minus Sidechain Minimum Distance";
+Title = simulation_name+" Backbone Minus Sidechain Minimum Distance from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
 backbone_mindist_figure = figure('Name',Title,'NumberTitle','off');
 
 line_width_for_legends = [];
@@ -669,10 +768,10 @@ consistent_figures(figure_name=backbone_mindist_figure, rotate_x_labels=0, PDF_P
 
 
 %% hbond Analysis %%
-four_hbond_to_peps = [];
-four_hbond_to_itself = [];
-four_hbond_to_membrane = [];
-four_hbond_to_water = [];
+shortend_four_hbond_to_peps = [];
+shortend_four_hbond_to_itself = [];
+shortend_four_hbond_to_membrane = [];
+shortend_four_hbond_to_water = [];
 four_pep_cumulative_hbonds = [];
 
 
@@ -686,17 +785,31 @@ for pep = 1:peptides_per_sim
     hbond_to_water_full_array = load("./hbond/"+pep+"p_hbond_to_water.txt");
 
     %important data for each hbond graph
-    Time = hbond_to_peps_full_array(:,1)/Conversion_factor_to_nanoseconds;
+    Time = hbond_to_itself_full_array(:,1)/Conversion_factor_to_nanoseconds;
     hbonds_to_peps = hbond_to_peps_full_array(:,2);
     hbonds_to_itself = hbond_to_itself_full_array(:,2);
     hbonds_to_membrane = hbond_to_membrane_full_array(:,2);
     hbonds_to_water = hbond_to_water_full_array(:,2);
 
+    %shortend hbond information
+
+    shortend_hbond_to_peps = hbond_to_peps_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+    shortend_hbond_to_peps_values = shortend_hbond_to_peps(:,2);
+
+    shortend_hbond_to_itself = hbond_to_itself_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+    shortend_hbond_to_itself_values = shortend_hbond_to_itself(:,2);
+
+    shortend_hbond_to_membrane = hbond_to_membrane_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+    shortend_hbond_to_membrane_values = shortend_hbond_to_membrane(:,2);
+
+    shortend_hbond_to_water = hbond_to_water_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+    shortend_hbond_to_water_values = shortend_hbond_to_water(:,2);  
+
     %mean arrays for seperate graph
-    four_hbond_to_peps = cat(2,four_hbond_to_peps,hbonds_to_peps);
-    four_hbond_to_itself = cat(2,four_hbond_to_itself,hbonds_to_itself);
-    four_hbond_to_membrane = cat(2,four_hbond_to_membrane,hbonds_to_membrane);
-    four_hbond_to_water = cat(2,four_hbond_to_water,hbonds_to_water);
+    shortend_four_hbond_to_peps = cat(2,shortend_four_hbond_to_peps,shortend_hbond_to_peps_values);
+    shortend_four_hbond_to_itself = cat(2,shortend_four_hbond_to_itself,shortend_hbond_to_itself_values);
+    shortend_four_hbond_to_membrane = cat(2,shortend_four_hbond_to_membrane,shortend_hbond_to_membrane_values);
+    shortend_four_hbond_to_water = cat(2,shortend_four_hbond_to_water,shortend_hbond_to_water_values);
 
     %some data means and cumulation
     cumulative_hbonds = hbonds_to_peps+hbonds_to_itself+hbonds_to_membrane+hbonds_to_water;
@@ -783,15 +896,13 @@ if peptides_per_sim > 1
     hbond_table = table();
     mean_of_means = [];
     
-    
         
-    mean_allpeps_hbond_to_peps = mean(four_hbond_to_peps);
-    mean_allpeps_hbond_to_itself = mean(four_hbond_to_itself);
-    mean_allpeps_hbond_to_membrane = mean(four_hbond_to_membrane);
-    mean_allpeps_hbond_to_water = mean(four_hbond_to_water);
+    mean_allpeps_hbond_to_peps = mean(shortend_four_hbond_to_peps);
+    mean_allpeps_hbond_to_itself = mean(shortend_four_hbond_to_itself);
+    mean_allpeps_hbond_to_membrane = mean(shortend_four_hbond_to_membrane);
+    mean_allpeps_hbond_to_water = mean(shortend_four_hbond_to_water);
     mean_allpeps_hbond_to_cumulative_hbonds = mean(four_pep_cumulative_hbonds);
         
-    
     
     mean_allpeps_hbond_to_peps = mean_allpeps_hbond_to_peps.';
         mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_peps)];
@@ -811,7 +922,7 @@ if peptides_per_sim > 1
     
     
     
-    Title = simulation_name+" Hydrogen Bonding Summary";
+    Title = simulation_name+" Hydrogen Bonding Summary from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
     Summary_hbond_figure = figure('Name',Title,'NumberTitle','off');
     
     Column_names = {'Peps.';'Itself';'Memb.';'Water';'Total'};

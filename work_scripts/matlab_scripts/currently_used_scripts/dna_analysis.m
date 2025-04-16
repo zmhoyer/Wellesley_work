@@ -24,12 +24,12 @@
 clear;
 close all
 
-Conversion_factor_to_nanoseconds = 1000; %if data is in terms of picoseconds, keep 1000. If in nanoseconds, change to 1
-simulation_name = "Simulation 1: sumthing - "; % What is the name of this simulation
+Conversion_factor_to_nanoseconds = 1000; %if data is in terms of picoseconds, keep 1000. If in nanoseconds, change to 1. If you change that variably you'll need to change that case-per-case or create multiple variables
+simulation_name = "Simulation 1: F6W - "; % What is the name of this simulation. Mainly used for titles and printing purposes
 peptides_per_sim = 1; % Do you have more than 1 peptides? if so how many?
 number_of_residues = 22; % How many residues do you have?
-current_peptide_residue_list = {'1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISH', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS','22GLY'}; % What are the residue names in order
-current_residue_one_letter_code = {'T','R','S','S','R','A','G','L','Q','W','P','V','G','R','V','H','R','L','L','R','K','G'};
+current_peptide_residue_list = {'1PHE', '2ILE', '3HIS', '4HIS', '5ILE', '6TRP', '7ARG', '8GLY', '9ILE', '10VAL', '11HIS', '12ALA', '13GLY', '14ARG', '15SER', '16ILE', '17GLY', '18ARG', '19PHE', '20LEU', '21THR','22GLY'}; % What are the residue names in order
+current_residue_one_letter_code = {'T','R','S','S','R','A','G','L','Q','W','P','V','G','R','V','H','R','L','L','R','K','G'}; %Maybe do protonated histidine as HH, I kind of like it
 snapshot_extration_range_start = 0; % The start time(ns) that the snapshot extraction portion of the simulation encompases. 250 means the it starts at 250 nanoseconds of the simulation.
 snapshot_extration_range_end = 250; % The end time(ns) that the snapshot extraction portion of the simulation encompases. 250 means the it starts at 250 nanoseconds of the simulation.
 
@@ -130,7 +130,7 @@ function consistent_figures(NameValueArgs) %function to (attempt) to keep all fi
         NameValueArgs.rotate_x_labels_by_angle = 'nan'
         NameValueArgs.legend_name = false
         NameValueArgs.PDF_PNG_name
-        NameValueArgs.fontname = 'Times New Roman' % really does nothing if using the latex interpreter. If font is an issue, change to a different interpreter or add the words in post.
+        NameValueArgs.fontname = 'comic sans' % really does nothing if using the latex interpreter. If font is an issue, change to a different interpreter or add the words in post.
     end
 
     % Variables and general graph settings
@@ -143,7 +143,7 @@ function consistent_figures(NameValueArgs) %function to (attempt) to keep all fi
     set(findall(NameValueArgs.figure_name, '-property', 'Fontsize'),'Fontsize',fontsize_of_your_paper);
     set(findall(NameValueArgs.figure_name, '-property', 'Box'),'Box','off');
     set(findall(NameValueArgs.figure_name, '-property', 'Interpreter'),'Interpreter','tex'); %change to LaTeX if you're using that %%% can't change font if you do though
-    set(findall(NameValueArgs.figure_name, '-property', 'TicklabelInterpreter'),'TicklabelInterpreter','latex');
+    set(findall(NameValueArgs.figure_name, '-property', 'TicklabelInterpreter'),'TicklabelInterpreter','tex');
     set(findall(NameValueArgs.figure_name, '-property', 'FontName'),'FontName',NameValueArgs.fontname);
 
     %argument modifiers
@@ -395,8 +395,50 @@ if peptides_per_sim > 1
 end
 
 
+%% RMSF Snapshot Eextraction Analysis summary %%
+    
 
-%% Per Residue Minimum Distance %%  
+Title = simulation_name+" RMSF -- All Peptides from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
+RMSF_figure = figure('Name',Title,'NumberTitle','off');
+line_width_for_legends = [];
+
+
+for pep = 1:peptides_per_sim
+
+
+    % data load and processing
+    rmsf = load(pep+"p_se_rmsf.txt");
+    rmsf_nm = rmsf(:,2);
+    rmsf_atom_num = rmsf(:,1);
+    
+
+    % Figure settings and creation
+    rmsf_plot = plot(rmsf_nm,'-','color',batlowS(pep+1,:),DisplayName="Peptide "+pep, LineWidth=2);
+    hold on;
+
+    %line width for legend
+    ax = gca;
+    rmsf_plot_for_legend = copyobj(rmsf_plot,ax);
+    set(rmsf_plot_for_legend, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+    line_width_for_legends = [line_width_for_legends, rmsf_plot_for_legend];
+
+end
+
+ylabel('RMSF ({\itnm})');
+xlabel('Residue');
+
+RMSF_analysis_legend = legend(line_width_for_legends,'AutoUpdate','off','Orientation','horizontal', Location='northoutside');
+
+xticks(0:length(rmsf_atom_num));
+xticklabels(spaced_one_letter_residue_list);
+
+fitting_data(tight_fitting=true, data_spacing=true);
+consistent_figures(figure_name=RMSF_figure,rotate_x_labels_by_angle=0, PDF_PNG_name=Title, legend_name=RMSF_analysis_legend);
+
+
+
+
+%% Per Residue Minimum Distance %% - already in the snapshot extraction range
 
 four_pep_sidechain_residue_array = [];
 four_pep_sidechain_mean_array = [];
@@ -570,7 +612,7 @@ if peptides_per_sim > 1
 end
 
 
-%% Backbone mindist - side chain - 1 peptide
+%% Backbone mindist-side chain %% - 1 peptide
 
 if peptides_per_sim == 1
     
@@ -605,7 +647,7 @@ if peptides_per_sim == 1
 end
 
 
-%% Backbone mindist - side chain - more than 1 analysis
+%% Backbone mindist-side chain %% - more than 1 analysis
  
 if peptides_per_sim > 1  
     bbsc_mindist = four_pep_backbone_residue_array-four_pep_sidechain_residue_array;
@@ -656,7 +698,7 @@ end
 if peptides_per_sim > 1    
     four_hbond_to_peps = [];
     four_hbond_to_itself = [];
-    four_hbond_to_DNA = [];
+    four_hbond_to_dna = [];
     four_hbond_to_water = [];
     four_pep_cumulative_hbonds = [];
     
@@ -667,37 +709,63 @@ if peptides_per_sim > 1
         %loading in data
         hbond_to_peps_full_array = load("./hbond/"+pep+"p_hbond_to_peps.txt");
         hbond_to_itself_full_array = load("./hbond/"+pep+"p_hbond_to_itself.txt");
-        hbond_to_DNA_full_array = load("./hbond/"+pep+"p_hbond_to_DNA.txt");
+        hbond_to_dna_full_array = load("./hbond/"+pep+"p_hbond_to_DNA.txt");
         hbond_to_water_full_array = load("./hbond/"+pep+"p_hbond_to_water.txt");
     
         %important data for each hbond graph
         Time = hbond_to_peps_full_array(:,1)/Conversion_factor_to_nanoseconds;
         hbonds_to_peps = hbond_to_peps_full_array(:,2);
         hbonds_to_itself = hbond_to_itself_full_array(:,2);
-        hbonds_to_DNA = hbond_to_DNA_full_array(:,2);
+        hbonds_to_dna = hbond_to_dna_full_array(:,2);
         hbonds_to_water = hbond_to_water_full_array(:,2);
     
         %mean arrays for seperate graph
         four_hbond_to_peps = cat(2,four_hbond_to_peps,hbonds_to_peps);
         four_hbond_to_itself = cat(2,four_hbond_to_itself,hbonds_to_itself);
-        four_hbond_to_DNA = cat(2,four_hbond_to_DNA,hbonds_to_DNA);
+        four_hbond_to_dna = cat(2,four_hbond_to_dna,hbonds_to_dna);
         four_hbond_to_water = cat(2,four_hbond_to_water,hbonds_to_water);
+
+
+
+
+        %shortend hbond information
+    
+        shortend_hbond_to_peps = hbond_to_peps_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+        shortend_hbond_to_peps_values = shortend_hbond_to_peps(:,2);
+    
+        shortend_hbond_to_itself = hbond_to_itself_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+        shortend_hbond_to_itself_values = shortend_hbond_to_itself(:,2);
+    
+        shortend_hbond_to_dna = hbond_to_dna_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+        shortend_hbond_to_dna_values = shortend_hbond_to_dna(:,2);
+    
+        shortend_hbond_to_water = hbond_to_water_full_array((snapshot_extration_range_start_frames/10):(snapshot_extration_range_end_frames/10), :);
+        shortend_hbond_to_water_values = shortend_hbond_to_water(:,2);  
+
+        %mean arrays for seperate graph
+        shortend_four_hbond_to_peps = cat(2,shortend_four_hbond_to_peps,shortend_hbond_to_peps_values);
+        shortend_four_hbond_to_itself = cat(2,shortend_four_hbond_to_itself,shortend_hbond_to_itself_values);
+        shortend_four_hbond_to_dna = cat(2,shortend_four_hbond_to_dna,shortend_hbond_to_dna_values);
+        shortend_four_hbond_to_water = cat(2,shortend_four_hbond_to_water,shortend_hbond_to_water_values); 
+
+
+
     
         %some data means and cumulation
-        cumulative_hbonds = hbonds_to_peps+hbonds_to_itself+hbonds_to_DNA+hbonds_to_water;
+        cumulative_hbonds = hbonds_to_peps+hbonds_to_itself+hbonds_to_dna+hbonds_to_water;
         four_pep_cumulative_hbonds = cat(2,four_pep_cumulative_hbonds,cumulative_hbonds);
         
         mean_cumulative_hbonds = mean(cumulative_hbonds);
         mean_hbonds_to_peps = mean(hbonds_to_peps);
         mean_hbonds_to_water = mean(hbonds_to_water);
-        mean_hbonds_to_DNA = mean(hbonds_to_DNA);
+        mean_hbonds_to_dna = mean(hbonds_to_dna);
         mean_hbonds_to_itself = mean(hbonds_to_itself);
     
         %Moving means
         MM_cumulative_hbonds = movmean(cumulative_hbonds,100);
         MM_hbonds_to_peps = movmean(hbonds_to_peps,100);
         MM_hbonds_to_water = movmean(hbonds_to_water,100);
-        MM_hbonds_to_DNA = movmean(hbonds_to_DNA,100);
+        MM_hbonds_to_dna = movmean(hbonds_to_dna,100);
         MM_hbonds_to_itself = movmean(hbonds_to_itself,50);
     
     
@@ -725,9 +793,9 @@ if peptides_per_sim > 1
         hold on;
     
     
-        h2d = plot(Time,MM_hbonds_to_DNA,'LineWidth',2,'Color',purple, DisplayName='Hbs to Memb');
+        h2d = plot(Time,MM_hbonds_to_dna,'LineWidth',2,'Color',purple, DisplayName='Hbs to Memb');
         hold on;
-        plot([min(xlim) max(xlim)],[1 1]*mean_hbonds_to_DNA,'LineWidth',2,'LineStyle',':','Color',[purple,0.40], DisplayName='Mean Hbs to DNA');
+        plot([min(xlim) max(xlim)],[1 1]*mean_hbonds_to_dna,'LineWidth',2,'LineStyle',':','Color',[purple,0.40], DisplayName='Mean Hbs to DNA');
         hold on;
     
     
@@ -744,16 +812,16 @@ if peptides_per_sim > 1
         Legend_MM_cumulative_hbonds = copyobj(h2c, ax);
         Legend_MM_hbonds_to_peps = copyobj(h2p, ax);
         Legend_MM_hbonds_to_water = copyobj(h2w, ax);
-        Legend_MM_hbonds_to_DNA = copyobj(h2d, ax);
+        Legend_MM_hbonds_to_dna = copyobj(h2d, ax);
         Legend_MM_hbonds_to_itself = copyobj(h2i, ax);
     
         set(Legend_MM_hbonds_to_peps, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
         set(Legend_MM_hbonds_to_water, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
-        set(Legend_MM_hbonds_to_DNA, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+        set(Legend_MM_hbonds_to_dna, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
         set(Legend_MM_hbonds_to_itself, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
     
         %some minor info
-        hbond_legend = legend([h2c,Legend_MM_hbonds_to_peps,Legend_MM_hbonds_to_water,Legend_MM_hbonds_to_DNA,Legend_MM_hbonds_to_itself],'AutoUpdate','off','Orientation','horizontal',IconColumnWidth=10,Location='northoutside');
+        hbond_legend = legend([h2c,Legend_MM_hbonds_to_peps,Legend_MM_hbonds_to_water,Legend_MM_hbonds_to_dna,Legend_MM_hbonds_to_itself],'AutoUpdate','off','Orientation','horizontal',IconColumnWidth=10,Location='northoutside');
         
         fitting_data(tight_fitting=false);
         consistent_figures(figure_name=Big_figure, PDF_PNG_name=Title, legend_name=hbond_legend);
@@ -765,39 +833,40 @@ end
 
 if peptides_per_sim == 1     
     four_hbond_to_itself = [];
-    four_hbond_to_DNA = [];
+    four_hbond_to_dna = [];
     four_hbond_to_water = [];
     four_pep_cumulative_hbonds = [];    
     
         %loading in data
         hbond_to_itself_full_array = load("./hbond/1p_hbond_to_itself.txt");
-        hbond_to_DNA_full_array = load("./hbond/1p_hbond_to_DNA.txt");
+        hbond_to_dna_full_array = load("./hbond/1p_hbond_to_DNA.txt");
         hbond_to_water_full_array = load("./hbond/1p_hbond_to_water.txt");
     
         %important data for each hbond graph
-        Time = hbond_to_DNA_full_array(:,1)/Conversion_factor_to_nanoseconds;
+        Time = hbond_to_dna_full_array(:,1)/Conversion_factor_to_nanoseconds;
         hbonds_to_itself = hbond_to_itself_full_array(:,2);
-        hbonds_to_DNA = hbond_to_DNA_full_array(:,2);
+        hbonds_to_dna = hbond_to_dna_full_array(:,2);
         hbonds_to_water = hbond_to_water_full_array(:,2);
     
         %mean arrays for seperate graph
         four_hbond_to_itself = cat(2,four_hbond_to_itself,hbonds_to_itself);
-        four_hbond_to_DNA = cat(2,four_hbond_to_DNA,hbonds_to_DNA);
+        four_hbond_to_dna = cat(2,four_hbond_to_dna,hbonds_to_dna);
         four_hbond_to_water = cat(2,four_hbond_to_water,hbonds_to_water);
     
         %some data means and cumulation
-        cumulative_hbonds = hbonds_to_itself+hbonds_to_DNA+hbonds_to_water;
+        cumulative_hbonds = hbonds_to_itself+hbonds_to_dna+hbonds_to_water;
         four_pep_cumulative_hbonds = cat(2,four_pep_cumulative_hbonds,cumulative_hbonds);
         
         mean_cumulative_hbonds = mean(cumulative_hbonds);
         mean_hbonds_to_water = mean(hbonds_to_water);
-        mean_hbonds_to_DNA = mean(hbonds_to_DNA);
+        mean_hbonds_to_dna = mean(hbonds_to_dna);
         mean_hbonds_to_itself = mean(hbonds_to_itself);
-    
+     
+
         %Moving means
         MM_cumulative_hbonds = movmean(cumulative_hbonds,100);
         MM_hbonds_to_water = movmean(hbonds_to_water,100);
-        MM_hbonds_to_DNA = movmean(hbonds_to_DNA,100);
+        MM_hbonds_to_dna = movmean(hbonds_to_dna,100);
         MM_hbonds_to_itself = movmean(hbonds_to_itself,50);
     
     
@@ -821,9 +890,9 @@ if peptides_per_sim == 1
         hold on;
     
     
-        h2d = plot(Time,MM_hbonds_to_DNA,'LineWidth',2,'Color',purple, DisplayName='Hbs to DNA');
+        h2d = plot(Time,MM_hbonds_to_dna,'LineWidth',2,'Color',purple, DisplayName='Hbs to DNA');
         hold on;
-        plot([min(xlim) max(xlim)],[1 1]*mean_hbonds_to_DNA,'LineWidth',2,'LineStyle',':','Color',[purple,0.40], DisplayName='Mean Hbs to DNA');
+        plot([min(xlim) max(xlim)],[1 1]*mean_hbonds_to_dna,'LineWidth',2,'LineStyle',':','Color',[purple,0.40], DisplayName='Mean Hbs to DNA');
         hold on;
     
     
@@ -839,15 +908,15 @@ if peptides_per_sim == 1
         ax = gca;
         Legend_MM_cumulative_hbonds = copyobj(h2c, ax);
         Legend_MM_hbonds_to_water = copyobj(h2w, ax);
-        Legend_MM_hbonds_to_DNA = copyobj(h2d, ax);
+        Legend_MM_hbonds_to_dna = copyobj(h2d, ax);
         Legend_MM_hbonds_to_itself = copyobj(h2i, ax);
     
         set(Legend_MM_hbonds_to_water, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
-        set(Legend_MM_hbonds_to_DNA, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+        set(Legend_MM_hbonds_to_dna, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
         set(Legend_MM_hbonds_to_itself, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
     
         %some minor info
-        hbond_legend = legend([h2c,Legend_MM_hbonds_to_water,Legend_MM_hbonds_to_DNA,Legend_MM_hbonds_to_itself],'AutoUpdate','off','Orientation','horizontal',IconColumnWidth=10,Location='northoutside');
+        hbond_legend = legend([h2c,Legend_MM_hbonds_to_water,Legend_MM_hbonds_to_dna,Legend_MM_hbonds_to_itself],'AutoUpdate','off','Orientation','horizontal',IconColumnWidth=10,Location='northoutside');
         
         fitting_data(tight_fitting=false);
         consistent_figures(figure_name=Big_figure, PDF_PNG_name=Title, legend_name=hbond_legend);
@@ -855,45 +924,43 @@ if peptides_per_sim == 1
 end
 
 
-%% hbond summary stuff
+%% hbond summary stuff %% snapshot extraction range
 
 if peptides_per_sim > 1
 
     hbond_table = table();
     mean_of_means = [];
     
-    
         
-    mean_allpeps_hbond_to_peps = mean(four_hbond_to_peps);
-    mean_allpeps_hbond_to_itself = mean(four_hbond_to_itself);
-    mean_allpeps_hbond_to_DNA = mean(four_hbond_to_DNA);
-    mean_allpeps_hbond_to_water = mean(four_hbond_to_water);
+    mean_allpeps_hbond_to_peps = mean(shortend_four_hbond_to_peps);
+    mean_allpeps_hbond_to_itself = mean(shortend_four_hbond_to_itself);
+    mean_allpeps_hbond_to_dna = mean(shortend_four_hbond_to_dna);
+    mean_allpeps_hbond_to_water = mean(shortend_four_hbond_to_water);
     mean_allpeps_hbond_to_cumulative_hbonds = mean(four_pep_cumulative_hbonds);
         
-    
     
     mean_allpeps_hbond_to_peps = mean_allpeps_hbond_to_peps.';
         mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_peps)];
     mean_allpeps_hbond_to_itself = mean_allpeps_hbond_to_itself.';
         mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_itself)];
-    mean_allpeps_hbond_to_DNA = mean_allpeps_hbond_to_DNA.';
-        mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_DNA)];
+    mean_allpeps_hbond_to_dna = mean_allpeps_hbond_to_dna.';
+        mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_dna)];
     mean_allpeps_hbond_to_water = mean_allpeps_hbond_to_water.';
         mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_water)];
     mean_allpeps_hbond_to_cumulative_hbonds = mean_allpeps_hbond_to_cumulative_hbonds.';
         mean_of_means = [mean_of_means,mean(mean_allpeps_hbond_to_cumulative_hbonds)];
     mean_of_means = mean_of_means.';
     
-    Table_data = [mean_allpeps_hbond_to_peps,mean_allpeps_hbond_to_itself,mean_allpeps_hbond_to_DNA,mean_allpeps_hbond_to_water,mean_allpeps_hbond_to_cumulative_hbonds];
+    Table_data = [mean_allpeps_hbond_to_peps,mean_allpeps_hbond_to_itself,mean_allpeps_hbond_to_dna,mean_allpeps_hbond_to_water,mean_allpeps_hbond_to_cumulative_hbonds];
     Table_data = [Table_data.',mean_of_means].';
     
     
     
     
-    Title = simulation_name+" Hydrogen Bonding Summary";
+    Title = simulation_name+" Hydrogen Bonding Summary from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
     Summary_hbond_figure = figure('Name',Title,'NumberTitle','off');
     
-    Column_names = {'Peps.';'Itself';'Memb.';'Water';'Total'};
+    Column_names = {'Peps.';'Itself';'DNA';'Water';'Total'};
     Row_names = {'Pep. 1';'Pep. 2';'Pep. 3';'Pep. 4';'Mean'};
     hbond_heatmap = heatmap(Column_names,Row_names,Table_data,Colormap=batlow);
     
