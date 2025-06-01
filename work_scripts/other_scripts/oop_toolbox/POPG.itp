@@ -1,0 +1,145 @@
+;;
+;;
+;; Edited by Zack, only used to get the charges for partial charge optimizations
+;;
+;; Only to be used with the charmm36 LJ-pme ff from 2022 as it has different charge distributions
+;;
+;;
+
+[ moleculetype ]
+; name	nrexcl
+POPG	     3
+
+[ atoms ]
+; nr	type	resnr	residu	atom	cgnr	charge	mass
+
+     1       CTL2     85   POPG    C13      1       0.05     12.011
+     2       HAL2     85   POPG   H13A      1       0.09      1.008
+     3       HAL2     85   POPG   H13B      1       0.09      1.008
+     4        OHL     85   POPG    OC3      1      -0.65    15.9994
+     5        HOL     85   POPG    HO3      1       0.42      1.008
+     6       CTL1     85   POPG    C12      2       0.14     12.011
+     7       HAL1     85   POPG   H12A      2       0.09      1.008
+     8        OHL     85   POPG    OC2      2      -0.65    15.9994
+     9        HOL     85   POPG    HO2      2       0.42      1.008
+    10       CTL2     85   POPG    C11      3      -0.08     12.011
+    11       HAL2     85   POPG   H11A      3       0.09      1.008
+    12       HAL2     85   POPG   H11B      3       0.09      1.008
+    13         PL     85   POPG      P      3        1.5     30.974
+    14        O2L     85   POPG    O13      3      -0.78    15.9994
+    15        O2L     85   POPG    O14      3      -0.78    15.9994
+    16       OSLP     85   POPG    O12      3      -0.57    15.9994
+    17       OSLP     85   POPG    O11      3      -0.57    15.9994
+    18       CTL2     85   POPG     C1      3      -0.08     12.011
+    19       HAL2     85   POPG     HA      3       0.09      1.008
+    20       HAL2     85   POPG     HB      3       0.09      1.008
+    21       CTL1     85   POPG     C2      4     0.1339     12.011
+    22       HAL1     85   POPG     HS      4     0.1023      1.008
+    23        OSL     85   POPG    O21      4    -0.4739    15.9994
+    24         CL     85   POPG    C21      4     0.8445     12.011
+    25        OBL     85   POPG    O22      4    -0.6272    15.9994
+    26       CTL2     85   POPG    C22      4    -0.1652     12.011
+    27       HAL2     85   POPG    H2R      4     0.0928      1.008
+    28       HAL2     85   POPG    H2S      4     0.0928      1.008
+    29       CTL2     85   POPG     C3      5     0.0302     12.011
+    30       HAL2     85   POPG     HX      5      0.103      1.008
+    31       HAL2     85   POPG     HY      5      0.103      1.008
+    32        OSL     85   POPG    O31      5    -0.4739    15.9994
+    33         CL     85   POPG    C31      5     0.8445     12.011
+    34        OBL     85   POPG    O32      5    -0.6272    15.9994
+    35       CTL2     85   POPG    C32      5    -0.1652     12.011
+    36       HAL2     85   POPG    H2X      5     0.0928      1.008
+    37       HAL2     85   POPG    H2Y      5     0.0928      1.008
+    38       CTL2     85   POPG    C23      6      -0.18     12.011
+    39       HAL2     85   POPG    H3R      6       0.09      1.008
+    40       HAL2     85   POPG    H3S      6       0.09      1.008
+    41       CTL2     85   POPG    C24      7      -0.18     12.011
+    42       HAL2     85   POPG    H4R      7       0.09      1.008
+    43       HAL2     85   POPG    H4S      7       0.09      1.008
+    44       CTL2     85   POPG    C25      8      -0.18     12.011
+    45       HAL2     85   POPG    H5R      8       0.09      1.008
+    46       HAL2     85   POPG    H5S      8       0.09      1.008
+    47       CTL2     85   POPG    C26      9      -0.18     12.011
+    48       HAL2     85   POPG    H6R      9       0.09      1.008
+    49       HAL2     85   POPG    H6S      9       0.09      1.008
+    50       CTL2     85   POPG    C27     10      -0.18     12.011
+    51       HAL2     85   POPG    H7R     10       0.09      1.008
+    52       HAL2     85   POPG    H7S     10       0.09      1.008
+    53       CTL2     85   POPG    C28     11      -0.18     12.011
+    54       HAL2     85   POPG    H8R     11       0.09      1.008
+    55       HAL2     85   POPG    H8S     11       0.09      1.008
+    56       CEL1     85   POPG    C29     12      -0.15     12.011
+    57       HEL1     85   POPG    H91     12       0.15      1.008
+    58       CEL1     85   POPG   C210     13      -0.15     12.011
+    59       HEL1     85   POPG   H101     13       0.15      1.008
+    60       CTL2     85   POPG   C211     14      -0.18     12.011
+    61       HAL2     85   POPG   H11R     14       0.09      1.008
+    62       HAL2     85   POPG   H11S     14       0.09      1.008
+    63       CTL2     85   POPG   C212     15      -0.18     12.011
+    64       HAL2     85   POPG   H12R     15       0.09      1.008
+    65       HAL2     85   POPG   H12S     15       0.09      1.008
+    66       CTL2     85   POPG   C213     16      -0.18     12.011
+    67       HAL2     85   POPG   H13R     16       0.09      1.008
+    68       HAL2     85   POPG   H13S     16       0.09      1.008
+    69       CTL2     85   POPG   C214     17      -0.18     12.011
+    70       HAL2     85   POPG   H14R     17       0.09      1.008
+    71       HAL2     85   POPG   H14S     17       0.09      1.008
+    72       CTL2     85   POPG   C215     18      -0.18     12.011
+    73       HAL2     85   POPG   H15R     18       0.09      1.008
+    74       HAL2     85   POPG   H15S     18       0.09      1.008
+    75       CTL2     85   POPG   C216     19      -0.18     12.011
+    76       HAL2     85   POPG   H16R     19       0.09      1.008
+    77       HAL2     85   POPG   H16S     19       0.09      1.008
+    78       CTL2     85   POPG   C217     20      -0.18     12.011
+    79       HAL2     85   POPG   H17R     20       0.09      1.008
+    80       HAL2     85   POPG   H17S     20       0.09      1.008
+    81       CTL3     85   POPG   C218     21      -0.27     12.011
+    82       HAL3     85   POPG   H18R     21       0.09      1.008
+    83       HAL3     85   POPG   H18S     21       0.09      1.008
+    84       HAL3     85   POPG   H18T     21       0.09      1.008
+    85       CTL2     85   POPG    C33     22      -0.18     12.011
+    86       HAL2     85   POPG    H3X     22       0.09      1.008
+    87       HAL2     85   POPG    H3Y     22       0.09      1.008
+    88       CTL2     85   POPG    C34     23      -0.18     12.011
+    89       HAL2     85   POPG    H4X     23       0.09      1.008
+    90       HAL2     85   POPG    H4Y     23       0.09      1.008
+    91       CTL2     85   POPG    C35     24      -0.18     12.011
+    92       HAL2     85   POPG    H5X     24       0.09      1.008
+    93       HAL2     85   POPG    H5Y     24       0.09      1.008
+    94       CTL2     85   POPG    C36     25      -0.18     12.011
+    95       HAL2     85   POPG    H6X     25       0.09      1.008
+    96       HAL2     85   POPG    H6Y     25       0.09      1.008
+    97       CTL2     85   POPG    C37     26      -0.18     12.011
+    98       HAL2     85   POPG    H7X     26       0.09      1.008
+    99       HAL2     85   POPG    H7Y     26       0.09      1.008
+   100       CTL2     85   POPG    C38     27      -0.18     12.011
+   101       HAL2     85   POPG    H8X     27       0.09      1.008
+   102       HAL2     85   POPG    H8Y     27       0.09      1.008
+   103       CTL2     85   POPG    C39     28      -0.18     12.011
+   104       HAL2     85   POPG    H9X     28       0.09      1.008
+   105       HAL2     85   POPG    H9Y     28       0.09      1.008
+   106       CTL2     85   POPG   C310     29      -0.18     12.011
+   107       HAL2     85   POPG   H10X     29       0.09      1.008
+   108       HAL2     85   POPG   H10Y     29       0.09      1.008
+   109       CTL2     85   POPG   C311     30      -0.18     12.011
+   110       HAL2     85   POPG   H11X     30       0.09      1.008
+   111       HAL2     85   POPG   H11Y     30       0.09      1.008
+   112       CTL2     85   POPG   C312     31      -0.18     12.011
+   113       HAL2     85   POPG   H12X     31       0.09      1.008
+   114       HAL2     85   POPG   H12Y     31       0.09      1.008
+   115       CTL2     85   POPG   C313     32      -0.18     12.011
+   116       HAL2     85   POPG   H13X     32       0.09      1.008
+   117       HAL2     85   POPG   H13Y     32       0.09      1.008
+   118       CTL2     85   POPG   C314     33      -0.18     12.011
+   119       HAL2     85   POPG   H14X     33       0.09      1.008
+   120       HAL2     85   POPG   H14Y     33       0.09      1.008
+   121       CTL2     85   POPG   C315     34      -0.18     12.011
+   122       HAL2     85   POPG   H15X     34       0.09      1.008
+   123       HAL2     85   POPG   H15Y     34       0.09      1.008
+   124       CTL3     85   POPG   C316     35      -0.27     12.011
+   125       HAL3     85   POPG   H16X     35       0.09      1.008
+   126       HAL3     85   POPG   H16Y     35       0.09      1.008
+   127       HAL3     85   POPG   H16Z     35       0.09      1.008   ; qtot -1
+
+[ bonds ]
+

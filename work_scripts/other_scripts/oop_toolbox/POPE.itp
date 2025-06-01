@@ -1,0 +1,143 @@
+;;
+;;
+;; Edited by Zack, only used to get the charges for partial charge optimizations
+;;
+;; Only to be used with the charmm36 LJ-pme ff from 2022 as it has different charge distributions
+;;
+;;
+
+
+
+; name	nrexcl
+POPE	     3
+
+[ atoms ]
+; nr	type	resnr	residu	atom	cgnr	charge	mass
+
+ 1           NH3L    117   POPE      N   1121       -0.3     14.007
+ 2            HCL    117   POPE    HN1   1121       0.33      1.008
+ 3            HCL    117   POPE    HN2   1121       0.33      1.008
+ 4            HCL    117   POPE    HN3   1121       0.33      1.008
+ 5           CTL2    117   POPE    C12   1121       0.13     12.011
+ 6           HAL2    117   POPE   H12A   1121       0.09      1.008
+ 7           HAL2    117   POPE   H12B   1121       0.09      1.008
+ 8           CTL2    117   POPE    C11   1122      -0.08     12.011
+ 9           HAL2    117   POPE   H11A   1122       0.09      1.008
+ 10          HAL2    117   POPE   H11B   1122       0.09      1.008
+ 11            PL    117   POPE      P   1122        1.5     30.974
+ 12           O2L    117   POPE    O13   1122      -0.78    15.9994
+ 13           O2L    117   POPE    O14   1122      -0.78    15.9994
+ 14          OSLP    117   POPE    O11   1122      -0.57    15.9994
+ 15          OSLP    117   POPE    O12   1122      -0.57    15.9994
+ 16          CTL2    117   POPE     C1   1122      -0.08     12.011
+ 17          HAL2    117   POPE     HA   1122       0.09      1.008
+ 18          HAL2    117   POPE     HB   1122       0.09      1.008
+ 19          CTL1    117   POPE     C2   1123     0.1339     12.011
+ 20          HAL1    117   POPE     HS   1123     0.1023      1.008
+ 21           OSL    117   POPE    O21   1123    -0.4739    15.9994
+ 22            CL    117   POPE    C21   1123     0.8445     12.011
+ 23           OBL    117   POPE    O22   1123    -0.6272    15.9994
+ 24          CTL2    117   POPE    C22   1123    -0.1652     12.011
+ 25          HAL2    117   POPE    H2R   1123     0.0928      1.008
+ 26          HAL2    117   POPE    H2S   1123     0.0928      1.008
+ 27          CTL2    117   POPE     C3   1124     0.0302     12.011
+ 28          HAL2    117   POPE     HX   1124      0.103      1.008
+ 29          HAL2    117   POPE     HY   1124      0.103      1.008
+ 30           OSL    117   POPE    O31   1124    -0.4739    15.9994
+ 31            CL    117   POPE    C31   1124     0.8445     12.011
+ 32           OBL    117   POPE    O32   1124    -0.6272    15.9994
+ 33          CTL2    117   POPE    C32   1124    -0.1652     12.011
+ 34          HAL2    117   POPE    H2X   1124     0.0928      1.008
+ 35          HAL2    117   POPE    H2Y   1124     0.0928      1.008
+ 36          CTL2    117   POPE    C23   1125      -0.18     12.011
+ 37          HAL2    117   POPE    H3R   1125       0.09      1.008
+ 38          HAL2    117   POPE    H3S   1125       0.09      1.008
+ 39          CTL2    117   POPE    C24   1126      -0.18     12.011
+ 40          HAL2    117   POPE    H4R   1126       0.09      1.008
+ 41          HAL2    117   POPE    H4S   1126       0.09      1.008
+ 42          CTL2    117   POPE    C25   1127      -0.18     12.011
+ 43          HAL2    117   POPE    H5R   1127       0.09      1.008
+ 44          HAL2    117   POPE    H5S   1127       0.09      1.008
+ 45          CTL2    117   POPE    C26   1128      -0.18     12.011
+ 46          HAL2    117   POPE    H6R   1128       0.09      1.008
+ 47          HAL2    117   POPE    H6S   1128       0.09      1.008
+ 48          CTL2    117   POPE    C27   1129      -0.18     12.011
+ 49          HAL2    117   POPE    H7R   1129       0.09      1.008
+ 50          HAL2    117   POPE    H7S   1129       0.09      1.008
+ 51          CTL2    117   POPE    C28   1130      -0.18     12.011
+ 52          HAL2    117   POPE    H8R   1130       0.09      1.008
+ 53          HAL2    117   POPE    H8S   1130       0.09      1.008
+ 54          CEL1    117   POPE    C29   1131      -0.15     12.011
+ 55          HEL1    117   POPE    H91   1131       0.15      1.008
+ 56          CEL1    117   POPE   C210   1132      -0.15     12.011
+ 57          HEL1    117   POPE   H101   1132       0.15      1.008
+ 58          CTL2    117   POPE   C211   1133      -0.18     12.011
+ 59          HAL2    117   POPE   H11R   1133       0.09      1.008
+ 60          HAL2    117   POPE   H11S   1133       0.09      1.008
+ 61          CTL2    117   POPE   C212   1134      -0.18     12.011
+ 62          HAL2    117   POPE   H12R   1134       0.09      1.008
+ 63          HAL2    117   POPE   H12S   1134       0.09      1.008
+ 64          CTL2    117   POPE   C213   1135      -0.18     12.011
+ 65          HAL2    117   POPE   H13R   1135       0.09      1.008
+ 66          HAL2    117   POPE   H13S   1135       0.09      1.008
+ 67          CTL2    117   POPE   C214   1136      -0.18     12.011
+ 68          HAL2    117   POPE   H14R   1136       0.09      1.008
+ 69          HAL2    117   POPE   H14S   1136       0.09      1.008
+ 70          CTL2    117   POPE   C215   1137      -0.18     12.011
+ 71          HAL2    117   POPE   H15R   1137       0.09      1.008
+ 72          HAL2    117   POPE   H15S   1137       0.09      1.008
+ 73          CTL2    117   POPE   C216   1138      -0.18     12.011
+ 74          HAL2    117   POPE   H16R   1138       0.09      1.008
+ 75          HAL2    117   POPE   H16S   1138       0.09      1.008
+ 76          CTL2    117   POPE   C217   1139      -0.18     12.011
+ 77          HAL2    117   POPE   H17R   1139       0.09      1.008
+ 78          HAL2    117   POPE   H17S   1139       0.09      1.008
+ 79          CTL3    117   POPE   C218   1140      -0.27     12.011
+ 80          HAL3    117   POPE   H18R   1140       0.09      1.008
+ 81          HAL3    117   POPE   H18S   1140       0.09      1.008
+ 82          HAL3    117   POPE   H18T   1140       0.09      1.008
+ 83          CTL2    117   POPE    C33   1141      -0.18     12.011
+ 84          HAL2    117   POPE    H3X   1141       0.09      1.008
+ 85          HAL2    117   POPE    H3Y   1141       0.09      1.008
+ 86          CTL2    117   POPE    C34   1142      -0.18     12.011
+ 87          HAL2    117   POPE    H4X   1142       0.09      1.008
+ 88          HAL2    117   POPE    H4Y   1142       0.09      1.008
+ 89          CTL2    117   POPE    C35   1143      -0.18     12.011
+ 90          HAL2    117   POPE    H5X   1143       0.09      1.008
+ 91          HAL2    117   POPE    H5Y   1143       0.09      1.008
+ 92          CTL2    117   POPE    C36   1144      -0.18     12.011
+ 93          HAL2    117   POPE    H6X   1144       0.09      1.008
+ 94          HAL2    117   POPE    H6Y   1144       0.09      1.008
+ 95          CTL2    117   POPE    C37   1145      -0.18     12.011
+ 96          HAL2    117   POPE    H7X   1145       0.09      1.008
+ 97          HAL2    117   POPE    H7Y   1145       0.09      1.008
+ 98          CTL2    117   POPE    C38   1146      -0.18     12.011
+ 99          HAL2    117   POPE    H8X   1146       0.09      1.008
+ 100         HAL2    117   POPE    H8Y   1146       0.09      1.008
+ 101         CTL2    117   POPE    C39   1147      -0.18     12.011
+ 102         HAL2    117   POPE    H9X   1147       0.09      1.008
+ 103         HAL2    117   POPE    H9Y   1147       0.09      1.008
+ 104         CTL2    117   POPE   C310   1148      -0.18     12.011
+ 105         HAL2    117   POPE   H10X   1148       0.09      1.008
+ 106         HAL2    117   POPE   H10Y   1148       0.09      1.008
+ 107         CTL2    117   POPE   C311   1149      -0.18     12.011
+ 108         HAL2    117   POPE   H11X   1149       0.09      1.008
+ 109         HAL2    117   POPE   H11Y   1149       0.09      1.008
+ 110         CTL2    117   POPE   C312   1150      -0.18     12.011
+ 111         HAL2    117   POPE   H12X   1150       0.09      1.008
+ 112         HAL2    117   POPE   H12Y   1150       0.09      1.008
+ 113         CTL2    117   POPE   C313   1151      -0.18     12.011
+ 114         HAL2    117   POPE   H13X   1151       0.09      1.008
+ 115         HAL2    117   POPE   H13Y   1151       0.09      1.008
+ 116         CTL2    117   POPE   C314   1152      -0.18     12.011
+ 117         HAL2    117   POPE   H14X   1152       0.09      1.008
+ 118         HAL2    117   POPE   H14Y   1152       0.09      1.008
+ 119         CTL2    117   POPE   C315   1153      -0.18     12.011
+ 120         HAL2    117   POPE   H15X   1153       0.09      1.008
+ 121         HAL2    117   POPE   H15Y   1153       0.09      1.008
+ 122         CTL3    117   POPE   C316   1154      -0.27     12.011
+ 123         HAL3    117   POPE   H16X   1154       0.09      1.008
+ 124         HAL3    117   POPE   H16Y   1154       0.09      1.008
+ 125         HAL3    117   POPE   H16Z   1154       0.09      1.008
+
+[ bonds ]
