@@ -285,6 +285,42 @@ consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=b
 
 
 
+%% tc groups %%
+
+% data load and processing
+tc_array = load("tc.txt");
+time = tc_array(:,1)/Conversion_factor_to_nanoseconds;
+
+POPG = tc_array(:,2);
+POPE = tc_array(:,3);
+
+
+
+% Figure settings - looks better when previewing the pdf
+Title = simulation_name+"POPE and POPG";
+box_vector_fig = figure('Name',Title,'NumberTitle','off');
+
+
+
+
+plot(time,POPG,'color',[batlowS(1,:),0.33],LineWidth=1);
+hold on;
+plot(time,POPE,'color',[batlowS(3,:),0.33],LineWidth=1);
+hold on;
+
+%setting the legend line widths with a set of fake data so the in-plot line
+%widths can stay the same.
+ax = gca;
+
+
+ylabel('Temp ({\itK})');
+xlabel('Time ({\itns})');
+
+%self defined functions
+fitting_data(tight_fitting=true, data_spacing_y=0.05);
+consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=box_analysis_legend);
+
+
 
 
 
