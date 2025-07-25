@@ -25,12 +25,12 @@ clear;
 close all
 
 Conversion_factor_to_nanoseconds = 1000; %if data is in terms of picoseconds, keep 1000. If in nanoseconds, change to 1
-simulation_name = "Simulation 1: WT - "; % What is the name of this simulation
+simulation_name = "Simulation 1: hL18R - "; % What is the name of this simulation
 peptides_per_sim = 4; % Do you have more than 1 peptides? if so how many?
 lipids_per_sim = 128; % Did you change the number of lipids?
 number_of_residues = 21; % How many residues do you have?
-current_peptide_residue_list = {'1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HIS', '17ARG', '18LEU', '19LEU', '20ARG', '21LYS'}; % What are the residue names in order
-current_residue_one_letter_code = {'T','R','S','S','R','A','G','L','Q','W','P','V','G','R','V','H','R','L','L','R','K'};
+current_peptide_residue_list = {'1THR', '2ARG', '3SER', '4SER', '5ARG', '6ALA', '7GLY', '8LEU', '9GLN', '10TRP', '11PRO', '12VAL', '13GLY', '14ARG', '15VAL', '16HISH', '17ARG', '18ARG', '19LEU', '20ARG', '21LYS'}; % What are the residue names in order
+current_residue_one_letter_code = {'T','R','S','S','R','A','G','L','Q','W','P','V','G','R','V','HH','R','R','L','R','K'};
 snapshot_extration_range_start = 750; % The start time(ns) that the snapshot extraction portion of the simulation encompases. 250 means the it starts at 250 nanoseconds of the simulation.
 snapshot_extration_range_end = 1000; % The end time(ns) that the snapshot extraction portion of the simulation encompases. 250 means the it starts at 250 nanoseconds of the simulation.
 
@@ -285,42 +285,42 @@ consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=b
 
 
 
-%% tc groups %%
-
-% data load and processing
-tc_array = load("tc.txt");
-time = tc_array(:,1)/Conversion_factor_to_nanoseconds;
-
-POPG = tc_array(:,2);
-POPE = tc_array(:,3);
-
-
-
-% Figure settings - looks better when previewing the pdf
-Title = simulation_name+"POPE and POPG";
-box_vector_fig = figure('Name',Title,'NumberTitle','off');
-
-
-
-
-plot(time,POPG,'color',[batlowS(1,:),0.33],LineWidth=1);
-hold on;
-plot(time,POPE,'color',[batlowS(3,:),0.33],LineWidth=1);
-hold on;
-
-%setting the legend line widths with a set of fake data so the in-plot line
-%widths can stay the same.
-ax = gca;
-
-
-ylabel('Temp ({\itK})');
-xlabel('Time ({\itns})');
-
-%self defined functions
-fitting_data(tight_fitting=true, data_spacing_y=0.05);
-consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=box_analysis_legend);
-
-
+% %% tc groups %%
+% 
+% % data load and processing
+% tc_array = load("tc.txt");
+% time = tc_array(:,1)/Conversion_factor_to_nanoseconds;
+% 
+% POPG = tc_array(:,2);
+% POPE = tc_array(:,3);
+% 
+% 
+% 
+% % Figure settings - looks better when previewing the pdf
+% Title = simulation_name+"POPE and POPG";
+% box_vector_fig = figure('Name',Title,'NumberTitle','off');
+% 
+% 
+% 
+% 
+% plot(time,POPG,'color',[batlowS(1,:),0.33],LineWidth=1);
+% hold on;
+% plot(time,POPE,'color',[batlowS(3,:),0.33],LineWidth=1);
+% hold on;
+% 
+% %setting the legend line widths with a set of fake data so the in-plot line
+% %widths can stay the same.
+% ax = gca;
+% 
+% 
+% ylabel('Temp ({\itK})');
+% xlabel('Time ({\itns})');
+% 
+% %self defined functions
+% fitting_data(tight_fitting=true, data_spacing_y=0.05);
+% consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=box_analysis_legend);
+% 
+% 
 
 
 
@@ -605,7 +605,7 @@ for pep = 1:peptides_per_sim
     Sidechain_Residue_data_mean = [];
     Sidechain_Residue_data_std = [];
 
-    for residue_number = number_of_residues:-1:1.0
+    for residue_number = 1:number_of_residues
         dimension = residue_number + 1;
         Sidechain_Residue_mindist = sidechain_residue_array(:,dimension);
         Sidechain_Residue_data_mean(end+1) = mean(Sidechain_Residue_mindist); %#ok<*SAGROW>
@@ -693,7 +693,7 @@ for pep = 1:peptides_per_sim
     backbone_Residue_data_std = [];
   
 
-    for residue_number = number_of_residues:-1:1.0
+    for residue_number = 1:number_of_residues
         dimension = residue_number + 1;
         backbone_Residue_mindist = backbone_residue_array(:,dimension);
         backbone_Residue_data_mean(end+1) = mean(backbone_Residue_mindist); %#ok<*SAGROW>

@@ -1,0 +1,38 @@
+# This file was created Mon Jul 14 10:53:55 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/v12r_sim3
+# Command line:
+#   gmx rmsf -f /home/zh106/v12r_sim3/analysis_setup_files/1p_memb.xtc -n /home/zh106/v12r_sim3/analysis_setup_files/1p_index.ndx -s /home/zh106/v12r_sim3/analysis_setup_files/1p_memb.tpr -o /home/zh106/v12r_sim3/v12r_sim3_analysis/1p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.5069
+   19   0.3989
+   43   0.3227
+   54   0.2283
+   65   0.2409
+   89   0.2781
+   99   0.2031
+  106   0.2196
+  125   0.3060
+  142   0.2583
+  168   0.2266
+  180   0.3090
+  204   0.3049
+  211   0.2723
+  235   0.2718
+  251   0.2670
+  268   0.2321
+  292   0.2103
+  311   0.2825
+  330   0.3372
+  354   0.5832

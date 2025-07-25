@@ -1,0 +1,38 @@
+# This file was created Mon Jul 14 12:30:01 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/wt_sim5
+# Command line:
+#   gmx rmsf -f /home/zh106/wt_sim5/analysis_setup_files/3p_memb.xtc -n /home/zh106/wt_sim5/analysis_setup_files/3p_index.ndx -s /home/zh106/wt_sim5/analysis_setup_files/3p_memb.tpr -o /home/zh106/wt_sim5/wt_sim5_analysis/3p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2665
+   19   0.1778
+   43   0.1656
+   54   0.1410
+   65   0.1034
+   89   0.1031
+   99   0.0892
+  106   0.0901
+  125   0.0805
+  142   0.0700
+  168   0.0879
+  180   0.1043
+  196   0.0857
+  203   0.0682
+  227   0.0570
+  243   0.0789
+  260   0.0992
+  284   0.0880
+  303   0.1066
+  322   0.1163
+  346   0.1861

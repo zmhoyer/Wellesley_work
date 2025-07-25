@@ -1,0 +1,38 @@
+# This file was created Mon Jul 14 12:24:38 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/v12r_sim1
+# Command line:
+#   gmx rmsf -f /home/zh106/v12r_sim1/analysis_setup_files/3p_memb.xtc -n /home/zh106/v12r_sim1/analysis_setup_files/3p_index.ndx -s /home/zh106/v12r_sim1/analysis_setup_files/3p_memb.tpr -o /home/zh106/v12r_sim1/v12r_sim1_analysis/3p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.3407
+   19   0.2703
+   43   0.2148
+   54   0.1626
+   65   0.1173
+   89   0.1950
+   99   0.1553
+  106   0.1513
+  125   0.2447
+  142   0.2464
+  168   0.1478
+  180   0.2243
+  204   0.2987
+  211   0.1991
+  235   0.1124
+  251   0.2078
+  268   0.1332
+  292   0.1401
+  311   0.2738
+  330   0.2661
+  354   0.3233
