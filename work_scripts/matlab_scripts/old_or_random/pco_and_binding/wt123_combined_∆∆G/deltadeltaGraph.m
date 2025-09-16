@@ -39,7 +39,7 @@ cumulative_data_ste = cumulative_data_std/sqrt(total_number_of_peptides);
 
 
 %figure settings
-figure('Name','cumulative','NumberTitle','off');
+figure('Name','cumulative','NumberTitle','off','Theme',"light");
 myfontsize = 15;
 errorbar(cumulative_data_mean, cumulative_data_ste, '-r.', 'MarkerSize',20, 'LineWidth',2, 'Color',blue);
 ylabel('\Delta\DeltaG_{opt,elec}, kcal/mol','fontsize',myfontsize);

@@ -232,6 +232,16 @@ for pep = 1:peptides_per_sim
 end
 
 
+%% pca analysis %%
+
+proj2d = load("2dproj.txt");
+
+eigenvector_1 = proj2d(:,1);
+eigenvector_2 = proj2d(:,2);
+
+histogram2(eigenvector_1,eigenvector_2,'BinWidth',[0.5 0.5])
+
+
 
 
 

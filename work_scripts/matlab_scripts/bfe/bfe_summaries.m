@@ -131,7 +131,10 @@ all_simulation_bfe = [];
 
 for sim = 1:length(all_sim_names)
     current_sim_bfe = [];
-    current_sim_name = strsplit(all_sim_names{sim},'_');
+    
+    loop_sim = all_sim_names_sorted{sim};
+    last_underscore_pos = strfind(loop_sim,'_');
+    current_sim_name = extractBefore(loop_sim,last_underscore_pos(end));
 
     for pep = 1:peptides_per_sim
         current_pep_bfe = load("bfe_summary_all_sims/"+all_sim_names{sim}+"/"+pep+"p_bfe_summary.txt");
@@ -200,17 +203,24 @@ axes.YLabel.Position = pos;
 %% All Simulations Summary - sorted differently%%
 
 
-all_sim_names_sorted = {"wt_sim1","wt_sim2","wt_sim3","wt_sim4","wt_sim5","wt_sim6","hwt_sim1","hwt_sim2","hwt_sim3","t1r_sim1","t1r_sim2","ht1r_sim1","ht1r_sim2","a6r_sim1","a6r_sim2","ha6r_sim1","ha6r_sim2","l8r_sim1","l8r_sim2","hl8r_sim1","hl8r_sim2"};
+all_sim_names_sorted = {"wt_sim1","wt_sim2","wt_sim3","wt_sim4","wt_sim5","wt_sim6","hwt_sim1","hwt_sim2","hwt_sim3","t1r_sim1","t1r_sim2","ht1r_sim1","ht1r_sim2","a6r_sim1","a6r_sim2","ha6r_sim1","ha6r_sim2","l8r_sim1","l8r_sim2","hl8r_sim1","hl8r_sim2","q9r_sim1","q9r_sim2","q9r_sim3","hq9r_sim1","hq9r_sim2","hq9r_sim3","v12r_sim1","v12r_sim2","v12r_sim3","hv12r_sim1","hv12r_sim2","hv12r_sim3","l18r_sim1","l18r_sim2","l18r_sim3","hl18r_sim1","hl18r_sim2","hl18r_sim3","t1r_a6r_l8r_sim1","t1r_a6r_l8r_sim2","t1r_a6r_l8r_sim3","h_t1r_a6r_l8r_sim1","h_t1r_a6r_l8r_sim2","h_t1r_a6r_l8r_sim3"};
 all_simulation_bfe = [];
 
 
 for sim = 1:length(all_sim_names_sorted)
     current_sim_bfe = [];
-    current_sim_name = strsplit(all_sim_names_sorted{sim},'_');
+
+    loop_sim = all_sim_names_sorted{sim};
+    last_underscore_pos = strfind(loop_sim,'_');
+    current_sim_name = extractBefore(loop_sim,last_underscore_pos(end));
 
     for pep = 1:peptides_per_sim
         current_pep_bfe = load("bfe_summary_all_sims/"+all_sim_names_sorted{sim}+"/"+pep+"p_bfe_summary.txt");
         current_sim_bfe = cat(2,current_sim_bfe,current_pep_bfe);
+        % figure;
+        
+        % plot(current_pep_bfe); autocorrelation
+
     end
 
     current_sim_bfe_cell = {current_sim_name{1},current_sim_bfe}.';
@@ -220,9 +230,10 @@ end
 
 unique_sims = unique(all_simulation_bfe(1,:),'stable');
 combined_across_sims_data_means = {};
+combined_across_sims_data_mean = [];
 combined_across_sims_data_std = [];
 combined_across_sims_data_ste = [];
-combined_across_sims_data_mean = [];
+
 
 for unique_sim = 1:length(unique_sims)
     logical_single_mutation = matches(all_simulation_bfe(1,:),unique_sims{unique_sim});
@@ -245,27 +256,26 @@ for unique_sim = 1:length(unique_sims)
 end
 
 
-% some type of signifigance testing for non independent data points. No
-% central limit theory due to non independence and small sample sizes, so
-% we had to do a non-parametric test for significance
+% % some type of signifigance testing for non independent data points. No
+% % central limit theory due to non independence and small sample sizes, so
+% % we had to do a non-parametric test for significance
 
 longest_data_set = 0;
 for sim = 1:length(combined_across_sims_data_means)
     if length(combined_across_sims_data_means{sim}) > longest_data_set
         longest_data_set = length(combined_across_sims_data_means{sim});
     end
-    % figure;
-    % qqplot(combined_across_sims_data_means{sim})
-    % figure;
-    % slog = fitdist(combined_across_sims_data_means{sim},'Normal');
-    % plot(slog)
+%     figure;
+%     qqplot(combined_across_sims_data_means{sim})
+%     figure;
+%     slog = fitdist(combined_across_sims_data_means{sim},'Normal');
+%     plot(slog)
 end
 A = zeros(longest_data_set,length(combined_across_sims_data_means));
 for sim = 1:length(combined_across_sims_data_means)
     A(1:length(combined_across_sims_data_means{sim}),sim) = combined_across_sims_data_means{sim};
 end
 A(A == 0) = NaN;
-
 
 [p,tbl,stats] = anova1(A,unique_sims,"off");
 [results,~,~,gnames]  = multcompare(stats);
@@ -284,14 +294,14 @@ Title = "All Simulations BFE Summary";
 Summary_BFE_figure = figure('Name',Title,'NumberTitle','off');
 
 for sim_data = 1:length(combined_across_sims_data_means)
-    scatter(sim_data,combined_across_sims_data_means{sim_data},100,'.r');
+    scatter(sim_data,combined_across_sims_data_means{sim_data},100,"red",'.');
     fprintf(unique_sims(sim_data)+": "+combined_across_sims_data_mean(sim_data)+" ± "+combined_across_sims_data_ste(sim_data)+" (N="+length(combined_across_sims_data_means{sim_data})+")\n")
     hold on;
 
 end
 
 
-errorbar(combined_across_sims_data_mean, combined_across_sims_data_ste, '.','LineWidth',1.2, 'Color',black);
+errorbar(combined_across_sims_data_mean, combined_across_sims_data_ste, '.','LineWidth',1.3, 'Color',black);
 hold off;
 
 ylabel('Binding Free Energy ({\itkcal/mol})');
@@ -301,27 +311,203 @@ xticks(1:length(string_sims));
 xticklabels(string_sims);
 
 fitting_data(tight_fitting=true, data_spacing=true);
-consistent_figures(figure_name=Summary_BFE_figure, rotate_x_labels_by_angle=1, PDF_PNG_name=Title);
+consistent_figures(figure_name=Summary_BFE_figure, rotate_x_labels_by_angle=40, PDF_PNG_name=Title);
 
 axes = gca;
 pos = axes.YLabel.get.Position-[0.15,0,0];
 axes.YLabel.Position = pos;
 
+ttest(A(:,1),A(:,2))
 
+fprintf("hi")
 
+ttest(A(:,1),A(:,3))
+ttest(A(:,1),A(:,4))
+ttest(A(:,1),A(:,5))
+ttest(A(:,1),A(:,6))
+ttest(A(:,1),A(:,7))
+ttest(A(:,1),A(:,8))
+ttest(A(:,1),A(:,9))
+ttest(A(:,1),A(:,10))
+ttest(A(:,1),A(:,11))
+ttest(A(:,1),A(:,12))
+ttest(A(:,1),A(:,13))
+ttest(A(:,1),A(:,14))
+ttest(A(:,1),A(:,15))
+ttest(A(:,1),A(:,16))
 
-%% Wild Type Summary %%
+fprintf("hi")
 
-wt_summary_list = {'wt_sim1','wt_sim2','wt_sim3','wt_sim4','wt_sim5','wt_sim6'};
-hwt_summary_list = {'hwt_sim1','hwt_sim3'}; %missing hwt_sim2 for right now
+ttest(A(:,2),A(:,15))
+ttest(A(:,2),A(:,16))
+
+%% Hbond and bfe correlation %%
+
+all_sim_names_sorted = {"wt_sim1","wt_sim2","wt_sim3","wt_sim4","wt_sim5","wt_sim6","hwt_sim1","hwt_sim2","hwt_sim3","t1r_sim1","t1r_sim2","ht1r_sim1","ht1r_sim2","a6r_sim1","a6r_sim2","ha6r_sim1","ha6r_sim2","l8r_sim1","l8r_sim2","hl8r_sim1","hl8r_sim2","q9r_sim1","q9r_sim2","q9r_sim3","hq9r_sim1","hq9r_sim2","hq9r_sim3","v12r_sim1","v12r_sim2","v12r_sim3","hv12r_sim1","hv12r_sim2","hv12r_sim3","l18r_sim1","l18r_sim2","l18r_sim3","hl18r_sim1","hl18r_sim2","hl18r_sim3","t1r_a6r_l8r_sim1","t1r_a6r_l8r_sim2","t1r_a6r_l8r_sim3","h_t1r_a6r_l8r_sim1","h_t1r_a6r_l8r_sim2","h_t1r_a6r_l8r_sim3"};
+all_simulation_bfe = [];
+all_simulation_hbond = [];
+all_simulation_hbond2 = [];
+all_simulation_hbond3 = [];
+all_simulation_hbond4 = [];
+
+pca_all_bfe = [];
+pca_all_hbond = [];
+pca_all_hbond2 = [];
+pca_all_hbond3 = [];
+pca_all_hbond4 = [];
+
+for sim = 1:length(all_sim_names_sorted)
+    current_sim_bfe = [];
+    current_sim_hbond = [];
+    current_sim_hbond2 = [];
+    current_sim_hbond3 = [];
+    current_sim_hbond4 = [];
+   
+    loop_sim = all_sim_names_sorted{sim};
+    last_underscore_pos = strfind(loop_sim,'_');
+    current_sim_name = extractBefore(loop_sim,last_underscore_pos(end));
 
     
-%% DNA informed mutations %%
+    for pep = 1:peptides_per_sim
+        current_pep_bfe = load("bfe_summary_all_sims/"+all_sim_names_sorted{sim}+"/"+pep+"p_bfe_summary.txt");
+        current_pep_hbond = load("../analysis/"+all_sim_names_sorted{sim}+"_analysis/hbond/"+pep+"p_hbond_to_memb.txt");
+        current_pep_hbond2 = load("../analysis/"+all_sim_names_sorted{sim}+"_analysis/hbond/"+pep+"p_hbond_to_peps.txt");
+        current_pep_hbond3 = load("../analysis/"+all_sim_names_sorted{sim}+"_analysis/hbond/"+pep+"p_hbond_to_itself.txt");
+        current_pep_hbond4 = load("../analysis/"+all_sim_names_sorted{sim}+"_analysis/hbond/"+pep+"p_hbond_to_water.txt");
+        
+        current_pep_hbond = current_pep_hbond(7501:25:10001,2); % row-start:interval:end,column-all second column
+        current_pep_hbond2 = current_pep_hbond2(7501:25:10001,2);
+        current_pep_hbond3 = current_pep_hbond3(7501:25:10001,2);
+        current_pep_hbond4 = current_pep_hbond4(7501:25:10001,2);
 
-DNA_summary_list = {'t1r_sim1','t1r_sim2','ht1r_sim1','ht1r_sim2'};
+        current_sim_bfe = cat(2,current_sim_bfe,current_pep_bfe);
+        pca_all_bfe = cat(1,pca_all_bfe,current_pep_bfe);
+
+        current_sim_hbond = cat(2,current_sim_hbond,current_pep_hbond);
+        pca_all_hbond = cat(1,pca_all_hbond,current_pep_hbond);
+
+        current_sim_hbond2 = cat(2,current_sim_hbond2,current_pep_hbond2);
+        pca_all_hbond2 = cat(1,pca_all_hbond2,current_pep_hbond2);
+
+        current_sim_hbond3 = cat(2,current_sim_hbond3,current_pep_hbond3);
+        pca_all_hbond3 = cat(1,pca_all_hbond3,current_pep_hbond3);
+
+        current_sim_hbond4 = cat(2,current_sim_hbond4,current_pep_hbond4);
+        pca_all_hbond4 = cat(1,pca_all_hbond4,current_pep_hbond4);
+
+    end
+
+    current_sim_bfe_cell = {current_sim_name{1},current_sim_bfe}.';
+    all_simulation_bfe = cat(2,all_simulation_bfe,current_sim_bfe_cell);
+    current_sim_hbond_cell = {current_sim_name{1},current_sim_hbond}.';
+    all_simulation_hbond = cat(2,all_simulation_hbond,current_sim_hbond_cell);
+    current_sim_hbond2_cell = {current_sim_name{1},current_sim_hbond2}.';
+    all_simulation_hbond2 = cat(2,all_simulation_hbond2,current_sim_hbond2_cell);
+    current_sim_hbond3_cell = {current_sim_name{1},current_sim_hbond3}.';
+    all_simulation_hbond3 = cat(2,all_simulation_hbond3,current_sim_hbond3_cell);
+    current_sim_hbond4_cell = {current_sim_name{1},current_sim_hbond4}.';
+    all_simulation_hbond4 = cat(2,all_simulation_hbond4,current_sim_hbond4_cell);
 
 
-%% PCO informed mutations %%
+end
+
+
+unique_sims = unique(all_simulation_bfe(1,:),'stable');
+combined_across_sims_bfe_data_means = {};
+combined_across_sims_bfe_data_mean = [];
+combined_across_sims_hbond_data_means = {};
+combined_across_sims_hbond_data_mean = [];
+combined_across_sims_hbond2_data_means = {};
+combined_across_sims_hbond2_data_mean = [];
+combined_across_sims_hbond3_data_means = {};
+combined_across_sims_hbond3_data_mean = [];
+combined_across_sims_hbond4_data_means = {};
+combined_across_sims_hbond4_data_mean = [];
+
+fprintf("bfe,memb,peps,itself,water")
+pca_data_object = cat(2,pca_all_hbond,pca_all_hbond2,pca_all_hbond3,pca_all_hbond4);
+[coeff,score,latent,tsquared,explained,mu] = pca(pca_data_object);
+pca_1 = score(:,1);
+figure;
+scatter(pca_1,pca_all_bfe)
+
+
+for unique_sim = 1:length(unique_sims)
+
+
+    logical_single_mutation_bfe = matches(all_simulation_bfe(1,:),unique_sims{unique_sim});
+    logical_single_mutation_hbond = matches(all_simulation_hbond(1,:),unique_sims{unique_sim});
+    logical_single_mutation_hbond2 = matches(all_simulation_hbond2(1,:),unique_sims{unique_sim});
+    logical_single_mutation_hbond3 = matches(all_simulation_hbond3(1,:),unique_sims{unique_sim});
+    logical_single_mutation_hbond4 = matches(all_simulation_hbond4(1,:),unique_sims{unique_sim});
+
+    
+    single_mutation_bfe = cell(size(all_simulation_bfe(1,:)));
+    single_mutation_bfe(logical_single_mutation_bfe) = all_simulation_bfe(2,logical_single_mutation_bfe);
+    single_mutation_data_bfe = cat(2,single_mutation_bfe{:});
+
+    single_mutation_hbond = cell(size(all_simulation_hbond(1,:)));
+    single_mutation_hbond(logical_single_mutation_hbond) = all_simulation_hbond(2,logical_single_mutation_hbond);
+    single_mutation_data_hbond = cat(2,single_mutation_hbond{:});
+
+    single_mutation_hbond2 = cell(size(all_simulation_hbond2(1,:)));
+    single_mutation_hbond2(logical_single_mutation_hbond2) = all_simulation_hbond2(2,logical_single_mutation_hbond2);
+    single_mutation_data_hbond2 = cat(2,single_mutation_hbond2{:});
+
+    single_mutation_hbond3 = cell(size(all_simulation_hbond3(1,:)));
+    single_mutation_hbond3(logical_single_mutation_hbond3) = all_simulation_hbond3(2,logical_single_mutation_hbond3);
+    single_mutation_data_hbond3 = cat(2,single_mutation_hbond3{:});
+
+    single_mutation_hbond4 = cell(size(all_simulation_hbond4(1,:)));
+    single_mutation_hbond4(logical_single_mutation_hbond4) = all_simulation_hbond4(2,logical_single_mutation_hbond4);
+    single_mutation_data_hbond4 = cat(2,single_mutation_hbond4{:});
+
+
+   
+    figure;
+    % model = fitlm(reshape(single_mutation_data_hbond,[],1),reshape(single_mutation_data_bfe,[],1))
+    scatter3(single_mutation_data_hbond,single_mutation_data_bfe,single_mutation_data_hbond2);
+    xlabel('Hydrogen Bond Count to memb');
+    ylabel('Binding Free Energy ({\itkcal/mol})');
+    zlabel('Hydrogen Bond Count to peps');
+    title(['Correlation between Hydrogen Bonds and BFE for ', unique_sims{unique_sim}]);
+    grid on;
+
+
+
+    single_mutation_data_bfe_means = mean(single_mutation_data_bfe,1).';
+    single_mutation_data_bfe_mean = mean(single_mutation_data_bfe_means);
+    single_mutation_data_hbond_means = mean(single_mutation_data_hbond,1).';
+    single_mutation_data_hbond_mean = mean(single_mutation_data_hbond_means);
+
+
+    combined_across_sims_bfe_data_means = cat(2,combined_across_sims_bfe_data_means,single_mutation_data_bfe_means);
+    combined_across_sims_bfe_data_mean = cat(2,combined_across_sims_bfe_data_mean,single_mutation_data_bfe_mean);
+    combined_across_sims_hbond_data_means = cat(2,combined_across_sims_hbond_data_means,single_mutation_data_hbond_means);
+    combined_across_sims_hbond_data_mean = cat(2,combined_across_sims_hbond_data_mean,single_mutation_data_hbond_mean);
+   
+
+end
+
+
+Title = "All Simulations BFE and hbond correlations";
+Summary_BFE_figure = figure('Name',Title,'NumberTitle','off');
+
+
+for sim_data = 1:length(combined_across_sims_bfe_data_means)
+     scatter(combined_across_sims_hbond_data_means{sim_data}, combined_across_sims_bfe_data_means{sim_data});
+     hold on;
+end
+
+
+hold off;
+
+ylabel('Binding Free Energy ({\itkcal/mol})');
+xlabel('Hydrogen Bond Count');
+
+% fitting_data(tight_fitting=true, data_spacing=true);
+% consistent_figures(figure_name=Summary_BFE_figure, rotate_x_labels_by_angle=1, PDF_PNG_name=Title);
+
 
 
 
@@ -349,116 +535,40 @@ DNA_summary_list = {'t1r_sim1','t1r_sim2','ht1r_sim1','ht1r_sim2'};
 
 % concat_dat = cat(1,pep_1,pep_2,pep_3,pep_4);
 % 
-fprintf("Mean Median and Mode:\n")
-mean(all_data)
-median(all_data)
- mode(all_data)
- 
-fprintf("Standard deviation and variance:\n")
- std(all_data)
- var(all_data)
- 
-fprintf("Frequency distribution:\n")
-range(all_data)
-figure;
-qqplot(all_data)
-
-figure;
-slog = fitdist(all_data,'Normal')
-plot(slog)
-
-%%
-
-all_sim_names_sorted = {"wt_sim1","wt_sim2","wt_sim3","wt_sim4","wt_sim5","wt_sim6","hwt_sim2","hwt_sim3"};
-all_simulation_bfe = [];
-
-
-for sim = 1:length(all_sim_names_sorted)
-    current_sim_bfe = [];
-    current_sim_name = strsplit(all_sim_names_sorted{sim},'_');
-
-    for pep = 1:peptides_per_sim
-        current_pep_bfe = load("bfe_summary_all_sims/"+all_sim_names_sorted{sim}+"/"+pep+"p_bfe_summary.txt");
-        current_sim_bfe = cat(2,current_sim_bfe,current_pep_bfe);
-    end
-
-    current_sim_bfe_cell = {current_sim_name{1},current_sim_bfe}.';
-    all_simulation_bfe = cat(2,all_simulation_bfe,current_sim_bfe_cell);
-
-end
-
-unique_sims = unique(all_simulation_bfe(1,:),'stable');
-combined_across_sims_data_means = {};
-combined_across_sims_data_std = [];
-combined_across_sims_data_ste = [];
-combined_across_sims_data_mean = [];
-
-for unique_sim = 1:length(unique_sims)
-    logical_single_mutation = matches(all_simulation_bfe(1,:),unique_sims{unique_sim});
-    
-    single_mutation = cell(size(all_simulation_bfe(1,:)));
-    single_mutation(logical_single_mutation) = all_simulation_bfe(2,logical_single_mutation);
-    single_mutation_data = cat(2,single_mutation{:});
-
-    single_mutation_data_means = mean(single_mutation_data,1).';
-    single_mutation_data_mean = mean(single_mutation_data_means);
-    single_mutation_data_std = std(single_mutation_data_means,1);
-    single_mutation_data_ste = single_mutation_data_std/sqrt(length(single_mutation_data));
-    
-
-    combined_across_sims_data_means = cat(2,combined_across_sims_data_means,single_mutation_data_means);
-    combined_across_sims_data_mean = cat(2,combined_across_sims_data_mean,single_mutation_data_mean);
-    combined_across_sims_data_std = cat(2,combined_across_sims_data_std,single_mutation_data_std);
-    combined_across_sims_data_ste = cat(2,combined_across_sims_data_ste,single_mutation_data_ste);
-    
-end
+% fprintf("Mean Median and Mode:\n")
+% mean(all_data)
+% median(all_data)
+%  mode(all_data)
+% 
+% fprintf("Standard deviation and variance:\n")
+%  std(all_data)
+%  var(all_data)
+% 
+% fprintf("Frequency distribution:\n")
+% range(all_data)
+% figure;
+% qqplot(all_data)
+% 
+% figure;
+% slog = fitdist(all_data,'Normal')
+% plot(slog)
 
 
 % hypothesis testing %
 
-for sim_data = 1:length(combined_across_sims_data_means)
-    figure;
-    normplot(combined_across_sims_data_means{sim_data});
-    fprintf(unique_sims(sim_data)+" Test for normality:\n")
-    normality_test = lillietest(combined_across_sims_data_means{sim_data})
-    % a zero represents the failure to reject the null hypothesis that the
-    % samples are normally distributed.
+% for sim_data = 1:length(combined_across_sims_data_means)
+%     figure;
+%     normplot(combined_across_sims_data_means{sim_data});
+%     fprintf(unique_sims(sim_data)+" Test for normality:\n")
+%     normality_test = lillietest(combined_across_sims_data_means{sim_data})
+%     % a zero represents the failure to reject the null hypothesis that the
+%     % samples are normally distributed.
+% 
+%     % qqplot(combined_across_sims_data_means{sim_data})
+% 
+%     if normality_test == 0
+%         fprintf("hi\n")
+%     end
+% 
+% end
 
-    % qqplot(combined_across_sims_data_means{sim_data})
-
-    if normality_test == 0
-        fprintf("hi\n")
-    end
-
-end
-
-
-
-
-
-
-Title = "All Simulations BFE Summary";
-Summary_BFE_figure = figure('Name',Title,'NumberTitle','off');
-
-
-for sim_data = 1:length(combined_across_sims_data_means)
-    scatter(sim_data,combined_across_sims_data_means{sim_data},100,'MarkerFaceColor','b','MarkerEdgeColor','b','MarkerFaceAlpha',.2,'MarkerEdgeAlpha',.2);
-    fprintf(unique_sims(sim_data)+": "+combined_across_sims_data_mean(sim_data)+" ± "+combined_across_sims_data_ste(sim_data)+" (N="+length(combined_across_sims_data_means{sim_data})+")\n")
-    hold on;
-end
-
-errorbar(combined_across_sims_data_mean, combined_across_sims_data_ste, '.','LineWidth',1.2, 'Color',black);
-hold off;
-
-ylabel('Binding Free Energy ({\itkcal/mol})');
-xlabel('Simulation');
-string_sims = string(unique_sims);
-xticks(1:length(string_sims));
-xticklabels(string_sims);
-
-fitting_data(tight_fitting=true, data_spacing=true);
-consistent_figures(figure_name=Summary_BFE_figure, rotate_x_labels_by_angle=1, PDF_PNG_name=Title);
-
-axes = gca;
-pos = axes.YLabel.get.Position-[0.05,0,0];
-axes.YLabel.Position = pos;
