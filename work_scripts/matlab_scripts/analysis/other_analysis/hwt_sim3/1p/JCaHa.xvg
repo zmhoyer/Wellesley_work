@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:04:01 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hwt_sim3/1p
+# Command line:
+#   gmx helix -s ../../../hwt_sim3/md.tpr -n ../../../hwt_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hwt_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     141.554
+         2     141.715
+         3     137.217
+         4     141.845
+         5     142.986
+         6     138.619
+         7     145.445
+         8     140.073
+         9     146.882
+        10      142.97
+        11     142.696
+        12     136.901
+        13     142.326
+        14     141.967
+        15     141.313
+        16     142.689
+        17     146.343
+        18     138.728
+        19     136.795

@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 18:26:55 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/a6r_sim1/2p
+# Command line:
+#   gmx helix -s ../../../../xj103/A6R_1/md.tpr -n ../../../a6r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/A6R_1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Gyas ROwers Mature At Cryogenic Speed
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     93.9442
+         2     93.7003
+         3     90.6724
+         4     95.5882
+         5     88.3925
+         6     72.8011
+         7      74.837
+         8     38.8944
+         9     86.4525
+        10     61.4455
+        11     90.3324
+        12     83.6207
+        13     93.3443
+        14     88.9604
+        15     80.2128
+        16     70.7932
+        17     71.1372
+        18     22.5471
+        19           0

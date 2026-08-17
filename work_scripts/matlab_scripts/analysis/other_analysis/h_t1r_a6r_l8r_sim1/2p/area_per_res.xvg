@@ -1,0 +1,46 @@
+# This file was created Fri Oct 17 08:27:33 2025
+# Created by:
+#                       :-) GROMACS - gmx sasa, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/h_t1r_a6r_l8r_sim1/2p
+# Command line:
+#   gmx sasa -s ../../../h_t1r_a6r_l8r_sim1/md.tpr -n ../../../h_t1r_a6r_l8r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../h_t1r_a6r_l8r_sim1/md.xtc -rmpbc yes -o area.xvg -or area_per_res.xvg -tv volume_and_density.xvg -odg estimated_solvation_energies.xvg -dt 500 -b 750000 -e 1000000 -probe 0.145
+# gmx sasa is part of G R O M A C S:
+#
+# Gravel Rubs Often Many Awfully Cauterized Sores
+#
+@    title "Area per residue over the trajectory"
+@    xaxis  label "Residue"
+@    yaxis  label "Area (nm\S2\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Average (nm\S2\N)"
+@ s1 legend "Standard deviation (nm\S2\N)"
+      22    2.901    0.201
+      23    1.534    0.273
+      24    1.007    0.103
+      25    0.915    0.138
+      26    1.447    0.134
+      27    1.555    0.147
+      28    0.309    0.115
+      29    1.012    0.293
+      30    0.835    0.148
+      31    1.434    0.289
+      32    0.085    0.081
+      33    0.964    0.149
+      34    0.837    0.088
+      35    1.308    0.236
+      36    1.511    0.150
+      37    1.794    0.154
+      38    1.199    0.314
+      39    1.535    0.195
+      40    1.304    0.236
+      41    1.496    0.414
+      42    2.612    0.185

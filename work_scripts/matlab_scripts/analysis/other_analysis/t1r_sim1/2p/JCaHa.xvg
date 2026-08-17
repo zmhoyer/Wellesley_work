@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:50:34 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/t1r_sim1/2p
+# Command line:
+#   gmx helix -s ../../../../xj103/T1R_hpc_1/md.tpr -n ../../../t1r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/T1R_hpc_1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Gyas ROwers Mature At Cryogenic Speed
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1      141.58
+         2     142.819
+         3     142.637
+         4      140.23
+         5     140.754
+         6     138.007
+         7      142.66
+         8     142.409
+         9     146.647
+        10     145.876
+        11     146.117
+        12     146.228
+        13     146.375
+        14     146.284
+        15     146.422
+        16      146.23
+        17     146.281
+        18     140.159
+        19     140.938

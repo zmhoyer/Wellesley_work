@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:24:05 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/wt_sim2/2p
+# Command line:
+#   gmx helix -s ../../../wt_sim2/md.tpr -n ../../../wt_sim2/analysis_setup_files/analysis_index.ndx -f ../../../wt_sim2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     141.888
+         2     142.409
+         3     145.964
+         4     146.322
+         5     146.351
+         6     145.972
+         7     145.804
+         8     143.215
+         9     147.014
+        10     141.206
+        11     139.628
+        12     138.406
+        13     146.646
+        14     146.131
+        15     146.363
+        16     146.324
+        17     145.405
+        18     143.308
+        19     137.331

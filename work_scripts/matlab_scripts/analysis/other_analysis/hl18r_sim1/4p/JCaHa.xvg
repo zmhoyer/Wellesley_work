@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:02:40 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hl18r_sim1/4p
+# Command line:
+#   gmx helix -s ../../../hl18r_sim1/md.tpr -n ../../../hl18r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../hl18r_sim1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Grunge ROck MAChoS
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     138.999
+         2     139.698
+         3     141.558
+         4     141.589
+         5     146.271
+         6     144.812
+         7     144.838
+         8     143.695
+         9     146.795
+        10     144.965
+        11     145.456
+        12     144.346
+        13     139.856
+        14     146.779
+        15     143.316
+        16     141.938
+        17     142.089
+        18     142.679
+        19     137.662

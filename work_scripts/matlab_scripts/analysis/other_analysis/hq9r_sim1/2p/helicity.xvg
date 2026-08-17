@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:42:24 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hq9r_sim1/2p
+# Command line:
+#   gmx helix -s ../../../hq9r_sim1/md.tpr -n ../../../hq9r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../hq9r_sim1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROup of MAchos and Cynical Suckers
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     29.1068
+         2    0.023999
+         3           0
+         4    0.927963
+         5           0
+         6     2.00392
+         7     30.3268
+         8    0.767969
+         9     81.1528
+        10     36.5105
+        11      24.519
+        12     13.0795
+        13           0
+        14     65.1174
+        15    0.263989
+        16           0
+        17     16.9953
+        18           0
+        19           0

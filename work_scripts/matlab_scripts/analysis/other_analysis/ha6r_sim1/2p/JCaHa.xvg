@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:31:32 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/ha6r_sim1/2p
+# Command line:
+#   gmx helix -s ../../../../xj103/A6R_prot_1/md.tpr -n ../../../ha6r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/A6R_prot_1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     141.854
+         2     141.958
+         3      141.96
+         4     139.875
+         5     140.805
+         6     138.048
+         7     144.277
+         8     142.026
+         9     146.646
+        10      142.16
+        11     143.404
+        12      139.08
+        13     137.883
+        14     146.556
+        15     141.689
+        16     143.795
+        17     144.937
+        18     141.035
+        19     139.144

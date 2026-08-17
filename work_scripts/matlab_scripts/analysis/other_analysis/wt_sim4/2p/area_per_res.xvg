@@ -1,0 +1,46 @@
+# This file was created Fri Oct 17 08:39:22 2025
+# Created by:
+#                       :-) GROMACS - gmx sasa, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/wt_sim4/2p
+# Command line:
+#   gmx sasa -s ../../../wt_sim4/md.tpr -n ../../../wt_sim4/analysis_setup_files/analysis_index.ndx -f ../../../wt_sim4/md.xtc -rmpbc yes -o area.xvg -or area_per_res.xvg -tv volume_and_density.xvg -odg estimated_solvation_energies.xvg -dt 500 -b 750000 -e 1000000 -probe 0.145
+# gmx sasa is part of G R O M A C S:
+#
+# Gyas ROwers Mature At Cryogenic Speed
+#
+@    title "Area per residue over the trajectory"
+@    xaxis  label "Residue"
+@    yaxis  label "Area (nm\S2\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Average (nm\S2\N)"
+@ s1 legend "Standard deviation (nm\S2\N)"
+      22    1.465    0.142
+      23    1.829    0.136
+      24    1.152    0.087
+      25    0.914    0.108
+      26    1.123    0.188
+      27    0.451    0.098
+      28    0.556    0.089
+      29    1.252    0.143
+      30    0.776    0.154
+      31    1.718    0.204
+      32    0.785    0.126
+      33    0.941    0.148
+      34    0.286    0.085
+      35    1.384    0.225
+      36    0.768    0.136
+      37    1.255    0.167
+      38    1.875    0.239
+      39    1.258    0.194
+      40    1.391    0.144
+      41    2.067    0.270
+      42    2.827    0.155

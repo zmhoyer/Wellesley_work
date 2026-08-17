@@ -1,0 +1,46 @@
+# This file was created Fri Oct 17 08:45:51 2025
+# Created by:
+#                       :-) GROMACS - gmx sasa, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/l18r_sim1/2p
+# Command line:
+#   gmx sasa -s ../../../l18r_sim1/md.tpr -n ../../../l18r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../l18r_sim1/md.xtc -rmpbc yes -o area.xvg -or area_per_res.xvg -tv volume_and_density.xvg -odg estimated_solvation_energies.xvg -dt 500 -b 750000 -e 1000000 -probe 0.145
+# gmx sasa is part of G R O M A C S:
+#
+# GROningen Mixture of Alchemy and Childrens' Stories
+#
+@    title "Area per residue over the trajectory"
+@    xaxis  label "Residue"
+@    yaxis  label "Area (nm\S2\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Average (nm\S2\N)"
+@ s1 legend "Standard deviation (nm\S2\N)"
+      22    2.063    0.105
+      23    1.697    0.122
+      24    1.132    0.088
+      25    0.987    0.095
+      26    1.306    0.117
+      27    0.590    0.083
+      28    0.441    0.065
+      29    1.210    0.141
+      30    0.935    0.148
+      31    1.596    0.200
+      32    0.661    0.120
+      33    0.849    0.129
+      34    0.202    0.085
+      35    1.020    0.198
+      36    0.736    0.122
+      37    1.224    0.117
+      38    1.422    0.233
+      39    1.795    0.200
+      40    1.428    0.172
+      41    1.876    0.164
+      42    2.814    0.150

@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:06:49 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hwt_sim3/4p
+# Command line:
+#   gmx helix -s ../../../hwt_sim3/md.tpr -n ../../../hwt_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hwt_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     141.554
+         2      141.95
+         3     142.181
+         4     141.718
+         5     143.685
+         6     142.987
+         7     142.682
+         8     140.942
+         9     146.779
+        10     144.729
+        11     146.346
+        12     146.218
+        13      146.47
+        14     146.475
+        15     146.521
+        16     145.528
+        17     144.847
+        18     139.755
+        19      138.16

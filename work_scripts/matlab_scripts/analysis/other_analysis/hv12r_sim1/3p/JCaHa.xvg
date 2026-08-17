@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 18:58:00 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hv12r_sim1/3p
+# Command line:
+#   gmx helix -s ../../../hv12r_sim1/md.tpr -n ../../../hv12r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../hv12r_sim1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1      140.95
+         2     141.997
+         3     141.338
+         4     141.547
+         5         143
+         6     139.364
+         7     144.296
+         8     140.762
+         9     146.996
+        10     145.114
+        11     146.041
+        12     145.882
+        13     146.084
+        14     144.276
+        15     138.337
+        16      142.74
+        17     142.152
+        18     141.024
+        19     143.322

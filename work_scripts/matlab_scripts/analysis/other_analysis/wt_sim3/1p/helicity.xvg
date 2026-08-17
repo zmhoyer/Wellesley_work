@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 18:22:15 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/wt_sim3/1p
+# Command line:
+#   gmx helix -s ../../../wt_sim3/md.tpr -n ../../../wt_sim3/analysis_setup_files/analysis_index.ndx -f ../../../wt_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GRoups of Organic Molecules in ACtion for Science
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     94.2402
+         2     94.8402
+         3     93.1923
+         4     94.6602
+         5     94.3922
+         6     84.6086
+         7     84.9046
+         8     5.68377
+         9     89.3324
+        10     12.8675
+        11           0
+        12           0
+        13      24.379
+        14     23.6031
+        15      24.135
+        16     64.0454
+        17     33.4987
+        18     29.2428
+        19           0

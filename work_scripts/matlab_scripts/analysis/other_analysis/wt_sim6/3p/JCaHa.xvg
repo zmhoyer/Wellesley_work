@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:47:44 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/wt_sim6/3p
+# Command line:
+#   gmx helix -s ../../../wt_sim6/md.tpr -n ../../../wt_sim6/analysis_setup_files/analysis_index.ndx -f ../../../wt_sim6/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROwing Monsters And Cloning Shrimps
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     144.209
+         2     146.385
+         3     146.295
+         4     146.442
+         5     146.237
+         6     145.903
+         7     145.421
+         8      144.39
+         9     146.972
+        10     143.422
+        11     144.677
+        12     142.105
+        13     134.993
+        14     146.035
+        15     146.002
+        16     141.049
+        17     146.027
+        18      141.71
+        19     141.867
