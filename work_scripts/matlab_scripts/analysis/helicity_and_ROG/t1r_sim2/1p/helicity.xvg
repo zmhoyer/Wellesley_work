@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:11:37 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/t1r_sim2/1p
+# Command line:
+#   gmx helix -s ../../../../xj103/T1R_hpc_2/md.tpr -n ../../../t1r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/T1R_hpc_2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROwing Monsters And Cloning Shrimps
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     84.2766
+         2     89.0284
+         3     89.5644
+         4     95.1162
+         5     87.4805
+         6     80.4688
+         7     82.5047
+         8    0.575977
+         9     82.2887
+        10     72.5411
+        11     81.3847
+        12     85.2326
+        13     93.8122
+        14     94.7442
+        15     87.9125
+        16     41.5983
+        17     9.42362
+        18     80.9408
+        19           0

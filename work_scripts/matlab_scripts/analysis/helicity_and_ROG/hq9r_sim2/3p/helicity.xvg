@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:09:16 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hq9r_sim2/3p
+# Command line:
+#   gmx helix -s ../../../hq9r_sim2/md.tpr -n ../../../hq9r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../hq9r_sim2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1    0.667973
+         2   0.0199992
+         3     4.27983
+         4           0
+         5     1.06396
+         6           0
+         7           0
+         8     36.0826
+         9     83.7447
+        10     61.1976
+        11     78.5129
+        12     84.9166
+        13     95.2042
+        14     92.7603
+        15     93.0443
+        16     80.9368
+        17     77.1209
+        18     28.0949
+        19           0

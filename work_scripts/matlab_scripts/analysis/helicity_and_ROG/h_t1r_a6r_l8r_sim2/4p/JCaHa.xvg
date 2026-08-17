@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:29:08 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/h_t1r_a6r_l8r_sim2/4p
+# Command line:
+#   gmx helix -s ../../../h_t1r_a6r_l8r_sim2/md.tpr -n ../../../h_t1r_a6r_l8r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../h_t1r_a6r_l8r_sim2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1      138.87
+         2     146.633
+         3     145.939
+         4     146.435
+         5     146.157
+         6     146.033
+         7     146.075
+         8     141.332
+         9     146.819
+        10     143.796
+        11     144.658
+        12     139.855
+        13     137.413
+        14     142.563
+        15     139.004
+        16     142.014
+        17     142.157
+        18     146.322
+        19     138.387

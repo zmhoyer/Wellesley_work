@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 18:23:13 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/wt_sim3/2p
+# Command line:
+#   gmx helix -s ../../../wt_sim3/md.tpr -n ../../../wt_sim3/analysis_setup_files/analysis_index.ndx -f ../../../wt_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Green Red Orange Magenta Azure Cyan Skyblue
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1           0
+         2     52.9259
+         3     15.9154
+         4    0.471981
+         5     1.10796
+         6           0
+         7           0
+         8           0
+         9      74.725
+        10     64.5934
+        11     88.7485
+        12     87.5645
+        13     95.6882
+        14     96.9801
+        15     94.2282
+        16     80.9488
+        17     40.4064
+        18     46.2501
+        19           0

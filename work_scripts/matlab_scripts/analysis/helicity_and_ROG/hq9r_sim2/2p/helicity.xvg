@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:08:20 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hq9r_sim2/2p
+# Command line:
+#   gmx helix -s ../../../hq9r_sim2/md.tpr -n ../../../hq9r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../hq9r_sim2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     1.31595
+         2     4.81181
+         3           0
+         4           0
+         5     21.5591
+         6     62.2655
+         7     9.34763
+         8     38.9824
+         9     88.1405
+        10     76.4169
+        11     83.8046
+        12     85.4526
+        13     91.1724
+        14     86.2406
+        15     85.1846
+        16     30.8108
+        17      76.029
+        18     18.3353
+        19           0

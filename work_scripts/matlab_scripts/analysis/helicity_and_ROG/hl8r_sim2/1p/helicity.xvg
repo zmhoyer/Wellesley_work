@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:26:48 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hl8r_sim2/1p
+# Command line:
+#   gmx helix -s ../../../../xj103/L8R_prot_2/md.tpr -n ../../../hl8r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/L8R_prot_2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     40.7944
+         2     84.5126
+         3     73.2811
+         4     92.6363
+         5     90.3044
+         6      74.949
+         7     78.3089
+         8     37.3185
+         9     81.9367
+        10     62.6455
+        11     90.3284
+        12     85.6046
+        13     94.9442
+        14     95.0042
+        15     91.0444
+        16     83.2167
+        17     57.5537
+        18      23.915
+        19           0

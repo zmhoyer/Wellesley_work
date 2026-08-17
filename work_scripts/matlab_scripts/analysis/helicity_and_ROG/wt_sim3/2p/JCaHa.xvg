@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 18:23:13 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/wt_sim3/2p
+# Command line:
+#   gmx helix -s ../../../wt_sim3/md.tpr -n ../../../wt_sim3/analysis_setup_files/analysis_index.ndx -f ../../../wt_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Green Red Orange Magenta Azure Cyan Skyblue
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1      140.07
+         2      144.44
+         3     141.019
+         4     140.228
+         5       141.9
+         6     140.499
+         7     141.957
+         8     142.672
+         9     146.996
+        10     145.276
+        11     146.179
+        12     146.321
+        13     146.479
+        14     146.672
+        15     146.508
+        16      145.95
+        17      144.05
+        18     144.248
+        19     138.479

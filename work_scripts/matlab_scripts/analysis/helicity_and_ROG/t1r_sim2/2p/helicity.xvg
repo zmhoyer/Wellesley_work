@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:12:36 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/t1r_sim2/2p
+# Command line:
+#   gmx helix -s ../../../../xj103/T1R_hpc_2/md.tpr -n ../../../t1r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/T1R_hpc_2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GRowing Old MAkes el Chrono Sweat
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1           0
+         2     6.92372
+         3           0
+         4   0.0159994
+         5     6.89172
+         6     1.51594
+         7    0.959962
+         8           0
+         9     84.7406
+        10     69.3052
+        11      73.945
+        12     85.8966
+        13     92.7563
+        14     92.2003
+        15     81.4647
+        16      76.173
+        17     39.9984
+        18     14.3154
+        19           0

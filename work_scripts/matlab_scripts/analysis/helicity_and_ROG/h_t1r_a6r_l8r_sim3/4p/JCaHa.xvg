@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:56:06 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/h_t1r_a6r_l8r_sim3/4p
+# Command line:
+#   gmx helix -s ../../../h_t1r_a6r_l8r_sim3/md.tpr -n ../../../h_t1r_a6r_l8r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../h_t1r_a6r_l8r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     145.896
+         2     146.408
+         3     146.147
+         4     146.478
+         5     146.183
+         6     146.023
+         7     144.775
+         8     143.486
+         9     146.818
+        10     145.576
+        11       145.9
+        12     146.425
+        13     146.473
+        14     146.137
+        15     146.126
+        16     141.108
+        17     146.393
+        18      139.29
+        19     139.735
