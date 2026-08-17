@@ -1,0 +1,8 @@
+simulation,peptide,time,frame_number,representative_percentage
+hl18r_sim2,4p,922500,70,0.00000
+hl18r_sim1,2p,792500,18,0.16667
+hl18r_sim1,2p,925000,71,0.33333
+hl18r_sim1,2p,907500,64,0.50000
+hl18r_sim2,4p,785000,15,0.66667
+hl18r_sim3,3p,795000,19,0.83333
+hl18r_sim2,1p,830000,33,1.00000

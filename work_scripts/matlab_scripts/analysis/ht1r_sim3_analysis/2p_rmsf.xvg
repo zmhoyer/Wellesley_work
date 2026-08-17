@@ -1,0 +1,38 @@
+# This file was created Sun Nov  9 15:04:24 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/ht1r_sim3
+# Command line:
+#   gmx rmsf -f /home/zh106/ht1r_sim3/analysis_setup_files/2p_memb.xtc -n /home/zh106/ht1r_sim3/analysis_setup_files/2p_index.ndx -s /home/zh106/ht1r_sim3/analysis_setup_files/2p_memb.tpr -o /home/zh106/ht1r_sim3/ht1r_sim3_analysis/2p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# GRoups of Organic Molecules in ACtion for Science
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2970
+   29   0.1868
+   53   0.3055
+   64   0.3171
+   75   0.2440
+   99   0.2559
+  109   0.1808
+  116   0.2875
+  135   0.2784
+  152   0.2473
+  178   0.1545
+  190   0.1447
+  206   0.1631
+  213   0.1490
+  237   0.1217
+  253   0.1124
+  271   0.1089
+  295   0.1156
+  314   0.1248
+  333   0.1539
+  357   0.2154

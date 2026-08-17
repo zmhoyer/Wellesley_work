@@ -1,0 +1,74 @@
+# This file was created Tue May 20 15:17:40 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/t1r_a6r_l8r_sim1
+# Command line:
+#   gmx density -f ./md.xtc -s ./md.tpr -o /home/zh106/t1r_a6r_l8r_sim1/t1r_a6r_l8r_sim1_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.70385                0
+    -4.51186                0
+    -4.31986                0
+    -4.12787                0
+    -3.93588                0
+    -3.74388      2.27855e-06
+    -3.55189      0.000960726
+    -3.35989        0.0175017
+     -3.1679         0.244487
+    -2.97591          2.44996
+    -2.78391          16.6741
+    -2.59192          78.8238
+    -2.39992          255.921
+    -2.20793          553.684
+    -2.01594          833.553
+    -1.82394          981.456
+    -1.63195          1018.94
+    -1.43995          978.685
+    -1.24796          917.803
+    -1.05597          884.079
+   -0.863973           869.82
+   -0.671979          853.944
+   -0.479985          821.878
+   -0.287991          760.333
+   -0.095997           693.08
+    0.095997          696.152
+    0.287991          764.006
+    0.479985          823.004
+    0.671979          854.744
+    0.863973           869.64
+     1.05597          881.234
+     1.24796          915.951
+     1.43995           988.59
+     1.63195          1032.55
+     1.82394          999.578
+     2.01594           841.32
+     2.20793          537.785
+     2.39992           241.86
+     2.59192          74.0195
+     2.78391           15.433
+     2.97591          1.97482
+      3.1679         0.133062
+     3.35989       0.00401569
+     3.55189      0.000133498
+     3.74388                0
+     3.93588                0
+     4.12787                0
+     4.31986                0
+     4.51186                0
+     4.70385                0

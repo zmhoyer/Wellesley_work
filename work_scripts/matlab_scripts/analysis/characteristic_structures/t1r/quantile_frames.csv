@@ -1,0 +1,8 @@
+simulation,peptide,time,frame_number,representative_percentage
+t1r_sim1,4p,932500,74,0.00000
+t1r_sim1,3p,777500,12,0.16667
+t1r_sim1,4p,752500,2,0.33333
+t1r_sim1,2p,952500,82,0.50000
+t1r_sim2,4p,915000,67,0.66667
+t1r_sim2,3p,857500,44,0.83333
+t1r_sim1,1p,760000,5,1.00000

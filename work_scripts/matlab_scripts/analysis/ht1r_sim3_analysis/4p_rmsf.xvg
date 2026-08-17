@@ -1,0 +1,38 @@
+# This file was created Sun Nov  9 16:09:58 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/ht1r_sim3
+# Command line:
+#   gmx rmsf -f /home/zh106/ht1r_sim3/analysis_setup_files/4p_memb.xtc -n /home/zh106/ht1r_sim3/analysis_setup_files/4p_index.ndx -s /home/zh106/ht1r_sim3/analysis_setup_files/4p_memb.tpr -o /home/zh106/ht1r_sim3/ht1r_sim3_analysis/4p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Gnomes, ROck Monsters And Chili Sauce
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.5215
+   29   0.4249
+   53   0.2361
+   64   0.2539
+   75   0.2962
+   99   0.3970
+  109   0.4091
+  116   0.3137
+  135   0.2420
+  152   0.2702
+  178   0.2318
+  190   0.1462
+  206   0.1567
+  213   0.1903
+  237   0.1481
+  253   0.1502
+  271   0.2005
+  295   0.1990
+  314   0.1969
+  333   0.2892
+  357   0.4213

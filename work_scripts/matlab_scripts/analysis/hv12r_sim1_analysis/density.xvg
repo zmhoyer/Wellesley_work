@@ -1,0 +1,74 @@
+# This file was created Mon Jul 14 10:43:19 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/hv12r_sim1
+# Command line:
+#   gmx density -f ./md.xtc -s ./md.tpr -o /home/zh106/hv12r_sim1/hv12r_sim1_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.73736                0
+      -4.544                0
+    -4.35063                0
+    -4.15727                0
+    -3.96391                0
+    -3.77055                0
+    -3.57719      0.000217546
+    -3.38383       0.00859286
+    -3.19046          0.18873
+     -2.9971          2.13322
+    -2.80374          15.4123
+    -2.61038          76.0074
+    -2.41702          252.578
+    -2.22366          550.788
+     -2.0303          827.163
+    -1.83693          971.856
+    -1.64357          1014.63
+    -1.45021          982.963
+    -1.25685          922.561
+    -1.06349          886.834
+   -0.870127          871.142
+   -0.676765          854.594
+   -0.483404          822.814
+   -0.290042          760.939
+  -0.0966808          693.089
+   0.0966808           695.59
+    0.290042          764.305
+    0.483404          823.682
+    0.676765          854.961
+    0.870127          870.749
+     1.06349          883.855
+     1.25685          919.077
+     1.45021          987.286
+     1.64357          1023.46
+     1.83693          972.653
+      2.0303          823.045
+     2.22366          548.851
+     2.41702          249.571
+     2.61038          75.4705
+     2.80374          15.7383
+      2.9971          2.09131
+     3.19046         0.165602
+     3.38383       0.00653848
+     3.57719      1.14202e-05
+     3.77055                0
+     3.96391                0
+     4.15727                0
+     4.35063                0
+       4.544                0
+     4.73736                0

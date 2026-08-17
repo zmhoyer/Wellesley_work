@@ -1,0 +1,38 @@
+# This file was created Sun Nov  9 18:31:32 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/ha6r_sim3
+# Command line:
+#   gmx rmsf -f /home/zh106/ha6r_sim3/analysis_setup_files/4p_memb.xtc -n /home/zh106/ha6r_sim3/analysis_setup_files/4p_index.ndx -s /home/zh106/ha6r_sim3/analysis_setup_files/4p_memb.tpr -o /home/zh106/ha6r_sim3/ha6r_sim3_analysis/4p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Gravel Rubs Often Many Awfully Cauterized Sores
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.2706
+   19   0.2319
+   43   0.2104
+   54   0.1586
+   65   0.1030
+   89   0.1359
+  113   0.0933
+  120   0.1064
+  139   0.1634
+  156   0.1925
+  182   0.2511
+  194   0.2755
+  210   0.3012
+  217   0.2461
+  241   0.2069
+  257   0.2628
+  275   0.2773
+  299   0.2942
+  318   0.2483
+  337   0.2904
+  361   0.4181

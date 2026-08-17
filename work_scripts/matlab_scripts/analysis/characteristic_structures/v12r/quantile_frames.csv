@@ -1,0 +1,8 @@
+simulation,peptide,time,frame_number,representative_percentage
+v12r_sim2,1p,845000,39,0.00000
+v12r_sim2,1p,800000,21,0.16667
+v12r_sim2,1p,907500,64,0.33333
+v12r_sim3,1p,882500,54,0.50000
+v12r_sim1,2p,847500,40,0.66667
+v12r_sim3,1p,807500,24,0.83333
+v12r_sim1,3p,920000,69,1.00000

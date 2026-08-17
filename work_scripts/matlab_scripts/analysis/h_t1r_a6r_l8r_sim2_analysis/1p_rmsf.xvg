@@ -1,0 +1,38 @@
+# This file was created Mon Jul 14 11:31:32 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/h_t1r_a6r_l8r_sim2
+# Command line:
+#   gmx rmsf -f /home/zh106/h_t1r_a6r_l8r_sim2/analysis_setup_files/1p_memb.xtc -n /home/zh106/h_t1r_a6r_l8r_sim2/analysis_setup_files/1p_index.ndx -s /home/zh106/h_t1r_a6r_l8r_sim2/analysis_setup_files/1p_memb.tpr -o /home/zh106/h_t1r_a6r_l8r_sim2/h_t1r_a6r_l8r_sim2_analysis/1p_rmsf.xvg -dt 10
+# gmx rmsf is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.1902
+   29   0.1549
+   53   0.1601
+   64   0.1354
+   75   0.0957
+   99   0.1058
+  123   0.1103
+  130   0.1008
+  154   0.1123
+  171   0.1543
+  197   0.1644
+  209   0.1634
+  225   0.1858
+  232   0.2017
+  256   0.1949
+  272   0.2095
+  290   0.2179
+  314   0.2287
+  333   0.2537
+  352   0.3494
+  376   0.5306

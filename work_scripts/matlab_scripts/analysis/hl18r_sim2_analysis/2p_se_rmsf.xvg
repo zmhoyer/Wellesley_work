@@ -1,0 +1,38 @@
+# This file was created Mon Jul 14 12:15:50 2025
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/hl18r_sim2
+# Command line:
+#   gmx rmsf -f /home/zh106/hl18r_sim2/analysis_setup_files/2p_memb.xtc -n /home/zh106/hl18r_sim2/analysis_setup_files/2p_index.ndx -s /home/zh106/hl18r_sim2/analysis_setup_files/2p_memb.tpr -o /home/zh106/hl18r_sim2/hl18r_sim2_analysis/2p_se_rmsf.xvg -dt 10 -b 750000 -e 1000000
+# gmx rmsf is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Atom"
+@    yaxis  label "(nm)"
+@TYPE xy
+    5   0.4977
+   19   0.3375
+   43   0.2583
+   54   0.2582
+   65   0.2361
+   89   0.2296
+   99   0.2056
+  106   0.1830
+  125   0.1645
+  142   0.1480
+  168   0.1187
+  180   0.1257
+  196   0.1214
+  203   0.0924
+  227   0.0917
+  243   0.1097
+  261   0.1250
+  285   0.1473
+  309   0.1662
+  328   0.1754
+  352   0.2140

@@ -25,7 +25,7 @@ clear;
 close all
 
 Conversion_factor_to_nanoseconds = 1000; %if data is in terms of picoseconds, keep 1000. If in nanoseconds, change to 1
-simulation_name = "Simulation 1: L8R - "; % What is the name of this simulation
+simulation_name = "Simulation 2: L8R - "; % What is the name of this simulation
 peptides_per_sim = 4; % Do you have more than 1 peptides? if so how many?
 lipids_per_sim = 128; % Did you change the number of lipids?
 number_of_residues = 21; % How many residues do you have?
@@ -147,7 +147,7 @@ function consistent_figures(NameValueArgs) %function to (attempt) to keep all fi
     set(findall(NameValueArgs.figure_name, '-property', 'Fontsize'),'Fontsize',fontsize_of_your_paper);
     set(findall(NameValueArgs.figure_name, '-property', 'Box'),'Box','off');
     set(findall(NameValueArgs.figure_name, '-property', 'Interpreter'),'Interpreter','tex'); %change to LaTeX if you're using that %%% can't change font if you do though
-    set(findall(NameValueArgs.figure_name, '-property', 'TicklabelInterpreter'),'TicklabelInterpreter','tex');
+    set(findall(NameValueArgs.figure_name, '-property', 'TicklabelInterpreter'),'TicklabelInterpreter','latex');
     set(findall(NameValueArgs.figure_name, '-property', 'FontName'),'FontName',NameValueArgs.fontname);
 
     %argument modifiers
@@ -250,7 +250,7 @@ Mean_z = mean(z);
 
 
 % Figure settings - looks better when previewing the pdf
-Title = simulation_name+" Box Size Analysis";
+Title = simulation_name+"Box Size Analysis";
 box_vector_fig = figure('Name',Title,'NumberTitle','off');
 
 MM_xy = plot(time,MM_x_and_y,'color',batlowS(1,:),DisplayName='\itX and \itY Moving Mean');
@@ -285,8 +285,44 @@ consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=b
 
 
 
-
-
+% %% tc groups %%
+% 
+% % data load and processing
+% tc_array = load("tc.txt");
+% time = tc_array(:,1)/Conversion_factor_to_nanoseconds;
+% 
+% POPG = tc_array(:,2);
+% POPE = tc_array(:,3);
+% 
+% 
+% 
+% % Figure settings - looks better when previewing the pdf
+% Title = simulation_name+"POPE and POPG";
+% box_vector_fig = figure('Name',Title,'NumberTitle','off');
+% 
+% 
+% 
+% 
+% plot(time,POPG,'color',[batlowS(1,:),0.33],LineWidth=1);
+% hold on;
+% plot(time,POPE,'color',[batlowS(3,:),0.33],LineWidth=1);
+% hold on;
+% 
+% %setting the legend line widths with a set of fake data so the in-plot line
+% %widths can stay the same.
+% ax = gca;
+% 
+% 
+% ylabel('Temp ({\itK})');
+% xlabel('Time ({\itns})');
+% 
+% %self defined functions
+% fitting_data(tight_fitting=true, data_spacing_y=0.05);
+% consistent_figures(figure_name=box_vector_fig, PDF_PNG_name=Title, legend_name=box_analysis_legend);
+% 
+% 
+% 
+% 
 
 %% Area per lipid analysis %% 
 
@@ -507,48 +543,48 @@ if peptides_per_sim > 1
 end
 
 
-%% RMSF Snapshot Eextraction Analysis summary %%
+%% RMSF SE Analysis summary %%
 
+if peptides_per_sim > 1
 
-
-Title = simulation_name+" RMSF -- All Peptides from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
-RMSF_figure = figure('Name',Title,'NumberTitle','off');
-line_width_for_legends = [];
-
-
-for pep = 1:peptides_per_sim
-
-
-    % data load and processing
-    rmsf = load(pep+"p_se_rmsf.txt");
-    rmsf_nm = rmsf(:,2);
-    rmsf_atom_num = rmsf(:,1);
+    Title = simulation_name+" RMSF -- All Peptides from "+snapshot_extration_range_start+"ns to "+snapshot_extration_range_end+"ns";
+    RMSF_figure = figure('Name',Title,'NumberTitle','off');
+    line_width_for_legends = [];
     
-
-    % Figure settings and creation
-    rmsf_plot = plot(rmsf_nm,'-','color',batlowS(pep+1,:),DisplayName="Peptide "+pep, LineWidth=2);
-    hold on;
-
-    %line width for legend
-    ax = gca;
-    rmsf_plot_for_legend = copyobj(rmsf_plot,ax);
-    set(rmsf_plot_for_legend, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
-    line_width_for_legends = [line_width_for_legends, rmsf_plot_for_legend];
+    
+    for pep = 1:peptides_per_sim
+    
+    
+        % data load and processing
+        rmsf = load(pep+"p_se_rmsf.txt");
+        rmsf_nm = rmsf(:,2);
+        rmsf_atom_num = rmsf(:,1);
+        
+    
+        % Figure settings and creation
+        rmsf_plot = plot(rmsf_nm,'-','color',batlowS(pep+1,:),DisplayName="Peptide "+pep, LineWidth=2);
+        hold on;
+    
+        %line width for legend
+        ax = gca;
+        rmsf_plot_for_legend = copyobj(rmsf_plot,ax);
+        set(rmsf_plot_for_legend, 'XData', NaN, 'YData', NaN, 'LineWidth', 2)
+        line_width_for_legends = [line_width_for_legends, rmsf_plot_for_legend];
+    
+    end
+    
+    ylabel('RMSF ({\itnm})');
+    xlabel('Residue');
+    
+    RMSF_analysis_legend = legend(line_width_for_legends,'AutoUpdate','off','Orientation','horizontal', Location='northoutside');
+    
+    xticks(0:length(rmsf_atom_num));
+    xticklabels(spaced_one_letter_residue_list);
+    
+    fitting_data(tight_fitting=true, data_spacing=true);
+    consistent_figures(figure_name=RMSF_figure,rotate_x_labels_by_angle=0, PDF_PNG_name=Title, legend_name=RMSF_analysis_legend);
 
 end
-
-ylabel('RMSF ({\itnm})');
-xlabel('Residue');
-
-RMSF_analysis_legend = legend(line_width_for_legends,'AutoUpdate','off','Orientation','horizontal', Location='northoutside');
-
-xticks(0:length(rmsf_atom_num));
-xticklabels(spaced_one_letter_residue_list);
-
-fitting_data(tight_fitting=true, data_spacing=true);
-consistent_figures(figure_name=RMSF_figure,rotate_x_labels_by_angle=0, PDF_PNG_name=Title, legend_name=RMSF_analysis_legend);
-
-
 
 
 %% Per Residue Minimum Distance %%  
@@ -569,7 +605,7 @@ for pep = 1:peptides_per_sim
     Sidechain_Residue_data_mean = [];
     Sidechain_Residue_data_std = [];
 
-    for residue_number = number_of_residues:-1:1.0
+    for residue_number = 1:number_of_residues
         dimension = residue_number + 1;
         Sidechain_Residue_mindist = sidechain_residue_array(:,dimension);
         Sidechain_Residue_data_mean(end+1) = mean(Sidechain_Residue_mindist); %#ok<*SAGROW>
@@ -657,7 +693,7 @@ for pep = 1:peptides_per_sim
     backbone_Residue_data_std = [];
   
 
-    for residue_number = number_of_residues:-1:1.0
+    for residue_number = 1:number_of_residues
         dimension = residue_number + 1;
         backbone_Residue_mindist = backbone_residue_array(:,dimension);
         backbone_Residue_data_mean(end+1) = mean(backbone_Residue_mindist); %#ok<*SAGROW>

@@ -1,0 +1,8 @@
+simulation,peptide,time,frame_number,representative_percentage
+hwt_sim3,1p,750000,1,0.00000
+hwt_sim2,1p,842500,38,0.16667
+hwt_sim1,2p,970000,89,0.33333
+hwt_sim1,1p,850000,41,0.50000
+hwt_sim3,1p,892500,58,0.66667
+hwt_sim1,4p,945000,79,0.83333
+hwt_sim3,2p,792500,18,1.00000

@@ -1,0 +1,74 @@
+# This file was created Sun Nov  9 14:24:54 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/ht1r_sim3
+# Command line:
+#   gmx density -f ./md.xtc -s ./md.tpr -o /home/zh106/ht1r_sim3/ht1r_sim3_analysis/density.xvg -center yes
+# gmx density is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Other"
+    -4.71669                0
+    -4.52417                0
+    -4.33165                0
+    -4.13913                0
+    -3.94661                0
+     -3.7541                0
+    -3.56158      0.000326108
+    -3.36906        0.0107955
+    -3.17654         0.189085
+    -2.98403          2.11085
+    -2.79151          15.2859
+    -2.59899          75.4665
+    -2.40647          250.689
+    -2.21395          550.392
+    -2.02144           832.25
+    -1.82892          980.745
+     -1.6364          1016.62
+    -1.44388            980.1
+    -1.25137          918.437
+    -1.05885          883.179
+    -0.86633          869.945
+   -0.673812          853.863
+   -0.481294          822.598
+   -0.288777          761.302
+  -0.0962589          693.531
+   0.0962589          695.276
+    0.288777           763.13
+    0.481294          822.919
+    0.673812          855.112
+     0.86633          871.524
+     1.05885          885.121
+     1.25137          922.701
+     1.44388          986.425
+      1.6364          1020.61
+     1.82892          971.965
+     2.02144          825.013
+     2.21395          549.505
+     2.40647          249.857
+     2.59899           76.878
+     2.79151          15.6435
+     2.98403          1.99065
+     3.17654         0.158932
+     3.36906        0.0082028
+     3.56158       0.00040687
+      3.7541                0
+     3.94661                0
+     4.13913                0
+     4.33165                0
+     4.52417                0
+     4.71669                0
