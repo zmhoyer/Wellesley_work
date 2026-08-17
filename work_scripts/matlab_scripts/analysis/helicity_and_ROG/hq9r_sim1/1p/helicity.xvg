@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:41:24 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hq9r_sim1/1p
+# Command line:
+#   gmx helix -s ../../../hq9r_sim1/md.tpr -n ../../../hq9r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../hq9r_sim1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROningen Mixture of Alchemy and Childrens' Stories
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     92.2043
+         2     94.6962
+         3     82.5567
+         4     92.0243
+         5     72.8331
+         6     35.7706
+         7     1.31195
+         8     86.2605
+         9     87.0765
+        10     76.8529
+        11     87.5725
+        12     86.5445
+        13     94.0762
+        14     92.9123
+        15     89.8004
+        16     80.1848
+        17     69.7452
+        18     11.8355
+        19           0

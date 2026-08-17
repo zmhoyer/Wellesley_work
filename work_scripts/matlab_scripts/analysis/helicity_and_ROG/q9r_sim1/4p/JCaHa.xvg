@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:37:09 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/q9r_sim1/4p
+# Command line:
+#   gmx helix -s ../../../q9r_sim1/md.tpr -n ../../../q9r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../q9r_sim1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     142.217
+         2     143.294
+         3     140.208
+         4     142.007
+         5      142.35
+         6     141.722
+         7     141.179
+         8     143.891
+         9     146.425
+        10     146.288
+        11     146.261
+        12     146.058
+        13      146.57
+        14     146.489
+        15     146.515
+        16     145.965
+        17     145.694
+        18     141.366
+        19      143.44

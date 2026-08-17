@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:37:09 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/q9r_sim1/4p
+# Command line:
+#   gmx helix -s ../../../q9r_sim1/md.tpr -n ../../../q9r_sim1/analysis_setup_files/analysis_index.ndx -f ../../../q9r_sim1/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     12.0235
+         2     41.2783
+         3     4.75181
+         4  0.00399984
+         5    0.859966
+         6           0
+         7  0.00399984
+         8     13.0475
+         9     89.5844
+        10     77.3969
+        11     88.5445
+        12     77.8649
+        13     96.1002
+        14     95.4922
+        15     93.7922
+        16     83.2087
+        17      74.177
+        18     21.0712
+        19           0
