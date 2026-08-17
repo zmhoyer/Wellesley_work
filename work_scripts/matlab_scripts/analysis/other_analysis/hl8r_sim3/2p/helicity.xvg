@@ -1,0 +1,36 @@
+# This file was created Mon Nov 10 21:10:03 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hl8r_sim3/2p
+# Command line:
+#   gmx helix -s ../../../hl8r_sim3/md.tpr -n ../../../hl8r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hl8r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Gravel Rubs Often Many Awfully Cauterized Sores
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1    0.207992
+         2     1.06796
+         3           0
+         4     6.11176
+         5     22.4111
+         6     15.8794
+         7      75.165
+         8     4.66781
+         9     89.6324
+        10     79.8368
+        11     87.1285
+        12     81.0288
+        13     94.6922
+        14     86.2845
+        15     86.8165
+        16     77.9209
+        17     71.4851
+        18     4.33183
+        19           0

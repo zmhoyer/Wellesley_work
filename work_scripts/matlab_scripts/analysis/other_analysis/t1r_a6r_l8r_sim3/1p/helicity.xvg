@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:07:44 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/t1r_a6r_l8r_sim3/1p
+# Command line:
+#   gmx helix -s ../../../t1r_a6r_l8r_sim3/md.tpr -n ../../../t1r_a6r_l8r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../t1r_a6r_l8r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1           0
+         2     82.4567
+         3     71.4731
+         4     72.1051
+         5     79.5568
+         6     65.9694
+         7     35.1626
+         8     3.72785
+         9     91.5163
+        10     84.1446
+        11     89.1204
+        12     84.2326
+        13     95.4642
+        14     92.9883
+        15     92.0083
+        16     82.0607
+        17     67.1773
+        18     15.0194
+        19           0

@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:49:55 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hv12r_sim2/2p
+# Command line:
+#   gmx helix -s ../../../hv12r_sim2/md.tpr -n ../../../hv12r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../hv12r_sim2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     29.2148
+         2     4.57982
+         3           0
+         4     3.09588
+         5     5.99576
+         6     3.30387
+         7     14.8594
+         8           0
+         9     78.0889
+        10     41.5023
+        11     30.8668
+        12     33.3987
+        13     45.7742
+        14     71.5851
+        15     77.0169
+        16     28.6029
+        17     58.6497
+        18     21.0152
+        19           0

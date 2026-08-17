@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:57:25 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hq9r_sim3/2p
+# Command line:
+#   gmx helix -s ../../../hq9r_sim3/md.tpr -n ../../../hq9r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hq9r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1     93.5643
+         2     90.9524
+         3     84.7686
+         4     79.6568
+         5     30.3948
+         6     64.2454
+         7     36.8705
+         8      51.074
+         9     88.3565
+        10     73.3771
+        11     80.6808
+        12     81.2448
+        13      74.425
+        14     47.5141
+        15     69.5612
+        16     7.78769
+        17     41.2104
+        18    0.527979
+        19           0

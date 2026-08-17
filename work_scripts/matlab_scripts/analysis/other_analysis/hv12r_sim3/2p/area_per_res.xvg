@@ -1,0 +1,46 @@
+# This file was created Fri Oct 17 09:20:43 2025
+# Created by:
+#                       :-) GROMACS - gmx sasa, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hv12r_sim3/2p
+# Command line:
+#   gmx sasa -s ../../../hv12r_sim3/md.tpr -n ../../../hv12r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hv12r_sim3/md.xtc -rmpbc yes -o area.xvg -or area_per_res.xvg -tv volume_and_density.xvg -odg estimated_solvation_energies.xvg -dt 500 -b 750000 -e 1000000 -probe 0.145
+# gmx sasa is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "Area per residue over the trajectory"
+@    xaxis  label "Residue"
+@    yaxis  label "Area (nm\S2\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Average (nm\S2\N)"
+@ s1 legend "Standard deviation (nm\S2\N)"
+      22    1.891    0.299
+      23    1.805    0.212
+      24    1.098    0.121
+      25    1.235    0.156
+      26    1.830    0.245
+      27    0.583    0.269
+      28    0.420    0.112
+      29    1.293    0.237
+      30    0.773    0.137
+      31    1.308    0.318
+      32    0.903    0.121
+      33    2.183    0.234
+      34    0.424    0.101
+      35    1.965    0.157
+      36    0.991    0.138
+      37    0.325    0.144
+      38    0.560    0.207
+      39    1.402    0.140
+      40    1.161    0.129
+      41    1.479    0.257
+      42    2.057    0.187

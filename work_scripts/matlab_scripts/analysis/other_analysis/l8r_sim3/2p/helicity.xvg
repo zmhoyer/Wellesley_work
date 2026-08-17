@@ -1,0 +1,36 @@
+# This file was created Mon Nov 10 21:03:26 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/l8r_sim3/2p
+# Command line:
+#   gmx helix -s ../../../l8r_sim3/md.tpr -n ../../../l8r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../l8r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1           0
+         2     4.26383
+         3     4.43982
+         4    0.407984
+         5     6.30375
+         6   0.0799968
+         7    0.187992
+         8           0
+         9     88.4525
+        10           0
+        11           0
+        12           0
+        13     71.2212
+        14     26.6909
+        15           0
+        16           0
+        17           0
+        18           0
+        19           0

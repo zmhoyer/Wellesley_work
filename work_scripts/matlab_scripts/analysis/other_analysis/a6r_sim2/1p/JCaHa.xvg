@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:11:06 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/a6r_sim2/1p
+# Command line:
+#   gmx helix -s ../../../../xj103/A6R_2/md.tpr -n ../../../a6r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/A6R_2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1      146.54
+         2     146.464
+         3     146.268
+         4     146.367
+         5     146.357
+         6     145.856
+         7     145.709
+         8     141.644
+         9     146.781
+        10     145.828
+        11     146.067
+        12     146.109
+        13     146.498
+        14     146.132
+        15     145.985
+        16     145.347
+        17     144.919
+        18     141.885
+        19     136.526

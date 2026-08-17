@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 20:42:50 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hl18r_sim3/2p
+# Command line:
+#   gmx helix -s ../../../hl18r_sim3/md.tpr -n ../../../hl18r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hl18r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GROningen Mixture of Alchemy and Childrens' Stories
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     143.072
+         2     146.614
+         3     146.092
+         4     146.191
+         5     146.313
+         6     145.771
+         7     145.235
+         8      140.38
+         9     146.612
+        10     142.385
+        11     141.872
+        12     139.333
+        13     140.319
+        14     142.576
+        15     136.129
+        16     141.448
+        17     140.744
+        18     142.639
+        19     139.005

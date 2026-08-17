@@ -1,0 +1,46 @@
+# This file was created Fri Oct 17 08:33:10 2025
+# Created by:
+#                       :-) GROMACS - gmx sasa, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/ht1r_sim2/4p
+# Command line:
+#   gmx sasa -s ../../../../xj103/T1R_protonated_hpc_2/md.tpr -n ../../../ht1r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../../xj103/T1R_protonated_hpc_2/md.xtc -rmpbc yes -o area.xvg -or area_per_res.xvg -tv volume_and_density.xvg -odg estimated_solvation_energies.xvg -dt 500 -b 750000 -e 1000000 -probe 0.145
+# gmx sasa is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Area per residue over the trajectory"
+@    xaxis  label "Residue"
+@    yaxis  label "Area (nm\S2\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Average (nm\S2\N)"
+@ s1 legend "Standard deviation (nm\S2\N)"
+      64    3.240    0.180
+      65    2.459    0.227
+      66    0.909    0.219
+      67    1.152    0.157
+      68    2.495    0.179
+      69    0.697    0.191
+      70    0.659    0.109
+      71    1.387    0.172
+      72    1.451    0.155
+      73    1.729    0.143
+      74    0.691    0.128
+      75    0.951    0.160
+      76    0.314    0.064
+      77    1.348    0.134
+      78    0.784    0.103
+      79    1.299    0.174
+      80    1.885    0.267
+      81    1.489    0.120
+      82    1.279    0.151
+      83    1.773    0.161
+      84    2.848    0.180

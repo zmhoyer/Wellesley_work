@@ -1,0 +1,36 @@
+# This file was created Mon Nov 10 21:29:54 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/a6r_sim3/2p
+# Command line:
+#   gmx helix -s ../../../a6r_sim3/md.tpr -n ../../../a6r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../a6r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "Helicity per Residue"
+@    xaxis  label "Residue"
+@    yaxis  label "% of time"
+@TYPE xy
+         1    0.667973
+         2     91.7043
+         3     87.0725
+         4     92.4603
+         5      75.049
+         6     51.2899
+         7     57.6417
+         8           0
+         9     79.6048
+        10     64.2814
+        11     45.3542
+        12     81.8407
+        13     92.1483
+        14     92.7963
+        15     94.2522
+        16     89.0804
+        17     81.2368
+        18     15.4554
+        19           0

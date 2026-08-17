@@ -1,0 +1,36 @@
+# This file was created Mon Nov 10 21:39:47 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/ha6r_sim3/4p
+# Command line:
+#   gmx helix -s ../../../ha6r_sim3/md.tpr -n ../../../ha6r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../ha6r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     146.477
+         2     146.537
+         3     146.307
+         4     146.387
+         5     146.298
+         6     145.821
+         7     146.036
+         8     138.734
+         9       146.8
+        10     141.547
+        11     141.269
+        12     142.262
+        13     139.014
+        14     141.567
+        15     135.831
+        16     137.289
+        17     135.604
+        18      142.07
+        19     142.647

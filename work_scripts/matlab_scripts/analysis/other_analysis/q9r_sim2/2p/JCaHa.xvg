@@ -1,0 +1,36 @@
+# This file was created Wed Oct  1 19:53:39 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/q9r_sim2/2p
+# Command line:
+#   gmx helix -s ../../../q9r_sim2/md.tpr -n ../../../q9r_sim2/analysis_setup_files/analysis_index.ndx -f ../../../q9r_sim2/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# GRowing Old MAkes el Chrono Sweat
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     141.759
+         2     142.279
+         3     141.525
+         4     142.436
+         5     139.753
+         6      140.03
+         7     142.225
+         8     144.592
+         9      139.59
+        10     141.039
+        11     144.477
+        12      142.56
+        13     142.636
+        14     144.027
+        15     145.306
+        16      140.94
+        17     142.149
+        18      140.18
+        19     141.042

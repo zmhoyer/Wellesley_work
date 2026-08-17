@@ -1,0 +1,46 @@
+# This file was created Fri Oct 17 09:13:04 2025
+# Created by:
+#                       :-) GROMACS - gmx sasa, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/v12r_sim3/2p
+# Command line:
+#   gmx sasa -s ../../../v12r_sim3/md.tpr -n ../../../v12r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../v12r_sim3/md.xtc -rmpbc yes -o area.xvg -or area_per_res.xvg -tv volume_and_density.xvg -odg estimated_solvation_energies.xvg -dt 500 -b 750000 -e 1000000 -probe 0.145
+# gmx sasa is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "Area per residue over the trajectory"
+@    xaxis  label "Residue"
+@    yaxis  label "Area (nm\S2\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Average (nm\S2\N)"
+@ s1 legend "Standard deviation (nm\S2\N)"
+      22    2.151    0.109
+      23    2.078    0.245
+      24    0.866    0.335
+      25    0.835    0.173
+      26    1.835    0.496
+      27    0.859    0.142
+      28    0.675    0.141
+      29    1.359    0.313
+      30    1.015    0.377
+      31    1.642    0.256
+      32    0.743    0.214
+      33    1.184    0.425
+      34    0.173    0.104
+      35    1.342    0.167
+      36    0.868    0.127
+      37    0.683    0.190
+      38    1.635    0.217
+      39    1.210    0.192
+      40    1.462    0.132
+      41    1.982    0.160
+      42    2.361    0.170

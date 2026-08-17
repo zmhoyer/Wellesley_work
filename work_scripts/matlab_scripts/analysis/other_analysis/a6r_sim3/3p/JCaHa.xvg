@@ -1,0 +1,36 @@
+# This file was created Mon Nov 10 21:31:31 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/a6r_sim3/3p
+# Command line:
+#   gmx helix -s ../../../a6r_sim3/md.tpr -n ../../../a6r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../a6r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Gravel Rubs Often Many Awfully Cauterized Sores
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1      143.27
+         2     144.143
+         3     141.623
+         4     144.106
+         5     146.469
+         6     145.268
+         7      145.28
+         8     140.174
+         9     146.727
+        10     138.986
+        11     141.692
+        12     136.998
+        13     140.785
+        14     142.472
+        15     141.366
+        16      141.47
+        17     141.842
+        18     141.803
+        19      141.97

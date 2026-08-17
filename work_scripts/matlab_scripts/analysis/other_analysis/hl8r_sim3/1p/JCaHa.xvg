@@ -1,0 +1,36 @@
+# This file was created Mon Nov 10 21:08:14 2025
+# Created by:
+#                      :-) GROMACS - gmx helix, 2024.2 (-:
+# 
+# Executable:   /home/delmore/gromacs_gpu/bin/gmx
+# Data prefix:  /home/delmore/gromacs_gpu
+# Working dir:  /home/zh106/helicity_and_ROG/hl8r_sim3/1p
+# Command line:
+#   gmx helix -s ../../../hl8r_sim3/md.tpr -n ../../../hl8r_sim3/analysis_setup_files/analysis_index.ndx -f ../../../hl8r_sim3/md.xtc -cz ./helix.pdb -b 750000 -e 1000000
+# gmx helix is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "J-Coupling Values"
+@    xaxis  label "Residue"
+@    yaxis  label "Hz"
+@TYPE xy
+         1     144.809
+         2     146.376
+         3     146.246
+         4     146.529
+         5     146.195
+         6     145.557
+         7     144.953
+         8     143.281
+         9     146.643
+        10     145.595
+        11      146.29
+        12     146.298
+        13     146.631
+        14     146.147
+        15     145.273
+        16     144.905
+        17     142.061
+        18     140.515
+        19     136.575
